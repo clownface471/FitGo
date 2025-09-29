@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "943310795135",
+    "project_id": "fitgo-35249",
+    "storage_bucket": "fitgo-35249.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943310795135:android:1fb6e4791aff7b53d92a4a",
+        "android_client_info": {
+          "package_name": "com.example.fitgo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrKPzQYALjDWq5RE2vbontgGuOXasrT1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
