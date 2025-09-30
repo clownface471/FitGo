@@ -4,6 +4,7 @@ import '../../models/user_model.dart';
 import '../../utils/auth_service.dart';
 import '../../utils/firestore_service.dart';
 import '../../utils/theme.dart';
+import '../profile/edit_profile_screen.dart'; 
 
 class ProfilScreen extends StatefulWidget {
   const ProfilScreen({super.key});
@@ -19,9 +20,15 @@ class _ProfilScreenState extends State<ProfilScreen> {
   @override
   void initState() {
     super.initState();
+    _loadProfileData();
+  }
+
+  void _loadProfileData() {
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      _userData = FirestoreService().getUserData(user.uid);
+      setState(() {
+        _userData = FirestoreService().getUserData(user.uid);
+      });
     }
   }
 
@@ -31,66 +38,83 @@ class _ProfilScreenState extends State<ProfilScreen> {
       appBar: AppBar(
         title: const Text('Profil'),
         centerTitle: true,
+        actions: [
+          FutureBuilder<UserModel?>(
+            future: _userData,
+            builder: (context, snapshot) {
+              if (snapshot.hasData && snapshot.data != null) {
+                return IconButton(
+                  icon: const Icon(Icons.edit),
+                  onPressed: () async {
+                    final result = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EditProfileScreen(user: snapshot.data!),
+                      ),
+                    );
+                    if (result == true) {
+                      _loadProfileData();
+                    }
+                  },
+                );
+              }
+              return const SizedBox.shrink();
+            },
+          )
+        ],
       ),
-      body: FutureBuilder<UserModel?>(
-        future: _userData,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          if (!snapshot.hasData || snapshot.data == null) {
-            return const Center(child: Text("Gagal memuat data profil."));
-          }
+      body: RefreshIndicator(
+        onRefresh: () async => _loadProfileData(),
+        child: FutureBuilder<UserModel?>(
+          future: _userData,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            if (!snapshot.hasData || snapshot.data == null) {
+              return const Center(child: Text("Gagal memuat data profil."));
+            }
 
-          final user = snapshot.data!;
+            final user = snapshot.data!;
 
-          return SingleChildScrollView(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildProfileHeader(user),
-                const SizedBox(height: 24),
-                _buildSectionTitle("Informasi Akun"),
-                _InfoCard(
-                  children: [
-                    _InfoTile(label: "Email", value: user.email),
-                  ],
-                ),
-                const SizedBox(height: 24),
-                _buildSectionTitle("Preferensi Latihan"),
-                _InfoCard(
-                  children: [
-                    _InfoTile(label: "Tujuan Utama", value: user.goal ?? '-'),
-                    _InfoTile(label: "Tingkat Kebugaran", value: user.level ?? '-'),
-                  ],
-                ),
-                const SizedBox(height: 24),
-                _buildSectionTitle("Data Metrik"),
-                _InfoCard(
-                  children: [
-                    _InfoTile(label: "Jenis Kelamin", value: user.gender ?? '-'),
+            return SingleChildScrollView(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildProfileHeader(user),
+                  const SizedBox(height: 24),
+                  _buildSectionTitle("Informasi Akun"),
+                  _InfoCard(children: [_InfoTile(label: "Email", value: user.email)]),
+                  const SizedBox(height: 24),
+                  _buildSectionTitle("Preferensi Latihan"),
+                  _InfoCard(children: [
+                    _InfoTile(label: "Tujuan Utama", value: user.goal?.replaceAll('_', ' ').toUpperCase() ?? '-'),
+                    _InfoTile(label: "Tingkat Kebugaran", value: user.level?.toUpperCase() ?? '-'),
+                  ]),
+                  const SizedBox(height: 24),
+                  _buildSectionTitle("Data Metrik"),
+                  _InfoCard(children: [
+                    _InfoTile(label: "Jenis Kelamin", value: user.gender?.toUpperCase() ?? '-'),
                     _InfoTile(label: "Umur", value: "${user.age ?? '-'} tahun"),
                     _InfoTile(label: "Tinggi Badan", value: "${user.height ?? '-'} cm"),
                     _InfoTile(label: "Berat Badan", value: "${user.weight ?? '-'} kg"),
-                  ],
-                ),
-                const SizedBox(height: 40),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red[800],
-                    foregroundColor: Colors.white,
-                    minimumSize: const Size(double.infinity, 50)
+                  ]),
+                  const SizedBox(height: 40),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red[800],
+                      foregroundColor: Colors.white,
+                      minimumSize: const Size(double.infinity, 50),
+                    ),
+                    onPressed: () => _authService.signOut(),
+                    child: const Text('Logout'),
                   ),
-                  onPressed: () {
-                    _authService.signOut();
-                  },
-                  child: const Text('Logout'),
-                ),
-              ],
-            ),
-          );
-        },
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }
