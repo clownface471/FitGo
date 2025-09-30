@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../models/daily_workout_model.dart';
 import '../../models/exercise_model.dart';
+import '../../utils/firestore_service.dart'; 
 import '../../utils/theme.dart';
 
 class ExercisePlayerScreen extends StatefulWidget {
@@ -23,7 +25,35 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
   int _currentSet = 1;
   bool _isResting = false;
   Timer? _timer;
-  int _restSeconds = 30; 
+  int _restSeconds = 30;
+
+  Future<void> _finishWorkout() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      await FirestoreService().advanceToNextDay(user.uid);
+    }
+    
+    if (mounted) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext dialogContext) => AlertDialog(
+          backgroundColor: darkCardColor,
+          title: const Text('Kerja Bagus!'),
+          content: const Text('Anda telah menyelesaikan latihan hari ini.'),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Kembali ke Home', style: TextStyle(color: primaryColor)),
+              onPressed: () {
+                Navigator.of(dialogContext).pop();
+                Navigator.of(context).pop(true);  
+              },
+            ),
+          ],
+        ),
+      );
+    }
+  }
 
   void _startRestTimer() {
     setState(() {
@@ -33,9 +63,7 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
 
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_restSeconds > 0) {
-        setState(() {
-          _restSeconds--;
-        });
+        setState(() => _restSeconds--);
       } else {
         _timer?.cancel();
         _moveToNextSetOrExercise();
@@ -55,9 +83,7 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
           _currentExerciseIndex++;
           _currentSet = 1;
         } else {
-          // Latihan hari ini selesai!
-          // TODO: Tampilkan dialog selesai & panggil fungsi untuk lanjut ke hari berikutnya
-          Navigator.of(context).pop(); 
+          _finishWorkout();
         }
       }
     });
@@ -95,10 +121,9 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
                 borderRadius: BorderRadius.circular(15),
               ),
               clipBehavior: Clip.antiAlias,
-              child: Image.network(currentExerciseDetail.gifUrl, fit: BoxFit.contain),
+              child: Image.network(currentExerciseDetail.gifUrl.replaceFirst('http://', 'https://'), fit: BoxFit.contain),
             ),
             const SizedBox(height: 24),
-
             Text(currentExerciseDetail.name, style: Theme.of(context).textTheme.headlineMedium),
             const SizedBox(height: 8),
             Text(
@@ -106,7 +131,6 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             const Spacer(),
-
             ElevatedButton(
               style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 50)),
               onPressed: _startRestTimer,

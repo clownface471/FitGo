@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../models/daily_workout_model.dart';
 import '../../models/exercise_model.dart';
 import '../../models/user_model.dart';
 import '../../models/workout_plan_model.dart';
@@ -108,7 +107,12 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 16),
           
           if (plan != null)
-            _RecommendedPlanCard(plan: plan, allExercises: allExercises, currentDay: user.currentDay)
+            _RecommendedPlanCard(
+              plan: plan,
+              allExercises: allExercises,
+              currentDay: user.currentDay,
+              onWorkoutCompleted: _loadAllData, 
+            )
           else
             const Card(
               child: ListTile(
@@ -126,18 +130,21 @@ class _HomeScreenState extends State<HomeScreen> {
 class _RecommendedPlanCard extends StatelessWidget {
   final WorkoutPlan plan;
   final List<Exercise> allExercises;
-  final int currentDay; 
+  final int currentDay;
+  final VoidCallback onWorkoutCompleted;
 
   const _RecommendedPlanCard({
     required this.plan,
     required this.allExercises,
     required this.currentDay,
+    required this.onWorkoutCompleted,
   });
 
   @override
   Widget build(BuildContext context) {
+    final dayToShow = (currentDay - 1) % plan.durationDays + 1;
     final todayWorkout = plan.workouts.firstWhere(
-      (w) => w.day == currentDay,
+      (w) => w.day == dayToShow,
       orElse: () => plan.workouts.first,
     );
 
@@ -149,19 +156,23 @@ class _RecommendedPlanCard extends StatelessWidget {
           children: [
             Text(plan.planName, style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 8),
-            Text("Hari ke-$currentDay: ${todayWorkout.workoutName}", style: Theme.of(context).textTheme.titleMedium),
+            Text("Hari ke-$dayToShow: ${todayWorkout.workoutName}", style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 4),
             Text("${todayWorkout.exercises.length} gerakan", style: Theme.of(context).textTheme.bodyMedium),
             const SizedBox(height: 16),
             ElevatedButton(
               style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 50)),
-              onPressed: todayWorkout.exercises.isEmpty ? null : () {
-                Navigator.push(context, MaterialPageRoute(
+              onPressed: todayWorkout.exercises.isEmpty ? null : () async {
+                final result = await Navigator.push(context, MaterialPageRoute(
                   builder: (context) => ExercisePlayerScreen(
                     dailyExercises: todayWorkout.exercises,
                     allExercises: allExercises,
                   ),
                 ));
+
+                if (result == true) {
+                  onWorkoutCompleted();
+                }
               },
               child: Text(todayWorkout.exercises.isEmpty ? 'Hari Istirahat' : "Mulai Latihan Hari Ini"),
             )
