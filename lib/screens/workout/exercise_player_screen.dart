@@ -3,17 +3,23 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../models/daily_workout_model.dart';
 import '../../models/exercise_model.dart';
-import '../../utils/firestore_service.dart'; 
+import '../../utils/firestore_service.dart';
 import '../../utils/theme.dart';
 
 class ExercisePlayerScreen extends StatefulWidget {
   final List<DailyExercise> dailyExercises;
   final List<Exercise> allExercises;
+  final String planName; 
+  final String workoutName;
+  final int currentDay;
 
   const ExercisePlayerScreen({
     super.key,
     required this.dailyExercises,
     required this.allExercises,
+    required this.planName,
+    required this.workoutName,
+    required this.currentDay,
   });
 
   @override
@@ -30,7 +36,14 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
   Future<void> _finishWorkout() async {
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      await FirestoreService().advanceToNextDay(user.uid);
+      final firestoreService = FirestoreService();
+      await firestoreService.addWorkoutHistory(
+        uid: user.uid,
+        planName: widget.planName,
+        workoutName: widget.workoutName,
+        dayCompleted: widget.currentDay,
+      );
+      await firestoreService.advanceToNextDay(user.uid);
     }
     
     if (mounted) {
@@ -46,7 +59,7 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
               child: const Text('Kembali ke Home', style: TextStyle(color: primaryColor)),
               onPressed: () {
                 Navigator.of(dialogContext).pop();
-                Navigator.of(context).pop(true);  
+                Navigator.of(context).pop(true); 
               },
             ),
           ],

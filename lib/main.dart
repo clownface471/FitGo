@@ -3,10 +3,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'screens/auth/splash_screen.dart';
 import 'utils/theme.dart';
+import 'package:intl/date_symbol_data_local.dart';
 // import 'utils/data_uploader.dart'; 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('id_ID', null);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

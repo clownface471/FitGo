@@ -44,6 +44,9 @@ class WorkoutDetailScreen extends StatelessWidget {
                               DailyExercise(exerciseId: exercise.id, sets: 3, reps: '10-12')
                             ],
                             allExercises: exercises,
+                            planName: "Latihan Bebas",
+                            workoutName: exercise.name,
+                            currentDay: 1,
                           ),
                         ),
                       );

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/exercise_model.dart';
 import '../models/user_model.dart';
 import '../models/workout_plan_model.dart';
+import '../models/workout_history_model.dart';
 
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -31,7 +32,7 @@ class FirestoreService {
       'currentDay': 1,
     });
   }
-  
+
   Future<void> advanceToNextDay(String uid) async {
     await _db.collection('users').doc(uid).update({
       'currentDay': FieldValue.increment(1),
@@ -81,6 +82,43 @@ class FirestoreService {
     } catch (e) {
       print("Error getting recommended plan: $e");
       return null;
+    }
+  }
+    Future<void> addWorkoutHistory({
+    required String uid,
+    required String planName,
+    required String workoutName,
+    required int dayCompleted,
+  }) async {
+    try {
+      await _db.collection('users').doc(uid).collection('workoutHistory').add({
+        'planName': planName,
+        'workoutName': workoutName,
+        'dayCompleted': dayCompleted,
+        'completedDate': FieldValue.serverTimestamp(), 
+      });
+    } catch (e) {
+      print("Error adding workout history: $e");
+    }
+  }
+
+  Future<List<WorkoutHistory>> getWorkoutHistory(String uid) async {
+    try {
+      final snapshot = await _db
+          .collection('users')
+          .doc(uid)
+          .collection('workoutHistory')
+          .orderBy('completedDate', descending: true)
+          .get();
+
+      if (snapshot.docs.isEmpty) {
+        return [];
+      }
+      
+      return snapshot.docs.map((doc) => WorkoutHistory.fromFirestore(doc)).toList();
+    } catch (e) {
+      print("Error fetching workout history: $e");
+      return [];
     }
   }
 }

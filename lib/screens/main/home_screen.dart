@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return {
       'user': userData,
       'plan': recommendedPlan,
-      'exercises': allExercises, 
+      'exercises': allExercises,
     };
   }
 
@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
               plan: plan,
               allExercises: allExercises,
               currentDay: user.currentDay,
-              onWorkoutCompleted: _loadAllData, 
+              onWorkoutCompleted: _loadAllData,
             )
           else
             const Card(
@@ -131,13 +131,13 @@ class _RecommendedPlanCard extends StatelessWidget {
   final WorkoutPlan plan;
   final List<Exercise> allExercises;
   final int currentDay;
-  final VoidCallback onWorkoutCompleted;
+  final VoidCallback onWorkoutCompleted; 
 
   const _RecommendedPlanCard({
     required this.plan,
     required this.allExercises,
     required this.currentDay,
-    required this.onWorkoutCompleted,
+    required this.onWorkoutCompleted, 
   });
 
   @override
@@ -167,10 +167,14 @@ class _RecommendedPlanCard extends StatelessWidget {
                   builder: (context) => ExercisePlayerScreen(
                     dailyExercises: todayWorkout.exercises,
                     allExercises: allExercises,
+                    planName: plan.planName,
+                    workoutName: todayWorkout.workoutName,
+                    currentDay: dayToShow,
                   ),
                 ));
 
                 if (result == true) {
+                  print("Workout completed! Refreshing home screen...");
                   onWorkoutCompleted();
                 }
               },
