@@ -64,12 +64,6 @@ class _HomeScreenState extends State<HomeScreen> {
             return const Text('Memuat...');
           },
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: () => _authService.signOut(),
-          )
-        ],
       ),
       body: RefreshIndicator(
         onRefresh: () async => _loadAllData(),

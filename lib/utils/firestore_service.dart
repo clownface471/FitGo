@@ -3,6 +3,8 @@ import '../models/exercise_model.dart';
 import '../models/user_model.dart';
 import '../models/workout_plan_model.dart';
 import '../models/workout_history_model.dart';
+import '../models/diet_plan_model.dart';
+import '../models/recipe_model.dart';
 
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -118,6 +120,28 @@ class FirestoreService {
       return snapshot.docs.map((doc) => WorkoutHistory.fromFirestore(doc)).toList();
     } catch (e) {
       print("Error fetching workout history: $e");
+      return [];
+    }
+  }
+  Future<DietPlan?> getRecommendedDietPlan(String goal) async {
+    try {
+      final query = await _db.collection('dietPlans').where('goal', isEqualTo: goal).limit(1).get();
+      if (query.docs.isNotEmpty) {
+        return DietPlan.fromFirestore(query.docs.first);
+      }
+      return null;
+    } catch (e) {
+      print("Error getting diet plan: $e");
+      return null;
+    }
+  }
+
+  Future<List<Recipe>> getAllRecipes() async {
+    try {
+      final snapshot = await _db.collection('recipes').get();
+      return snapshot.docs.map((doc) => Recipe.fromFirestore(doc)).toList();
+    } catch(e) {
+      print("Error getting all recipes: $e");
       return [];
     }
   }

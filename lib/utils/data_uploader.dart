@@ -7,8 +7,10 @@ class DataUploader {
 
   Future<void> uploadAllData() async {
     final exerciseNameToIdMap = await _uploadAndFetchExercises();
-
     await _uploadWorkoutPlans(exerciseNameToIdMap);
+    
+    final recipeNameToIdMap = await _uploadAndFetchRecipes();
+    await _uploadDietPlans(recipeNameToIdMap);
 
     print("--- PROSES UNGGAH SEMUA DATA SELESAI ---");
   }
@@ -84,5 +86,49 @@ class DataUploader {
 
     await batch.commit();
     print("Unggah program latihan selesai.");
+  }
+  Future<Map<String, String>> _uploadAndFetchRecipes() async {
+    final collectionRef = _db.collection('recipes');
+    if ((await collectionRef.limit(1).get()).docs.isNotEmpty) {
+      print("Data resep sudah ada. Melewatkan unggah.");
+    } else {
+      print("Memulai unggah recipes.json...");
+      final jsonString = await rootBundle.loadString('assets/data/recipes.json');
+      final List<dynamic> recipes = json.decode(jsonString);
+      final WriteBatch batch = _db.batch();
+      for (final recipe in recipes) {
+        final docRef = collectionRef.doc(recipe['recipeId']); 
+        batch.set(docRef, recipe as Map<String, dynamic>);
+      }
+      await batch.commit();
+      print("Unggah recipes.json selesai.");
+    }
+
+    final allRecipesSnapshot = await collectionRef.get();
+    final Map<String, String> nameToIdMap = {};
+    for (final doc in allRecipesSnapshot.docs) {
+      nameToIdMap[doc.data()['name']] = doc.id;
+    }
+    return nameToIdMap;
+  }
+
+  Future<void> _uploadDietPlans(Map<String, String> recipeNameToIdMap) async {
+    final collectionRef = _db.collection('dietPlans');
+    if ((await collectionRef.limit(1).get()).docs.isNotEmpty) {
+      print("Data program diet sudah ada. Dibatalkan.");
+      return;
+    }
+
+    print("Memulai unggah diet_plans.json...");
+    final jsonString = await rootBundle.loadString('assets/data/diet_plans.json');
+    final List<dynamic> plans = json.decode(jsonString);
+    final WriteBatch batch = _db.batch();
+
+    for (final plan in plans) {
+      final docRef = collectionRef.doc();
+      batch.set(docRef, plan as Map<String, dynamic>);
+    }
+    await batch.commit();
+    print("Unggah diet_plans.json selesai.");
   }
 }

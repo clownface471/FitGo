@@ -1,0 +1,126 @@
+[
+  {
+    "planName": "Menurunkan Berat Badan",
+    "goal": "fat_loss",
+    "dailyMeals": [
+      {
+        "day": 1,
+        "meals": {
+          "breakfast": { "recipeId": "FL001" },
+          "lunch": { "recipeId": "FL002" },
+          "dinner": { "recipeId": "FL003" }
+        }
+      },
+      {
+        "day": 2,
+        "meals": {
+          "breakfast": { "recipeId": "FL005" },
+          "lunch": { "recipeId": "FL004" },
+          "dinner": { "recipeId": "FL002" }
+        }
+      },
+      {
+        "day": 3,
+        "meals": {
+          "breakfast": { "recipeId": "FL001" },
+          "lunch": { "recipeId": "FL003" },
+          "dinner": { "recipeId": "FL004" }
+        }
+      },
+      {
+        "day": 4,
+        "meals": {
+          "breakfast": { "recipeId": "FL005" },
+          "lunch": { "recipeId": "FL002" },
+          "dinner": { "recipeId": "FL003" }
+        }
+      },
+      {
+        "day": 5,
+        "meals": {
+          "breakfast": { "recipeId": "FL001" },
+          "lunch": { "recipeId": "FL004" },
+          "dinner": { "recipeId": "FL002" }
+        }
+      },
+      {
+        "day": 6,
+        "meals": {
+          "breakfast": { "recipeId": "FL005" },
+          "lunch": { "recipeId": "FL003" },
+          "dinner": { "recipeId": "FL004" }
+        }
+      },
+      {
+        "day": 7,
+        "meals": {
+          "breakfast": { "recipeId": "FL001" },
+          "lunch": { "recipeId": "FL002" },
+          "dinner": { "recipeId": "FL003" }
+        }
+      }
+    ]
+  },
+  {
+    "planName": "Membentuk Otot",
+    "goal": "muscle_gain",
+    "dailyMeals": [
+      {
+        "day": 1,
+        "meals": {
+          "breakfast": { "recipeId": "MG001" },
+          "lunch": { "recipeId": "MG002" },
+          "dinner": { "recipeId": "MG003" }
+        }
+      },
+      {
+        "day": 2,
+        "meals": {
+          "breakfast": { "recipeId": "MG004" },
+          "lunch": { "recipeId": "MG003" },
+          "dinner": { "recipeId": "MG002" }
+        }
+      },
+      {
+        "day": 3,
+        "meals": {
+          "breakfast": { "recipeId": "MG001" },
+          "lunch": { "recipeId": "MG004" },
+          "dinner": { "recipeId": "MG002" }
+        }
+      },
+      {
+        "day": 4,
+        "meals": {
+          "breakfast": { "recipeId": "MG004" },
+          "lunch": { "recipeId": "MG002" },
+          "dinner": { "recipeId": "MG003" }
+        }
+      },
+      {
+        "day": 5,
+        "meals": {
+          "breakfast": { "recipeId": "MG001" },
+          "lunch": { "recipeId": "MG003" },
+          "dinner": { "recipeId": "MG004" }
+        }
+      },
+      {
+        "day": 6,
+        "meals": {
+          "breakfast": { "recipeId": "MG004" },
+          "lunch": { "recipeId": "MG002" },
+          "dinner": { "recipeId": "MG003" }
+        }
+      },
+      {
+        "day": 7,
+        "meals": {
+          "breakfast": { "recipeId": "MG001" },
+          "lunch": { "recipeId": "MG002" },
+          "dinner": { "recipeId": "MG004" }
+        }
+      }
+    ]
+  }
+]

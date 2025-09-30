@@ -27,7 +27,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - lib/assets/images/
-    - lib/assets/icons/
-    - assets/data/exercises.json
-    - assets/data/workout_plans.json
+    - assets/data/

@@ -1,0 +1,205 @@
+[
+  {
+    "recipeId": "FL001",
+    "name": "Oatmeal Pisang & Kacang Almond",
+    "imageUrl": "https://placeholder.com/oatmeal_pisang_kacang.jpg",
+    "calories": 350,
+    "protein": "15g",
+    "carbs": "55g",
+    "fat": "10g",
+    "ingredients": [
+      "5 sdm oatmeal instan",
+      "200ml air panas atau susu rendah lemak",
+      "1 buah pisang, iris",
+      "1 sdm kacang almond cincang",
+      "Sedikit bubuk kayu manis"
+    ],
+    "instructions": [
+      "Seduh oatmeal dengan air panas atau susu, aduk hingga rata.",
+      "Tambahkan irisan pisang di atasnya.",
+      "Taburi dengan kacang almond cincang dan bubuk kayu manis.",
+      "Sajikan selagi hangat."
+    ]
+  },
+  {
+    "recipeId": "FL002",
+    "name": "Salad Dada Ayam Panggang",
+    "imageUrl": "https://placeholder.com/salad_ayam_panggang.jpg",
+    "calories": 400,
+    "protein": "40g",
+    "carbs": "10g",
+    "fat": "22g",
+    "ingredients": [
+      "150g dada ayam fillet",
+      "100g selada campur (lettuce, romaine)",
+      "50g tomat ceri, belah dua",
+      "25g timun, iris",
+      "Dressing: 2 sdm minyak zaitun, 1 sdm jus lemon, garam, lada"
+    ],
+    "instructions": [
+      "Bumbui dada ayam dengan garam dan lada, panggang hingga matang.",
+      "Iris dada ayam yang sudah matang.",
+      "Dalam mangkuk, campurkan selada, tomat, dan timun.",
+      "Masukkan irisan ayam ke dalam mangkuk.",
+      "Campur bahan dressing dan tuangkan di atas salad. Aduk rata."
+    ]
+  },
+  {
+    "recipeId": "FL003",
+    "name": "Ikan Dori Kukus Jahe",
+    "imageUrl": "https://placeholder.com/ikan_kukus_jahe.jpg",
+    "calories": 320,
+    "protein": "35g",
+    "carbs": "5g",
+    "fat": "18g",
+    "ingredients": [
+      "150g fillet ikan dori",
+      "2 cm jahe, iris korek api",
+      "1 siung bawang putih, cincang",
+      "1 sdm kecap asin rendah sodium",
+      "Daun bawang secukupnya, iris"
+    ],
+    "instructions": [
+      "Letakkan fillet ikan di piring tahan panas.",
+      "Taburi dengan jahe, bawang putih, dan daun bawang.",
+      "Siram dengan kecap asin.",
+      "Kukus selama 10-15 menit atau hingga ikan matang.",
+      "Sajikan dengan nasi merah (opsional)."
+    ]
+  },
+  {
+    "recipeId": "FL004",
+    "name": "Tumis Tahu Brokoli Bawang Putih",
+    "imageUrl": "https://placeholder.com/tumis_tahu_brokoli.jpg",
+    "calories": 280,
+    "protein": "20g",
+    "carbs": "15g",
+    "fat": "15g",
+    "ingredients": [
+      "150g tahu putih, potong dadu",
+      "100g brokoli, potong per kuntum",
+      "2 siung bawang putih, cincang",
+      "1 sdm saus tiram",
+      "1 sdt minyak wijen",
+      "Sedikit air"
+    ],
+    "instructions": [
+      "Tumis bawang putih hingga harum.",
+      "Masukkan tahu, masak hingga sedikit kecoklatan.",
+      "Masukkan brokoli dan sedikit air, masak hingga brokoli setengah matang.",
+      "Tambahkan saus tiram dan minyak wijen, aduk rata.",
+      "Masak hingga brokoli matang dan bumbu meresap."
+    ]
+  },
+  {
+    "recipeId": "FL005",
+    "name": "Greek Yogurt dengan Buah Berry",
+    "imageUrl": "https://placeholder.com/greek_yogurt_berry.jpg",
+    "calories": 250,
+    "protein": "22g",
+    "carbs": "30g",
+    "fat": "5g",
+    "ingredients": [
+      "200g Greek yogurt plain",
+      "50g campuran buah berry (strawberry, blueberry)",
+      "1 sdt madu (opsional)"
+    ],
+    "instructions": [
+      "Tuang Greek yogurt ke dalam mangkuk.",
+      "Tambahkan campuran buah berry di atasnya.",
+      "Jika suka, tambahkan sedikit madu.",
+      "Aduk perlahan dan sajikan dingin."
+    ]
+  },
+  {
+    "recipeId": "MG001",
+    "name": "Smoothie Protein Coklat Pisang",
+    "imageUrl": "https://placeholder.com/smoothie_protein_coklat.jpg",
+    "calories": 550,
+    "protein": "45g",
+    "carbs": "60g",
+    "fat": "15g",
+    "ingredients": [
+      "1 scoop whey protein rasa coklat",
+      "1 buah pisang beku",
+      "250ml susu full cream",
+      "1 sdm selai kacang",
+      "1 sdm biji chia"
+    ],
+    "instructions": [
+      "Masukkan semua bahan ke dalam blender.",
+      "Blender dengan kecepatan tinggi hingga halus dan tercampur rata.",
+      "Tuang ke dalam gelas dan sajikan segera."
+    ]
+  },
+  {
+    "recipeId": "MG002",
+    "name": "Dada Ayam & Ubi Panggang",
+    "imageUrl": "https://placeholder.com/ayam_ubi_panggang.jpg",
+    "calories": 650,
+    "protein": "55g",
+    "carbs": "50g",
+    "fat": "25g",
+    "ingredients": [
+      "200g dada ayam fillet",
+      "200g ubi jalar, potong dadu",
+      "100g asparagus",
+      "1 sdm minyak zaitun",
+      "Bumbu: paprika bubuk, bawang putih bubuk, garam, lada"
+    ],
+    "instructions": [
+      "Panaskan oven hingga 200°C.",
+      "Campurkan ubi jalar dan asparagus dengan minyak zaitun dan bumbu, lalu sebarkan di loyang.",
+      "Bumbui dada ayam dan letakkan di loyang yang sama.",
+      "Panggang selama 20-25 menit atau hingga ayam dan ubi matang sempurna."
+    ]
+  },
+  {
+    "recipeId": "MG003",
+    "name": "Steak Daging Sapi & Nasi Merah",
+    "imageUrl": "https://placeholder.com/steak_nasi_merah.jpg",
+    "calories": 700,
+    "protein": "60g",
+    "carbs": "45g",
+    "fat": "30g",
+    "ingredients": [
+      "180g daging sapi sirloin",
+      "150g nasi merah matang",
+      "100g buncis, rebus",
+      "1 siung bawang putih, geprek",
+      "1 sdm mentega",
+      "Garam dan lada hitam"
+    ],
+    "instructions": [
+      "Bumbui steak dengan garam dan lada hitam.",
+      "Panaskan wajan dengan mentega, masukkan bawang putih geprek.",
+      "Masak steak sesuai tingkat kematangan yang diinginkan (misal: 3-4 menit per sisi untuk medium).",
+      "Angkat steak dan istirahatkan selama 5 menit sebelum diiris.",
+      "Sajikan steak dengan nasi merah dan buncis rebus."
+    ]
+  },
+  {
+    "recipeId": "MG004",
+    "name": "Telur Orak-arik & Roti Gandum",
+    "imageUrl": "https://placeholder.com/telur_orak_arik_roti.jpg",
+    "calories": 500,
+    "protein": "30g",
+    "carbs": "40g",
+    "fat": "25g",
+    "ingredients": [
+      "3 butir telur ayam",
+      "50ml susu",
+      "2 lembar roti gandum utuh",
+      "1 sdm mentega",
+      "Garam dan lada secukupnya",
+      "50g alpukat, iris (opsional)"
+    ],
+    "instructions": [
+      "Kocok lepas telur, susu, garam, dan lada.",
+      "Panggang roti gandum hingga kecoklatan.",
+      "Lelehkan mentega di wajan, tuang campuran telur.",
+      "Masak sambil diaduk (orak-arik) hingga matang.",
+      "Sajikan telur orak-arik di atas roti panggang, tambahkan irisan alpukat jika suka."
+    ]
+  }
+]
