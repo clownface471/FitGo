@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -8,9 +10,11 @@ class DataUploader {
   Future<void> uploadAllData() async {
     final exerciseNameToIdMap = await _uploadAndFetchExercises();
     await _uploadWorkoutPlans(exerciseNameToIdMap);
-    
+
     final recipeNameToIdMap = await _uploadAndFetchRecipes();
     await _uploadDietPlans(recipeNameToIdMap);
+
+    await uploadMotivations();
 
     print("--- PROSES UNGGAH SEMUA DATA SELESAI ---");
   }
@@ -23,7 +27,8 @@ class DataUploader {
       print("Data latihan sudah ada. Melewatkan unggah exercises.");
     } else {
       print("Memulai unggah exercises.json...");
-      final String jsonString = await rootBundle.loadString('assets/data/exercises.json');
+      final String jsonString =
+          await rootBundle.loadString('assets/data/exercises.json');
       final List<dynamic> exercises = json.decode(jsonString);
       final WriteBatch batch = _db.batch();
       for (final exercise in exercises) {
@@ -40,7 +45,7 @@ class DataUploader {
     for (final doc in allExercisesSnapshot.docs) {
       final name = doc.data()['name'] as String?;
       if (name != null) {
-        nameToIdMap[name.toLowerCase()] = doc.id; 
+        nameToIdMap[name.toLowerCase()] = doc.id;
       }
     }
     print("Pemetaan selesai. Ditemukan ${nameToIdMap.length} latihan.");
@@ -57,7 +62,8 @@ class DataUploader {
     }
 
     print("Memulai unggah workout_plans.json...");
-    final String jsonString = await rootBundle.loadString('assets/data/workout_plans.json');
+    final String jsonString =
+        await rootBundle.loadString('assets/data/workout_plans.json');
     final List<dynamic> plans = json.decode(jsonString);
     final WriteBatch batch = _db.batch();
 
@@ -72,11 +78,12 @@ class DataUploader {
           final String? exerciseId = nameToIdMap[exerciseName.toLowerCase()];
 
           if (exerciseId != null) {
-            exercise['exerciseId'] = exerciseId; 
+            exercise['exerciseId'] = exerciseId;
           } else {
-            print("PERINGATAN: Latihan bernama '$exerciseName' tidak ditemukan di database exercises.");
+            print(
+                "PERINGATAN: Latihan bernama '$exerciseName' tidak ditemukan di database exercises.");
           }
-          exercise.remove('exerciseName'); 
+          exercise.remove('exerciseName');
         }
       }
 
@@ -87,17 +94,19 @@ class DataUploader {
     await batch.commit();
     print("Unggah program latihan selesai.");
   }
+
   Future<Map<String, String>> _uploadAndFetchRecipes() async {
     final collectionRef = _db.collection('recipes');
     if ((await collectionRef.limit(1).get()).docs.isNotEmpty) {
       print("Data resep sudah ada. Melewatkan unggah.");
     } else {
       print("Memulai unggah recipes.json...");
-      final jsonString = await rootBundle.loadString('assets/data/recipes.json');
+      final jsonString =
+          await rootBundle.loadString('assets/data/recipes.json');
       final List<dynamic> recipes = json.decode(jsonString);
       final WriteBatch batch = _db.batch();
       for (final recipe in recipes) {
-        final docRef = collectionRef.doc(recipe['recipeId']); 
+        final docRef = collectionRef.doc(recipe['recipeId']);
         batch.set(docRef, recipe as Map<String, dynamic>);
       }
       await batch.commit();
@@ -120,7 +129,8 @@ class DataUploader {
     }
 
     print("Memulai unggah diet_plans.json...");
-    final jsonString = await rootBundle.loadString('assets/data/diet_plans.json');
+    final jsonString =
+        await rootBundle.loadString('assets/data/diet_plans.json');
     final List<dynamic> plans = json.decode(jsonString);
     final WriteBatch batch = _db.batch();
 
@@ -130,5 +140,26 @@ class DataUploader {
     }
     await batch.commit();
     print("Unggah diet_plans.json selesai.");
+  }
+
+  Future<void> uploadMotivations() async {
+    final collectionRef = _db.collection('motivations');
+    if ((await collectionRef.limit(1).get()).docs.isNotEmpty) {
+      print("Data motivasi sudah ada. Dibatalkan.");
+      return;
+    }
+
+    print("Memulai unggah motivations.json...");
+    final jsonString =
+        await rootBundle.loadString('assets/data/motivations.json');
+    final List<dynamic> motivations = json.decode(jsonString);
+    final WriteBatch batch = _db.batch();
+
+    for (final item in motivations) {
+      final docRef = collectionRef.doc();
+      batch.set(docRef, item as Map<String, dynamic>);
+    }
+    await batch.commit();
+    print("Unggah motivations.json selesai.");
   }
 }

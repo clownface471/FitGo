@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/exercise_model.dart';
 import '../models/user_model.dart';
@@ -5,6 +7,7 @@ import '../models/workout_plan_model.dart';
 import '../models/workout_history_model.dart';
 import '../models/diet_plan_model.dart';
 import '../models/recipe_model.dart';
+import '../models/motivation_model.dart';
 
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -145,4 +148,13 @@ class FirestoreService {
       return [];
     }
   }
+  Future<List<Motivation>> getMotivations() async {
+  try {
+    final snapshot = await _db.collection('motivations').get();
+    return snapshot.docs.map((doc) => Motivation.fromFirestore(doc)).toList();
+  } catch (e) {
+    print("Error getting motivations: $e");
+    return [];
+  }
+}
 }

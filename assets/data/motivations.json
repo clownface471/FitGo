@@ -1,0 +1,122 @@
+[
+  {
+    "type": "profile",
+    "name": "Arnold Schwarzenegger",
+    "imageUrl": "https://placeholder.com/arnold_schwarzenegger.jpg",
+    "content": "Arnold Schwarzenegger adalah seorang binaragawan profesional, aktor, dan politisi legendaris. Ia memenangkan gelar Mr. Olympia sebanyak tujuh kali dan dianggap sebagai salah satu binaragawan terhebat sepanjang masa. Dedikasinya yang luar biasa pada disiplin dan kerja keras terus menginspirasi jutaan orang di seluruh dunia untuk mencapai tujuan kebugaran mereka."
+  },
+  {
+    "type": "quote",
+    "name": "Chris Bumstead",
+    "imageUrl": "https://placeholder.com/chris_bumstead.jpg",
+    "content": "Satu-satunya orang yang harus kamu kalahkan adalah dirimu yang kemarin. Teruslah berkembang."
+  },
+  {
+    "type": "quote",
+    "name": "Dwayne 'The Rock' Johnson",
+    "imageUrl": "https://placeholder.com/dwayne_johnson.jpg",
+    "content": "Kesuksesan tidak selalu tentang kehebatan. Ini tentang konsistensi. Kerja keras yang konsisten akan membawa kesuksesan."
+  },
+  {
+    "type": "quote",
+    "name": "Muhammad Ali",
+    "imageUrl": "https://placeholder.com/muhammad_ali.jpg",
+    "content": "Saya benci setiap menit latihan, tapi saya berkata, 'Jangan berhenti. Menderitalah sekarang dan jalani sisa hidupmu sebagai seorang juara.'"
+  },
+  {
+    "type": "quote",
+    "name": "Michael Jordan",
+    "imageUrl": "https://placeholder.com/michael_jordan.jpg",
+    "content": "Saya bisa menerima kegagalan, semua orang pernah gagal. Tapi saya tidak bisa menerima jika tidak mencoba."
+  },
+  {
+    "type": "quote",
+    "name": "David Goggins",
+    "imageUrl": "https://placeholder.com/david_goggins.jpg",
+    "content": "Jangan biarkan pikiranmu mengontrol dirimu. Kamulah yang harus mengontrol pikiranmu."
+  },
+  {
+    "type": "quote",
+    "name": "Vince Lombardi",
+    "imageUrl": "https://placeholder.com/vince_lombardi.jpg",
+    "content": "Satu-satunya tempat di mana kesuksesan datang sebelum kerja keras hanyalah di dalam kamus."
+  },
+  {
+    "type": "quote",
+    "name": "Bruce Lee",
+    "imageUrl": "https://placeholder.com/bruce_lee.jpg",
+    "content": "Mengetahui saja tidak cukup, kita harus menerapkan. Berkemauan saja tidak cukup, kita harus melakukan."
+  },
+  {
+    "type": "quote",
+    "name": "Serena Williams",
+    "imageUrl": "https://placeholder.com/serena_williams.jpg",
+    "content": "Saya tidak pernah suka kalah, tapi yang paling saya benci adalah belajar dari kekalahan itu."
+  },
+  {
+    "type": "quote",
+    "name": "Tim Motivasi",
+    "imageUrl": "https://placeholder.com/tim_motivasi.jpg",
+    "content": "Rasa sakit yang kamu rasakan hari ini adalah kekuatan yang akan kamu rasakan besok."
+  },
+  {
+    "type": "quote",
+    "name": "Cristiano Ronaldo",
+    "imageUrl": "https://placeholder.com/cristiano_ronaldo.jpg",
+    "content": "Saya tidak melihat batasan, saya melihat peluang untuk menjadi lebih baik setiap hari."
+  },
+  {
+    "type": "quote",
+    "name": "Jillian Michaels",
+    "imageUrl": "https://placeholder.com/jillian_michaels.jpg",
+    "content": "Transformasi bukanlah tentang fisik semata, ini tentang merevolusi cara berpikirmu."
+  },
+  {
+    "type": "quote",
+    "name": "Tim Motivasi",
+    "imageUrl": "https://placeholder.com/tim_motivasi.jpg",
+    "content": "Satu jam latihan hanyalah 4% dari harimu. Jangan ada alasan."
+  },
+  {
+    "type": "quote",
+    "name": "Ronnie Coleman",
+    "imageUrl": "https://placeholder.com/ronnie_coleman.jpg",
+    "content": "Semua orang ingin menjadi binaragawan, tapi tidak semua orang mau mengangkat beban yang berat."
+  },
+  {
+    "type": "quote",
+    "name": "Usain Bolt",
+    "imageUrl": "https://placeholder.com/usain_bolt.jpg",
+    "content": "Saya berlatih selama bertahun-tahun hanya untuk berlari selama sembilan detik. Kerja keras itu nyata."
+  },
+  {
+    "type": "quote",
+    "name": "Tim Motivasi",
+    "imageUrl": "https://placeholder.com/tim_motivasi.jpg",
+    "content": "Tubuhmu bisa melakukan hampir semua hal. Kamulah yang harus meyakinkan pikiranmu."
+  },
+  {
+    "type": "quote",
+    "name": "Arnold Schwarzenegger",
+    "imageUrl": "https://placeholder.com/arnold_schwarzenegger.jpg",
+    "content": "Repetisi terakhir yang membuat otot bertumbuh. Momen rasa sakit itulah yang memisahkan seorang juara dari pecundang."
+  },
+  {
+    "type": "quote",
+    "name": "Tim Motivasi",
+    "imageUrl": "https://placeholder.com/tim_motivasi.jpg",
+    "content": "Jangan berharap untuk melihat perubahan jika kamu tidak membuatnya."
+  },
+  {
+    "type": "quote",
+    "name": "Conor McGregor",
+    "imageUrl": "https://placeholder.com/conor_mcgregor.jpg",
+    "content": "Tidak ada bakat di sini, ini adalah kerja keras. Ini adalah sebuah obsesi."
+  },
+  {
+    "type": "quote",
+    "name": "Tim Motivasi",
+    "imageUrl": "https://placeholder.com/tim_motivasi.jpg",
+    "content": "Hari ini mungkin sulit, besok mungkin lebih sulit, tapi lusa akan menjadi hari kemenanganmu."
+  }
+]

@@ -4,7 +4,7 @@ import 'firebase_options.dart';
 import 'screens/auth/splash_screen.dart';
 import 'utils/theme.dart';
 import 'package:intl/date_symbol_data_local.dart';
-// import 'utils/data_uploader.dart'; 
+import 'utils/data_uploader.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,7 +12,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  // await DataUploader().uploadAllData(); 
+  await DataUploader().uploadAllData();
   runApp(const MyApp());
 }
 
