@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'screens/auth/splash_screen.dart'; 
+import 'screens/auth/splash_screen.dart';
 import 'utils/theme.dart';
+// import 'utils/data_uploader.dart'; 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // await DataUploader().uploadAllData(); 
   runApp(const MyApp());
 }
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'FitGo',
       theme: buildDarkTheme(),
-      home: const SplashScreen(), 
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

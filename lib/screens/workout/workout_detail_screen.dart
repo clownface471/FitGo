@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../models/daily_workout_model.dart';
 import '../../models/exercise_model.dart';
 import 'exercise_player_screen.dart';
 
@@ -38,7 +39,12 @@ class WorkoutDetailScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ExercisePlayerScreen(exercise: exercise),
+                          builder: (context) => ExercisePlayerScreen(
+                            dailyExercises: [
+                              DailyExercise(exerciseId: exercise.id, sets: 3, reps: '10-12')
+                            ],
+                            allExercises: exercises,
+                          ),
                         ),
                       );
                     },
@@ -64,13 +70,13 @@ class _ExerciseCard extends StatelessWidget {
     final secureGifUrl = exercise.gifUrl.replaceFirst('http://', 'https://');
 
     return Card(
-      clipBehavior: Clip.antiAlias, 
+      clipBehavior: Clip.antiAlias,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Container(
-              color: Colors.white, 
+              color: Colors.white,
               child: Image.network(
                 secureGifUrl,
                 fit: BoxFit.contain,
@@ -86,7 +92,7 @@ class _ExerciseCard extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
-            color: Theme.of(context).cardTheme.color, 
+            color: Theme.of(context).cardTheme.color,
             child: Text(
               exercise.name,
               textAlign: TextAlign.center,

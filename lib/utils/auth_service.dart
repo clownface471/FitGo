@@ -1,22 +1,28 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'firestore_service.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirestoreService _firestoreService = FirestoreService(); 
 
-  // Stream untuk memantau status login user
   Stream<User?> get authStateChanges => _auth.authStateChanges();
 
-  // Fungsi Sign Up
   Future<String?> signUp({required String email, required String password}) async {
     try {
-      await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      UserCredential userCredential = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      
+      if (userCredential.user != null) {
+        await _firestoreService.createUser(
+          uid: userCredential.user!.uid,
+          email: email,
+        );
+      }
       return "Success";
     } on FirebaseAuthException catch (e) {
       return e.message;
     }
   }
 
-  // Fungsi Sign In
   Future<String?> signIn({required String email, required String password}) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
@@ -26,7 +32,6 @@ class AuthService {
     }
   }
 
-  // Fungsi Sign Out
   Future<void> signOut() async {
     await _auth.signOut();
   }

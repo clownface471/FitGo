@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-// Palet Warna 
-const Color primaryColor = Color(0xFFD4FF40); // Hijau Neon
-const Color darkBackgroundColor = Color(0xFF1C1C1E); // Hitam/Abu-abu gelap
+const Color primaryColor = Color(0xFFD4FF40); 
+const Color darkBackgroundColor = Color(0xFF1C1C1E); 
 const Color darkCardColor = Color(0xFF2C2C2E);
 const Color lightTextColor = Colors.white;
 const Color darkTextColor = Colors.black;
@@ -13,7 +12,6 @@ ThemeData buildDarkTheme() {
     scaffoldBackgroundColor: darkBackgroundColor,
     primaryColor: primaryColor,
     
-    // Tema untuk Input/TextField
     inputDecorationTheme: InputDecorationTheme( 
       filled: true,
       fillColor: darkCardColor,
@@ -35,7 +33,7 @@ ThemeData buildDarkTheme() {
       style: ElevatedButton.styleFrom(
         backgroundColor: primaryColor,
         foregroundColor: darkTextColor,
-        minimumSize: const Size(double.infinity, 50),
+        padding: const EdgeInsets.symmetric(vertical: 16),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),

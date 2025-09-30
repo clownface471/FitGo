@@ -1,7 +1,8 @@
 class Exercise {
   final String id;
   final String name;
-  final String bodyPart;
+  final String description;
+  final String bodyPart; 
   final String equipment;
   final String gifUrl;
   final String target;
@@ -10,6 +11,7 @@ class Exercise {
   Exercise({
     required this.id,
     required this.name,
+    required this.description,
     required this.bodyPart,
     required this.equipment,
     required this.gifUrl,
@@ -17,15 +19,16 @@ class Exercise {
     required this.instructions,
   });
 
-  factory Exercise.fromJson(Map<String, dynamic> json) {
+  factory Exercise.fromFirestore(Map<String, dynamic> data, String documentId) {
     return Exercise(
-      id: json['id'] as String? ?? 'no-id',
-      name: json['name'] as String? ?? 'Unnamed Exercise',
-      bodyPart: json['bodyPart'] as String? ?? 'Unknown',
-      equipment: json['equipment'] as String? ?? 'N/A',
-      gifUrl: json['gifUrl'] as String? ?? '',
-      target: json['target'] as String? ?? 'N/A',
-      instructions: List<String>.from(json['instructions'] ?? []),
+      id: documentId,
+      name: data['name'] ?? 'Unnamed Exercise',
+      description: data['description'] ?? 'No description available.',
+      bodyPart: data['targetMuscle'] ?? 'Unknown', 
+      equipment: data['equipment'] ?? 'N/A',
+      gifUrl: (data['gifUrl'] ?? '').replaceFirst('http://', 'https://'), 
+      target: data['targetMuscle'] ?? 'N/A',
+      instructions: List<String>.from(data['instructions'] ?? []),
     );
   }
 }

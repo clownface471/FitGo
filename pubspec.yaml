@@ -13,7 +13,6 @@ dependencies:
     sdk: flutter
   firebase_core: ^3.1.1
   firebase_auth: ^5.1.1
-  http: ^1.2.1
   cloud_firestore: ^5.0.2
   collection: ^1.18.0
   cupertino_icons: ^1.0.6
@@ -29,3 +28,5 @@ flutter:
   assets:
     - lib/assets/images/
     - lib/assets/icons/
+    - assets/data/exercises.json
+    - assets/data/workout_plans.json

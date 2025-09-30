@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:collection/collection.dart'; 
+import 'package:collection/collection.dart';
 import '../../models/exercise_model.dart';
-import '../../utils/api_service.dart';
+import '../../utils/firestore_service.dart'; 
 import '../workout/workout_detail_screen.dart';
 
 class LatihanScreen extends StatefulWidget {
@@ -12,12 +12,12 @@ class LatihanScreen extends StatefulWidget {
 }
 
 class _LatihanScreenState extends State<LatihanScreen> {
-  late Future<List<Exercise>> _allExercises;
+  late Future<List<Exercise>> _exercises = FirestoreService().getExercises();
 
-  @override
-  void initState() {
-    super.initState();
-    _allExercises = ApiService().getAllExercises();
+  void _refreshExercises() {
+    setState(() {
+      _exercises = FirestoreService().getExercises();
+    });
   }
 
   @override
@@ -27,48 +27,50 @@ class _LatihanScreenState extends State<LatihanScreen> {
         title: const Text('Latihan'),
         centerTitle: true,
       ),
-      body: FutureBuilder<List<Exercise>>(
-        future: _allExercises,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(child: Text('Tidak ada data latihan.'));
-          } else {
-            // Kelompokkan latihan berdasarkan bodyPart
-            final exercises = snapshot.data!;
-            final groupedExercises = groupBy(exercises, (Exercise e) => e.bodyPart);
-            final bodyParts = groupedExercises.keys.toList();
+      body: RefreshIndicator(
+        onRefresh: () async => _refreshExercises(),
+        child: FutureBuilder<List<Exercise>>(
+          future: _exercises,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            } else if (snapshot.hasError) {
+              return Center(child: Text('Error: ${snapshot.error}'));
+            } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+              return const Center(child: Text('Tidak ada data latihan di database.'));
+            } else {
+              final exercises = snapshot.data!;
+              final groupedExercises = groupBy(exercises, (Exercise e) => e.bodyPart);
+              final bodyParts = groupedExercises.keys.toList();
 
-            return ListView.separated(
-              padding: const EdgeInsets.all(16.0),
-              itemCount: bodyParts.length,
-              separatorBuilder: (context, index) => const SizedBox(height: 16),
-              itemBuilder: (context, index) {
-                final bodyPart = bodyParts[index];
-                final exercisesForBodyPart = groupedExercises[bodyPart]!;
-                
-                return _WorkoutCategoryCard(
-                  title: bodyPart,
-                  exerciseCount: exercisesForBodyPart.length,
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => WorkoutDetailScreen(
-                          title: bodyPart,
-                          exercises: exercisesForBodyPart,
+              return ListView.separated(
+                padding: const EdgeInsets.all(16.0),
+                itemCount: bodyParts.length,
+                separatorBuilder: (context, index) => const SizedBox(height: 16),
+                itemBuilder: (context, index) {
+                  final bodyPart = bodyParts[index];
+                  final exercisesForBodyPart = groupedExercises[bodyPart]!;
+                  
+                  return _WorkoutCategoryCard(
+                    title: bodyPart,
+                    exerciseCount: exercisesForBodyPart.length,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WorkoutDetailScreen(
+                            title: bodyPart,
+                            exercises: exercisesForBodyPart,
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                );
-              },
-            );
-          }
-        },
+                      );
+                    },
+                  );
+                },
+              );
+            }
+          },
+        ),
       ),
     );
   }

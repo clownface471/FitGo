@@ -1,0 +1,1411 @@
+[
+  {
+    "name": "Squat",
+    "description": "Raja dari semua latihan kaki. Gerakan fundamental untuk membangun kekuatan dan massa di seluruh tubuh bagian bawah.",
+    "targetMuscle": "legs",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/squat.gif",
+    "instructions": [
+      "Letakkan barbell di punggung atas Anda, berdiri dengan kaki selebar bahu.",
+      "Jaga dada tetap tegak dan punggung lurus, turunkan pinggul ke belakang dan ke bawah seolah-olah duduk di kursi.",
+      "Turun hingga paha Anda setidaknya sejajar dengan lantai.",
+      "Dorong kembali ke posisi awal melalui tumit."
+    ]
+  },
+  {
+    "name": "Barbell Bench Press",
+    "description": "Latihan utama untuk membangun kekuatan dan ukuran otot dada, bahu depan, dan trisep.",
+    "targetMuscle": "chest",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/barbell_bench_press.gif",
+    "instructions": [
+      "Berbaring telentang di bangku datar, pegang barbell dengan genggaman sedikit lebih lebar dari bahu.",
+      "Turunkan barbell secara perlahan ke tengah dada Anda, jaga siku tetap terkontrol.",
+      "Dorong barbell kembali ke atas dengan kuat hingga lengan hampir lurus."
+    ]
+  },
+  {
+    "name": "Lat Pulldown",
+    "description": "Alternatif yang bagus untuk pull-up, menargetkan otot punggung (latissimus dorsi) untuk membangun punggung yang lebar.",
+    "targetMuscle": "back",
+    "equipment": "cable machine",
+    "gifUrl": "https://placeholder.com/lat_pulldown.gif",
+    "instructions": [
+      "Duduk di mesin dan kencangkan penahan paha.",
+      "Pegang palang dengan genggaman lebar, telapak tangan menghadap ke depan.",
+      "Tarik palang ke bawah hingga menyentuh dada bagian atas, jaga punggung tetap lurus dan dada dibusungkan.",
+      "Kembalikan palang ke posisi awal secara perlahan."
+    ]
+  },
+  {
+    "name": "Dumbbell Shoulder Press",
+    "description": "Latihan yang sangat baik untuk membangun kekuatan dan massa pada otot bahu (deltoid).",
+    "targetMuscle": "shoulders",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/dumbbell_shoulder_press.gif",
+    "instructions": [
+      "Duduk di bangku dengan sandaran tegak, pegang dumbbell setinggi bahu dengan telapak tangan menghadap ke depan.",
+      "Dorong dumbbell lurus ke atas kepala hingga lengan hampir lurus.",
+      "Turunkan kembali dumbbell secara perlahan dan terkontrol ke posisi awal."
+    ]
+  },
+  {
+    "name": "Tricep Dips",
+    "description": "Latihan bodyweight yang efektif untuk menargetkan otot trisep dan dada bagian bawah.",
+    "targetMuscle": "triceps",
+    "equipment": "parallel bars",
+    "gifUrl": "https://placeholder.com/tricep_dips.gif",
+    "instructions": [
+      "Pegang palang paralel dengan lengan lurus dan tubuh tegak.",
+      "Tekuk siku untuk menurunkan tubuh secara perlahan hingga bahu sejajar dengan siku.",
+      "Dorong tubuh kembali ke atas dengan kekuatan trisep hingga lengan lurus kembali."
+    ]
+  },
+  {
+    "name": "Leg Press",
+    "description": "Latihan mesin yang memungkinkan Anda mengangkat beban berat untuk melatih paha depan, hamstring, dan bokong.",
+    "targetMuscle": "legs",
+    "equipment": "leg press machine",
+    "gifUrl": "https://placeholder.com/leg_press.gif",
+    "instructions": [
+      "Duduk di mesin dengan punggung dan kepala menempel pada sandaran.",
+      "Letakkan kaki di platform selebar bahu.",
+      "Dorong platform ke atas hingga kaki hampir lurus, lalu lepaskan kunci pengaman.",
+      "Turunkan platform secara perlahan dengan menekuk lutut."
+    ]
+  },
+  {
+    "name": "Push-up",
+    "description": "Latihan fundamental untuk kekuatan tubuh bagian atas, terutama dada, bahu, dan trisep.",
+    "targetMuscle": "chest",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/pushup.gif",
+    "instructions": [
+      "Mulai dengan posisi plank, tangan sedikit lebih lebar dari bahu.",
+      "Jaga tubuh tetap lurus dari kepala hingga tumit.",
+      "Turunkan tubuh hingga dada hampir menyentuh lantai.",
+      "Dorong tubuh kembali ke posisi awal dengan kekuatan dada dan trisep."
+    ]
+  },
+  {
+    "name": "Pull Up",
+    "description": "Latihan bodyweight terbaik untuk membangun lebar dan kekuatan punggung (lats).",
+    "targetMuscle": "back",
+    "equipment": "pull-up bar",
+    "gifUrl": "https://placeholder.com/pull_up.gif",
+    "instructions": [
+      "Genggam palang dengan telapak tangan menghadap ke depan (overhand grip), sedikit lebih lebar dari bahu.",
+      "Mulai dari posisi menggantung dengan lengan lurus.",
+      "Tarik tubuh ke atas hingga dagu melewati palang, fokus pada otot punggung.",
+      "Turunkan tubuh secara perlahan dan terkontrol."
+    ]
+  },
+  {
+    "name": "Dumbbell Bicep Curl",
+    "description": "Gerakan klasik dan paling populer untuk melatih otot bisep lengan depan.",
+    "targetMuscle": "biceps",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/dumbbell_bicep_curl.gif",
+    "instructions": [
+      "Pegang sepasang dumbbell di sisi tubuh dengan telapak tangan menghadap ke depan.",
+      "Jaga siku tetap di sisi tubuh, angkat dumbbell secara perlahan ke arah bahu.",
+      "Kontraksikan otot bisep di puncak gerakan, lalu turunkan kembali dumbbell dengan terkontrol."
+    ]
+  },
+  {
+    "name": "Plank",
+    "description": "Latihan isometrik fundamental untuk membangun kekuatan dan stabilitas otot inti (core).",
+    "targetMuscle": "abs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/plank.gif",
+    "instructions": [
+      "Mulai dengan posisi push-up, tetapi bertumpu pada lengan bawah (forearm) bukan telapak tangan.",
+      "Pastikan tubuh membentuk garis lurus dari kepala hingga tumit.",
+      "Kencangkan otot perut dan bokong, lalu tahan posisi ini selama mungkin."
+    ]
+  },
+  {
+    "name": "Deadlift",
+    "description": "Latihan seluruh tubuh yang sangat baik untuk membangun kekuatan punggung bawah, bokong, dan hamstring.",
+    "targetMuscle": "back",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/deadlift.gif",
+    "instructions": [
+      "Berdiri dengan bagian tengah kaki di bawah barbell.",
+      "Tekuk pinggul dan lutut untuk memegang barbell dengan punggung lurus.",
+      "Angkat barbell dengan mendorong melalui tumit hingga berdiri tegak.",
+      "Turunkan barbell dengan mengontrol gerakan, tekuk pinggul dan lutut."
+    ]
+  },
+  {
+    "name": "Crunches",
+    "description": "Latihan perut klasik untuk menargetkan otot rektus abdominis bagian atas.",
+    "targetMuscle": "abs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/crunches.gif",
+    "instructions": [
+      "Berbaring telentang dengan lutut ditekuk dan kaki rata di lantai.",
+      "Letakkan tangan di belakang kepala atau menyilang di dada.",
+      "Angkat kepala dan bahu dari lantai dengan mengontraksikan otot perut.",
+      "Turunkan kembali secara perlahan."
+    ]
+  },
+
+  {
+    "name": "TRX Row",
+    "description": "Latihan punggung yang sangat baik menggunakan berat badan, dapat disesuaikan tingkat kesulitannya dengan mengubah sudut tubuh.",
+    "targetMuscle": "back",
+    "equipment": "suspension trainer",
+    "gifUrl": "https://placeholder.com/trx_row.gif",
+    "instructions": [
+      "Pegang gagang TRX dengan telapak tangan saling berhadapan, dan berjalan mundur hingga tali menegang.",
+      "Condongkan tubuh ke belakang hingga lengan lurus. Semakin horizontal tubuh Anda, semakin sulit latihannya.",
+      "Tarik dada Anda ke arah gagang, jaga tubuh tetap lurus seperti papan.",
+      "Turunkan kembali tubuh Anda secara terkontrol."
+    ]
+  },
+  {
+    "name": "TRX Chest Press",
+    "description": "Varian bodyweight dari chest press yang menantang stabilitas bahu dan inti.",
+    "targetMuscle": "chest",
+    "equipment": "suspension trainer",
+    "gifUrl": "https://placeholder.com/trx_chest_press.gif",
+    "instructions": [
+      "Berdiri membelakangi titik anchor, pegang gagang TRX dengan genggaman overhand.",
+      "Condongkan tubuh ke depan ke posisi push-up, dengan lengan lurus.",
+      "Turunkan dada Anda di antara gagang dengan menekuk siku, seperti push-up.",
+      "Dorong kembali ke posisi awal."
+    ]
+  },
+  {
+    "name": "Renegade Row",
+    "description": "Latihan compound yang menggabungkan plank, push-up, dan row, sangat menantang untuk stabilitas inti.",
+    "targetMuscle": "full body",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/renegade_row.gif",
+    "instructions": [
+      "Mulai dalam posisi plank dengan tangan memegang sepasang dumbbell.",
+      "Jaga pinggul tetap stabil, lakukan gerakan row dengan satu tangan ke arah sisi dada Anda.",
+      "Turunkan dumbbell kembali ke lantai dan ulangi di sisi lain.",
+      "Anda bisa menambahkan push-up di antara setiap set row."
+    ]
+  },
+  {
+    "name": "Single-Leg Romanian Deadlift",
+    "description": "Latihan unilateral untuk meningkatkan keseimbangan, kekuatan hamstring, dan glutes.",
+    "targetMuscle": "legs",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/single_leg_rdl.gif",
+    "instructions": [
+      "Berdiri dengan satu kaki, pegang dumbbell di tangan yang berlawanan.",
+      "Jaga punggung tetap lurus, tekuk pinggul untuk menurunkan dumbbell ke arah lantai.",
+      "Biarkan kaki yang tidak menapak terangkat lurus ke belakang untuk keseimbangan.",
+      "Kembali ke posisi berdiri menggunakan kekuatan hamstring dan glutes."
+    ]
+  },
+  {
+    "name": "Incline Dumbbell Curl",
+    "description": "Melatih bisep dalam posisi meregang, memberikan penekanan lebih pada kepala panjang (long head) otot bisep.",
+    "targetMuscle": "biceps",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/incline_dumbbell_curl.gif",
+    "instructions": [
+      "Duduk di bangku yang dimiringkan, biarkan lengan Anda menggantung lurus ke bawah.",
+      "Pegang sepasang dumbbell dengan telapak tangan menghadap ke depan.",
+      "Angkat dumbbell ke arah bahu tanpa mengayunkan tubuh.",
+      "Turunkan secara perlahan untuk merasakan peregangan penuh."
+    ]
+  },
+  {
+    "name": "Clamshell",
+    "description": "Latihan aktivasi yang bagus untuk otot gluteus medius, penting untuk stabilitas pinggul.",
+    "targetMuscle": "legs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/clamshell.gif",
+    "instructions": [
+      "Berbaring miring dengan lutut ditekuk dan ditumpuk.",
+      "Jaga agar tumit tetap bersentuhan, angkat lutut bagian atas ke arah langit-langit.",
+      "Jangan biarkan pinggul Anda berputar ke belakang.",
+      "Turunkan lutut secara perlahan."
+    ]
+  },
+  {
+    "name": "Scapular Push-up",
+    "description": "Latihan untuk meningkatkan kontrol dan stabilitas pada tulang belikat (skapula).",
+    "targetMuscle": "shoulders",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/scapular_pushup.gif",
+    "instructions": [
+      "Mulai dari posisi plank dengan lengan lurus.",
+      "Tanpa menekuk siku, biarkan dada Anda turun di antara bahu (retraksi skapula).",
+      "Kemudian, dorong punggung atas Anda ke arah langit-langit (protraksi skapula).",
+      "Gerakan ini hanya terjadi pada tulang belikat Anda."
+    ]
+  },
+  {
+    "name": "Handstand Push-up (Wall Assisted)",
+    "description": "Latihan bahu dan trisep tingkat lanjut menggunakan berat badan.",
+    "targetMuscle": "shoulders",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/handstand_pushup.gif",
+    "instructions": [
+      "Lakukan handstand dengan tumit bersandar pada dinding untuk keseimbangan.",
+      "Perlahan-lahan tekuk siku untuk menurunkan kepala Anda ke arah lantai.",
+      "Dorong kembali dengan kuat ke posisi handstand awal.",
+      "Jaga otot inti tetap kencang selama gerakan."
+    ]
+  },
+  {
+    "name": "Dragon Flag",
+    "description": "Latihan perut yang sangat canggih untuk kekuatan inti eksentrik.",
+    "targetMuscle": "abs",
+    "equipment": "bench",
+    "gifUrl": "https://placeholder.com/dragon_flag.gif",
+    "instructions": [
+      "Berbaring telentang di bangku datar, pegang tepi bangku di belakang kepala Anda.",
+      "Angkat seluruh tubuh Anda hingga hanya bahu atas yang menyentuh bangku.",
+      "Jaga tubuh tetap lurus kaku, turunkan secara perlahan dan terkontrol.",
+      "Jangan biarkan pinggul Anda menekuk atau menyentuh bangku."
+    ]
+  },
+  {
+    "name": "Sled Push",
+    "description": "Latihan conditioning seluruh tubuh yang membangun kekuatan kaki dan daya tahan kardiovaskular.",
+    "targetMuscle": "full body",
+    "equipment": "sled",
+    "gifUrl": "https://placeholder.com/sled_push.gif",
+    "instructions": [
+      "Muat sled dengan beban yang sesuai.",
+      "Pegang gagang dengan lengan hampir lurus dan condongkan tubuh ke depan.",
+      "Dorong sled ke depan dengan langkah yang kuat dan bertenaga.",
+      "Jaga punggung tetap lurus dan inti kencang."
+    ]
+  },
+  {
+    "name": "Tire Flip",
+    "description": "Latihan gaya strongman klasik untuk membangun kekuatan eksplosif seluruh tubuh.",
+    "targetMuscle": "full body",
+    "equipment": "tire",
+    "gifUrl": "https://placeholder.com/tire_flip.gif",
+    "instructions": [
+      "Mulai dalam posisi jongkok rendah di depan ban, selipkan jari-jari Anda di bawahnya.",
+      "Dorong dengan kaki Anda untuk mengangkat ban, jaga punggung tetap lurus.",
+      "Saat ban mencapai ketinggian pinggang, dorong dengan kuat untuk membaliknya.",
+      "Ulangi untuk jarak atau jumlah repetisi yang diinginkan."
+    ]
+  },
+  {
+    "name": "Downward-Facing Dog",
+    "description": "Pose yoga fundamental untuk meregangkan hamstring, betis, dan bahu, serta memperkuat lengan.",
+    "targetMuscle": "flexibility",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/downward_dog.gif",
+    "instructions": [
+      "Mulai dari posisi merangkak.",
+      "Angkat pinggul Anda ke atas dan ke belakang, membentuk huruf 'V' terbalik dengan tubuh Anda.",
+      "Dorong tumit Anda ke arah lantai untuk merasakan peregangan di bagian belakang kaki.",
+      "Jaga kepala tetap rileks di antara lengan."
+    ]
+  },
+  {
+    "name": "Warrior II Pose",
+    "description": "Pose yoga yang membangun kekuatan dan daya tahan di kaki dan paha, sambil membuka pinggul.",
+    "targetMuscle": "legs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/warrior_two.gif",
+    "instructions": [
+      "Berdiri dengan kaki terbuka lebar.",
+      "Putar satu kaki 90 derajat ke luar, dan tekuk lutut di atas pergelangan kaki.",
+      "Rentangkan lengan Anda lurus ke samping, sejajar dengan lantai.",
+      "Tahan posisi, lihat ke arah jari tangan depan Anda."
+    ]
+  },
+  {
+    "name": "Archer Push-up",
+    "description": "Varian push-up unilateral yang membangun kekuatan untuk one-arm push-up.",
+    "targetMuscle": "chest",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/archer_pushup.gif",
+    "instructions": [
+      "Mulai dalam posisi push-up dengan tangan lebih lebar dari biasanya.",
+      "Turunkan tubuh Anda ke satu sisi, tekuk siku di sisi tersebut sambil meluruskan lengan yang lain.",
+      "Dorong kembali ke tengah dan ulangi di sisi lainnya."
+    ]
+  },
+  {
+    "name": "TRX Pike",
+    "description": "Latihan inti tingkat lanjut yang menargetkan perut bagian bawah dan fleksor pinggul.",
+    "targetMuscle": "abs",
+    "equipment": "suspension trainer",
+    "gifUrl": "https://placeholder.com/trx_pike.gif",
+    "instructions": [
+      "Mulai dalam posisi plank dengan kaki di dalam gantungan TRX.",
+      "Jaga kaki tetap lurus, gunakan otot inti untuk mengangkat pinggul setinggi mungkin ke arah langit-langit.",
+      "Tubuh Anda akan membentuk huruf 'V' terbalik.",
+      "Turunkan kembali ke posisi plank secara terkontrol."
+    ]
+  },
+  {
+    "name": "Single-Arm Overhead Carry",
+    "description": "Latihan untuk membangun stabilitas bahu dan kekuatan inti, terutama obliques.",
+    "targetMuscle": "shoulders",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/overhead_carry.gif",
+    "instructions": [
+      "Angkat satu dumbbell atau kettlebell ke atas kepala dengan lengan terkunci lurus.",
+      "Jaga bahu tetap stabil dan inti kencang untuk mencegah tubuh miring.",
+      "Berjalanlah lurus ke depan untuk jarak atau waktu yang ditentukan.",
+      "Ganti tangan dan ulangi."
+    ]
+  },
+  {
+    "name": "Cross-Body Hammer Curl",
+    "description": "Varian hammer curl yang menargetkan otot brachialis dan bisep dari sudut yang berbeda.",
+    "targetMuscle": "biceps",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/cross_body_hammer_curl.gif",
+    "instructions": [
+      "Pegang sepasang dumbbell dengan genggaman netral (telapak tangan saling berhadapan).",
+      "Angkat satu dumbbell melintasi tubuh Anda ke arah bahu yang berlawanan.",
+      "Kontraksikan bisep di puncak gerakan.",
+      "Turunkan secara perlahan dan ulangi dengan tangan lainnya."
+    ]
+  },
+  {
+    "name": "Quadruped Glute Kickback",
+    "description": "Latihan isolasi berat badan untuk menargetkan dan mengaktifkan otot glutes.",
+    "targetMuscle": "legs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/glute_kickback.gif",
+    "instructions": [
+      "Mulai dari posisi merangkak (quadruped).",
+      "Jaga lutut tetap ditekuk 90 derajat, angkat satu kaki ke belakang dan ke atas.",
+      "Fokus untuk meremas otot bokong di puncak gerakan.",
+      "Turunkan kembali ke posisi awal tanpa menyentuh lantai dan ulangi."
+    ]
+  },
+  {
+    "name": "Tuck Front Lever",
+    "description": "Progression awal untuk latihan kalistenik canggih 'front lever', membangun kekuatan punggung dan inti.",
+    "targetMuscle": "back",
+    "equipment": "pull-up bar",
+    "gifUrl": "https://placeholder.com/tuck_front_lever.gif",
+    "instructions": [
+      "Bergantung pada palang pull-up dengan genggaman overhand.",
+      "Tarik lutut ke arah dada Anda (posisi tuck).",
+      "Gunakan kekuatan punggung untuk menurunkan tubuh Anda hingga sejajar dengan lantai.",
+      "Tahan posisi ini selama mungkin dengan punggung yang lurus."
+    ]
+  },
+  {
+    "name": "TRX Atomic Push-up",
+    "description": "Gerakan gabungan yang menguji kekuatan tubuh bagian atas dan inti secara bersamaan.",
+    "targetMuscle": "full body",
+    "equipment": "suspension trainer",
+    "gifUrl": "https://placeholder.com/trx_atomic_pushup.gif",
+    "instructions": [
+      "Mulai dalam posisi plank dengan kaki di dalam gantungan TRX.",
+      "Lakukan satu push-up yang dalam dan terkontrol.",
+      "Saat Anda mendorong ke atas, tarik kedua lutut ke arah dada Anda (crunch).",
+      "Kembalikan kaki ke posisi plank, dan ulangi seluruh gerakan."
+    ]
+  },
+  {
+    "name": "Dumbbell Fly",
+    "description": "Latihan isolasi yang sangat baik untuk meregangkan dan membentuk otot dada.",
+    "targetMuscle": "chest",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/dumbbell_fly.gif",
+    "instructions": [
+      "Berbaring di bangku datar dengan dumbbell di kedua tangan, lengan terentang di atas dada.",
+      "Dengan sedikit tekukan pada siku, turunkan dumbbell ke samping dengan gerakan busur.",
+      "Gunakan otot dada untuk mengembalikan dumbbell ke posisi awal."
+    ]
+  },
+  {
+    "name": "Incline Dumbbell Press",
+    "description": "Menargetkan bagian atas otot dada (pectoralis major) untuk dada yang lebih penuh.",
+    "targetMuscle": "chest",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/incline_dumbbell_press.gif",
+    "instructions": [
+      "Duduk di bangku yang dimiringkan 30-45 derajat, pegang dumbbell di samping bahu.",
+      "Dorong dumbbell ke atas hingga lengan hampir lurus.",
+      "Turunkan kembali dumbbell secara perlahan dan terkontrol ke posisi awal."
+    ]
+  },
+  {
+    "name": "Dips",
+    "description": "Latihan bodyweight yang efektif untuk dada bagian bawah dan trisep.",
+    "targetMuscle": "chest",
+    "equipment": "parallel bars",
+    "gifUrl": "https://placeholder.com/dips.gif",
+    "instructions": [
+      "Pegang palang paralel dengan lengan lurus dan tubuh tegak.",
+      "Condongkan tubuh sedikit ke depan, lalu tekuk siku untuk menurunkan tubuh.",
+      "Dorong kembali ke atas hingga lengan lurus, rasakan kontraksi di dada bagian bawah."
+    ]
+  },
+  {
+    "name": "Cable Crossover",
+    "description": "Latihan isolasi yang menjaga ketegangan konstan pada otot dada.",
+    "targetMuscle": "chest",
+    "equipment": "cable machine",
+    "gifUrl": "https://placeholder.com/cable_crossover.gif",
+    "instructions": [
+      "Berdiri di tengah mesin kabel, pegang kedua gagang dengan lengan terentang ke samping.",
+      "Dengan sedikit tekukan pada siku, tarik kedua gagang ke depan dan ke bawah hingga bertemu di depan pinggang.",
+      "Kembalikan lengan ke posisi awal secara perlahan."
+    ]
+  },
+  {
+    "name": "Pull-up",
+    "description": "Latihan bodyweight terbaik untuk membangun lebar dan kekuatan punggung.",
+    "targetMuscle": "back",
+    "equipment": "pull-up bar",
+    "gifUrl": "https://placeholder.com/pull_up.gif",
+    "instructions": [
+      "Genggam palang dengan telapak tangan menghadap ke depan, sedikit lebih lebar dari bahu.",
+      "Tarik tubuh ke atas hingga dagu melewati palang, fokus pada otot punggung.",
+      "Turunkan tubuh secara perlahan dan terkontrol hingga lengan kembali lurus."
+    ]
+  },
+  {
+    "name": "Barbell Bent-over Row",
+    "description": "Latihan compound untuk membangun ketebalan dan kekuatan punggung tengah.",
+    "targetMuscle": "back",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/bent_over_row.gif",
+    "instructions": [
+      "Berdiri dengan kaki selebar bahu, tekuk lutut dan pinggul hingga punggung hampir sejajar dengan lantai.",
+      "Pegang barbell dengan genggaman overhand, sedikit lebih lebar dari bahu.",
+      "Tarik barbell ke arah perut bagian atas, satukan tulang belikat Anda.",
+      "Turunkan kembali barbell dengan terkontrol."
+    ]
+  },
+  {
+    "name": "Lat Pulldown",
+    "description": "Alternatif yang bagus untuk pull-up, menargetkan otot latissimus dorsi.",
+    "targetMuscle": "back",
+    "equipment": "cable machine",
+    "gifUrl": "https://placeholder.com/lat_pulldown.gif",
+    "instructions": [
+      "Duduk di mesin lat pulldown dan kencangkan penahan paha.",
+      "Pegang palang dengan genggaman lebar, telapak tangan menghadap ke depan.",
+      "Tarik palang ke bawah hingga menyentuh dada bagian atas, jaga punggung tetap lurus.",
+      "Kembalikan palang ke posisi awal secara perlahan."
+    ]
+  },
+  {
+    "name": "Seated Cable Row",
+    "description": "Menargetkan otot punggung tengah dan lats untuk ketebalan punggung.",
+    "targetMuscle": "back",
+    "equipment": "cable machine",
+    "gifUrl": "https://placeholder.com/seated_cable_row.gif",
+    "instructions": [
+      "Duduk di mesin dengan kaki menapak pada platform dan lutut sedikit ditekuk.",
+      "Pegang gagang dengan punggung lurus dan dada dibusungkan.",
+      "Tarik gagang ke arah perut, kontraksikan otot punggung.",
+      "Kembalikan secara perlahan ke posisi awal."
+    ]
+  },
+  {
+    "name": "Deadlift",
+    "description": "Latihan seluruh tubuh yang sangat baik untuk kekuatan punggung bawah, glutes, dan hamstring.",
+    "targetMuscle": "back",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/deadlift.gif",
+    "instructions": [
+      "Berdiri dengan bagian tengah kaki di bawah barbell, pegang barbell dengan genggaman overhand.",
+      "Jaga punggung tetap lurus, angkat barbell dengan mendorong melalui tumit hingga berdiri tegak.",
+      "Turunkan barbell dengan mengontrol gerakan, tekuk pinggul dan lutut."
+    ]
+  },
+  {
+    "name": "Barbell Squat",
+    "description": "Raja dari semua latihan kaki, membangun kekuatan dan massa di seluruh tubuh bagian bawah.",
+    "targetMuscle": "legs",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/barbell_squat.gif",
+    "instructions": [
+      "Letakkan barbell di punggung atas Anda, berdiri dengan kaki selebar bahu.",
+      "Turunkan pinggul ke belakang dan ke bawah seolah-olah duduk di kursi, jaga dada tetap tegak.",
+      "Dorong kembali ke posisi awal melalui tumit."
+    ]
+  },
+  {
+    "name": "Dumbbell Lunge",
+    "description": "Latihan unilateral untuk meningkatkan keseimbangan dan kekuatan kaki secara individual.",
+    "targetMuscle": "legs",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/dumbbell_lunge.gif",
+    "instructions": [
+      "Pegang sepasang dumbbell di sisi tubuh, berdiri tegak.",
+      "Langkahkan satu kaki ke depan dan turunkan tubuh hingga kedua lutut membentuk sudut 90 derajat.",
+      "Dorong kembali ke posisi awal dan ulangi dengan kaki lainnya."
+    ]
+  },
+  {
+    "name": "Leg Press",
+    "description": "Latihan mesin yang memungkinkan Anda mengangkat beban berat untuk menargetkan paha depan dan glutes.",
+    "targetMuscle": "legs",
+    "equipment": "leg press machine",
+    "gifUrl": "https://placeholder.com/leg_press.gif",
+    "instructions": [
+      "Duduk di mesin dengan kaki di platform selebar bahu.",
+      "Lepaskan kunci pengaman dan dorong platform ke atas hingga kaki hampir lurus.",
+      "Turunkan platform secara perlahan dengan menekuk lutut."
+    ]
+  },
+  {
+    "name": "Romanian Deadlift",
+    "description": "Fokus pada peregangan dan penguatan otot hamstring dan glutes.",
+    "targetMuscle": "legs",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/romanian_deadlift.gif",
+    "instructions": [
+      "Pegang barbell di depan paha, berdiri tegak dengan lutut sedikit ditekuk.",
+      "Dorong pinggul ke belakang dan turunkan barbell di sepanjang kaki Anda, jaga punggung tetap lurus.",
+      "Kembali ke posisi awal dengan mengontraksikan hamstring dan glutes."
+    ]
+  },
+  {
+    "name": "Standing Calf Raise",
+    "description": "Latihan isolasi sederhana untuk membangun otot betis.",
+    "targetMuscle": "legs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/calf_raise.gif",
+    "instructions": [
+      "Berdiri tegak dengan kaki rata di lantai.",
+      "Angkat tumit setinggi mungkin, kontraksikan otot betis di puncak gerakan.",
+      "Turunkan tumit kembali ke lantai secara perlahan."
+    ]
+  },
+  {
+    "name": "Overhead Press",
+    "description": "Latihan fundamental untuk membangun kekuatan dan ukuran bahu secara keseluruhan.",
+    "targetMuscle": "shoulders",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/overhead_press.gif",
+    "instructions": [
+      "Berdiri tegak, pegang barbell di depan bahu dengan telapak tangan menghadap ke depan.",
+      "Dorong barbell lurus ke atas kepala hingga lengan terentang penuh.",
+      "Turunkan barbell kembali ke bahu dengan terkontrol."
+    ]
+  },
+  {
+    "name": "Dumbbell Lateral Raise",
+    "description": "Latihan isolasi untuk menargetkan bagian samping (medial) otot deltoid, menciptakan bahu yang lebih lebar.",
+    "targetMuscle": "shoulders",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/lateral_raise.gif",
+    "instructions": [
+      "Berdiri tegak, pegang dumbbell di sisi tubuh dengan telapak tangan menghadap ke dalam.",
+      "Angkat dumbbell ke samping hingga setinggi bahu, dengan sedikit tekukan pada siku.",
+      "Turunkan kembali dumbbell secara perlahan."
+    ]
+  },
+  {
+    "name": "Dumbbell Front Raise",
+    "description": "Menargetkan bagian depan (anterior) otot deltoid.",
+    "targetMuscle": "shoulders",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/front_raise.gif",
+    "instructions": [
+      "Berdiri tegak, pegang dumbbell di depan paha dengan telapak tangan menghadap ke tubuh.",
+      "Angkat satu dumbbell lurus ke depan hingga setinggi bahu.",
+      "Turunkan secara perlahan dan ulangi dengan tangan lainnya."
+    ]
+  },
+  {
+    "name": "Face Pull",
+    "description": "Latihan yang sangat baik untuk kesehatan bahu dan melatih deltoid belakang serta punggung atas.",
+    "targetMuscle": "shoulders",
+    "equipment": "cable machine",
+    "gifUrl": "https://placeholder.com/face_pull.gif",
+    "instructions": [
+      "Pasang pegangan tali pada katrol setinggi wajah.",
+      "Pegang tali dengan kedua tangan dan mundur beberapa langkah.",
+      "Tarik tali ke arah wajah Anda, pisahkan kedua tangan dan fokus pada kontraksi bahu belakang."
+    ]
+  },
+  {
+    "name": "Arnold Press",
+    "description": "Varian dumbbell press yang melibatkan rotasi untuk melatih ketiga bagian deltoid.",
+    "targetMuscle": "shoulders",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/arnold_press.gif",
+    "instructions": [
+      "Duduk dengan punggung tegak, pegang dumbbell di depan bahu dengan telapak tangan menghadap ke tubuh.",
+      "Saat Anda mendorong dumbbell ke atas, putar pergelangan tangan sehingga telapak tangan menghadap ke depan di puncak gerakan.",
+      "Balikkan gerakan saat menurunkan dumbbell kembali ke posisi awal."
+    ]
+  },
+  {
+    "name": "Barbell Curl",
+    "description": "Latihan klasik dan fundamental untuk membangun massa otot bisep.",
+    "targetMuscle": "biceps",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/barbell_curl.gif",
+    "instructions": [
+      "Berdiri tegak, pegang barbell dengan kedua tangan selebar bahu dan telapak tangan menghadap ke depan.",
+      "Jaga siku tetap di sisi tubuh, angkat barbell ke arah bahu.",
+      "Kontraksikan bisep di puncak gerakan, lalu turunkan barbell secara perlahan."
+    ]
+  },
+  {
+    "name": "Hammer Curl",
+    "description": "Melatih bisep dan otot brachialis untuk lengan yang lebih tebal.",
+    "targetMuscle": "biceps",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/hammer_curl.gif",
+    "instructions": [
+      "Berdiri tegak, pegang sepasang dumbbell di sisi tubuh dengan telapak tangan saling berhadapan (posisi netral).",
+      "Angkat satu dumbbell ke arah bahu tanpa memutar pergelangan tangan.",
+      "Turunkan secara terkontrol dan ulangi dengan tangan lainnya."
+    ]
+  },
+  {
+    "name": "Leg Extension",
+    "description": "Latihan isolasi menggunakan mesin untuk menargetkan otot paha depan (quadriceps).",
+    "targetMuscle": "legs",
+    "equipment": "machine",
+    "gifUrl": "https://placeholder.com/leg_extension.gif",
+    "instructions": [
+      "Duduk di mesin leg extension, sesuaikan bantalan sehingga berada di atas pergelangan kaki Anda.",
+      "Pegang gagang di samping untuk stabilitas.",
+      "Luruskan kaki Anda ke atas dengan mengontraksikan paha depan.",
+      "Turunkan beban secara perlahan dan terkontrol."
+    ]
+  },
+  {
+    "name": "Hamstring Curl",
+    "description": "Latihan isolasi menggunakan mesin untuk menargetkan otot paha belakang (hamstring).",
+    "targetMuscle": "legs",
+    "equipment": "machine",
+    "gifUrl": "https://placeholder.com/hamstring_curl.gif",
+    "instructions": [
+      "Berbaring telungkup di mesin (atau duduk, tergantung jenis mesin), kaitkan tumit di bawah bantalan.",
+      "Tekuk lutut Anda untuk menarik bantalan ke arah bokong.",
+      "Kontraksikan hamstring dengan kuat di puncak gerakan.",
+      "Kembalikan ke posisi awal secara perlahan."
+    ]
+  },
+  {
+    "name": "Pec Deck Machine",
+    "description": "Latihan isolasi untuk otot dada yang mirip dengan dumbbell fly, tetapi dengan stabilitas mesin.",
+    "targetMuscle": "chest",
+    "equipment": "machine",
+    "gifUrl": "https://placeholder.com/pec_deck_machine.gif",
+    "instructions": [
+      "Duduk di mesin dengan punggung menempel rata pada sandaran.",
+      "Pegang gagang atau letakkan lengan bawah pada bantalan.",
+      "Gunakan kekuatan dada untuk menyatukan kedua gagang di depan Anda.",
+      "Kembali ke posisi awal secara perlahan untuk merasakan peregangan."
+    ]
+  },
+  {
+    "name": "Calf Press On Leg Press Machine",
+    "description": "Cara yang bagus untuk melatih betis dengan beban berat tanpa membebani tulang belakang.",
+    "targetMuscle": "legs",
+    "equipment": "leg press machine",
+    "gifUrl": "https://placeholder.com/calf_press.gif",
+    "instructions": [
+      "Duduk di mesin leg press, letakkan ujung jari kaki dan bola kaki di bagian bawah platform.",
+      "Luruskan kaki Anda dan lepaskan kunci pengaman.",
+      "Dorong platform ke atas hanya dengan menggunakan pergelangan kaki Anda.",
+      "Turunkan secara perlahan untuk meregangkan betis."
+    ]
+  },
+  {
+    "name": "Hyperextension",
+    "description": "Latihan untuk memperkuat punggung bawah, glutes, dan hamstring.",
+    "targetMuscle": "back",
+    "equipment": "hyperextension bench",
+    "gifUrl": "https://placeholder.com/hyperextension.gif",
+    "instructions": [
+      "Posisikan diri Anda di bangku hiperekstensi dengan paha bertumpu pada bantalan.",
+      "Silangkan tangan di dada atau letakkan di belakang kepala.",
+      "Tekuk pinggang untuk menurunkan tubuh bagian atas.",
+      "Angkat kembali tubuh Anda hingga lurus, kontraksikan punggung bawah dan glutes."
+    ]
+  },
+  {
+    "name": "Medicine Ball Slam",
+    "description": "Latihan eksplosif seluruh tubuh untuk membangun tenaga dan melepaskan stres.",
+    "targetMuscle": "full body",
+    "equipment": "medicine ball",
+    "gifUrl": "https://placeholder.com/medicine_ball_slam.gif",
+    "instructions": [
+      "Berdiri dengan kaki selebar bahu, pegang bola medis di kedua tangan.",
+      "Angkat bola tinggi di atas kepala, regangkan tubuh Anda sepenuhnya.",
+      "Banting bola ke lantai sekuat tenaga tepat di depan Anda.",
+      "Tangkap bola saat memantul dan ulangi."
+    ]
+  },
+  {
+    "name": "Wall Sit",
+    "description": "Latihan isometrik untuk membangun daya tahan pada otot paha depan, glutes, dan betis.",
+    "targetMuscle": "legs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/wall_sit.gif",
+    "instructions": [
+      "Berdiri dengan punggung menempel pada dinding.",
+      "Geser punggung Anda ke bawah hingga paha sejajar dengan lantai, seolah-olah duduk di kursi.",
+      "Pastikan lutut berada tepat di atas pergelangan kaki.",
+      "Tahan posisi ini selama waktu yang ditentukan."
+    ]
+  },
+  {
+    "name": "Bicycle Crunches",
+    "description": "Latihan perut dinamis yang menargetkan rektus abdominis dan obliques.",
+    "targetMuscle": "abs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/bicycle_crunches.gif",
+    "instructions": [
+      "Berbaring telentang, letakkan tangan di belakang kepala, dan angkat kaki dari lantai.",
+      "Tarik satu lutut ke arah dada sambil memutar badan untuk mendekatkan siku yang berlawanan.",
+      "Luruskan kaki tersebut dan ganti dengan sisi lainnya dalam gerakan mengayuh sepeda."
+    ]
+  },
+  {
+    "name": "Superman",
+    "description": "Latihan yang sangat baik untuk memperkuat seluruh rantai posterior, terutama punggung bawah.",
+    "targetMuscle": "back",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/superman.gif",
+    "instructions": [
+      "Berbaring telungkup dengan lengan dan kaki terentang lurus.",
+      "Secara bersamaan, angkat lengan, dada, dan kaki Anda dari lantai.",
+      "Fokus pada kontraksi otot punggung bawah dan glutes.",
+      "Tahan sejenak, lalu turunkan kembali."
+    ]
+  },
+  {
+    "name": "Bird Dog",
+    "description": "Latihan stabilitas inti yang meningkatkan keseimbangan dan koordinasi.",
+    "targetMuscle": "abs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/bird_dog.gif",
+    "instructions": [
+      "Mulai dengan posisi merangkak (tangan di bawah bahu, lutut di bawah pinggul).",
+      "Secara bersamaan, luruskan satu lengan ke depan dan kaki yang berlawanan ke belakang.",
+      "Jaga pinggul dan bahu tetap sejajar dengan lantai.",
+      "Kembali ke posisi awal dan ulangi di sisi lain."
+    ]
+  },
+  {
+    "name": "Dead Bug",
+    "description": "Latihan inti yang aman untuk punggung bawah, melatih koordinasi dan stabilitas.",
+    "targetMuscle": "abs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/dead_bug.gif",
+    "instructions": [
+      "Berbaring telentang dengan lengan lurus ke atas dan lutut ditekuk 90 derajat di atas pinggul.",
+      "Secara perlahan, turunkan satu lengan dan kaki yang berlawanan ke arah lantai.",
+      "Jaga punggung bawah tetap menempel di lantai.",
+      "Kembali ke posisi awal dan ganti sisi."
+    ]
+  },
+  {
+    "name": "Jumping Jacks",
+    "description": "Latihan pemanasan kardio klasik untuk meningkatkan detak jantung dan sirkulasi darah.",
+    "targetMuscle": "cardio",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/jumping_jacks.gif",
+    "instructions": [
+      "Berdiri tegak dengan kaki rapat dan lengan di samping.",
+      "Lompat sambil melebarkan kaki ke samping dan mengangkat lengan ke atas kepala.",
+      "Lompat kembali ke posisi awal.",
+      "Ulangi dengan ritme yang stabil."
+    ]
+  },
+  {
+    "name": "High Knees",
+    "description": "Latihan pemanasan dinamis untuk mengaktifkan fleksor pinggul dan meningkatkan detak jantung.",
+    "targetMuscle": "cardio",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/high_knees.gif",
+    "instructions": [
+      "Berlari di tempat.",
+      "Angkat setiap lutut setinggi mungkin ke arah dada.",
+      "Gerakkan lengan Anda secara bergantian seolah-olah sedang berlari.",
+      "Jaga agar tubuh tetap tegak."
+    ]
+  },
+  {
+    "name": "Butt Kicks",
+    "description": "Pemanasan dinamis untuk meregangkan paha depan dan mengaktifkan hamstring.",
+    "targetMuscle": "legs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/butt_kicks.gif",
+    "instructions": [
+      "Berlari di tempat atau maju perlahan.",
+      "Tekuk lutut untuk menendang tumit ke arah bokong Anda.",
+      "Lakukan secara bergantian dengan cepat.",
+      "Fokus pada peregangan paha depan."
+    ]
+  },
+  {
+    "name": "Arm Circles",
+    "description": "Gerakan mobilitas sederhana untuk pemanasan sendi bahu.",
+    "targetMuscle": "shoulders",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/arm_circles.gif",
+    "instructions": [
+      "Berdiri dengan kaki selebar bahu, rentangkan lengan lurus ke samping.",
+      "Buat lingkaran kecil dengan lengan Anda.",
+      "Setelah beberapa detik, perbesar lingkarannya.",
+      "Ulangi gerakan ke arah yang berlawanan."
+    ]
+  },
+  {
+    "name": "Cat-Cow Stretch",
+    "description": "Peregangan dinamis untuk meningkatkan fleksibilitas dan mobilitas tulang belakang.",
+    "targetMuscle": "back",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/cat_cow_stretch.gif",
+    "instructions": [
+      "Mulai dengan posisi merangkak.",
+      "Tarik napas sambil menurunkan perut dan mengangkat kepala (Posisi Sapi/Cow).",
+      "Buang napas sambil melengkungkan punggung ke atas dan menundukkan kepala (Posisi Kucing/Cat).",
+      "Ulangi gerakan dengan alur yang lambat dan terkontrol."
+    ]
+  },
+  {
+    "name": "World's Greatest Stretch",
+    "description": "Peregangan dinamis seluruh tubuh yang menargetkan pinggul, hamstring, dan tulang belakang toraks.",
+    "targetMuscle": "full body",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/worlds_greatest_stretch.gif",
+    "instructions": [
+      "Mulai dengan melangkahkan kaki kanan ke depan ke posisi lunge.",
+      "Letakkan tangan kiri di lantai dan siku kanan di bagian dalam kaki kanan.",
+      "Putar tubuh Anda untuk mengangkat lengan kanan lurus ke atas.",
+      "Kembali ke posisi awal dan ulangi di sisi lain."
+    ]
+  },
+  {
+    "name": "Hip Abduction Machine",
+    "description": "Latihan mesin untuk mengisolasi dan memperkuat otot paha luar dan gluteus medius.",
+    "targetMuscle": "legs",
+    "equipment": "machine",
+    "gifUrl": "https://placeholder.com/hip_abduction.gif",
+    "instructions": [
+      "Duduk di mesin dengan bagian luar paha menempel pada bantalan.",
+      "Dorong kaki Anda ke luar melawan resistensi.",
+      "Tahan sejenak di posisi terlebar.",
+      "Kembalikan secara perlahan ke posisi awal."
+    ]
+  },
+  {
+    "name": "Hip Adduction Machine",
+    "description": "Latihan mesin untuk mengisolasi dan memperkuat otot paha dalam (adductors).",
+    "targetMuscle": "legs",
+    "equipment": "machine",
+    "gifUrl": "https://placeholder.com/hip_adduction.gif",
+    "instructions": [
+      "Duduk di mesin dengan bagian dalam paha menempel pada bantalan.",
+      "Peras paha Anda bersama-sama melawan resistensi.",
+      "Tahan sejenak saat bantalan bertemu.",
+      "Kembalikan secara perlahan ke posisi awal."
+    ]
+  },
+  {
+    "name": "Reverse Wrist Curl",
+    "description": "Latihan isolasi untuk memperkuat otot ekstensor di bagian atas lengan bawah.",
+    "targetMuscle": "forearms",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/reverse_wrist_curl.gif",
+    "instructions": [
+      "Duduk dan letakkan lengan bawah di atas paha, dengan telapak tangan menghadap ke bawah.",
+      "Pegang dumbbell dan biarkan pergelangan tangan Anda menekuk ke bawah.",
+      "Luruskan pergelangan tangan untuk mengangkat dumbbell.",
+      "Turunkan kembali secara perlahan."
+    ]
+  },
+
+  {
+    "name": "Kettlebell Swing",
+    "description": "Latihan eksplosif fundamental untuk membangun kekuatan pinggul, glutes, hamstring, dan kardio.",
+    "targetMuscle": "legs",
+    "equipment": "kettlebell",
+    "gifUrl": "https://placeholder.com/kettlebell_swing.gif",
+    "instructions": [
+      "Berdiri dengan kaki sedikit lebih lebar dari bahu, pegang kettlebell dengan kedua tangan.",
+      "Tekuk pinggul ke belakang (hinge), biarkan kettlebell berayun di antara kedua kaki Anda.",
+      "Dorong pinggul ke depan dengan kuat untuk mengayunkan kettlebell hingga setinggi dada.",
+      "Biarkan momentum membawa kettlebell kembali ke bawah dan ulangi gerakan."
+    ]
+  },
+  {
+    "name": "Goblet Squat",
+    "description": "Varian squat yang ramah pemula, membantu menjaga postur tubuh yang tegak.",
+    "targetMuscle": "legs",
+    "equipment": "kettlebell",
+    "gifUrl": "https://placeholder.com/goblet_squat.gif",
+    "instructions": [
+      "Pegang satu kettlebell atau dumbbell secara vertikal di depan dada dengan kedua tangan.",
+      "Berdiri dengan kaki selebar bahu, ujung jari kaki sedikit mengarah keluar.",
+      "Turunkan pinggul ke bawah dan ke belakang, jaga dada tetap terangkat dan punggung lurus.",
+      "Dorong kembali ke posisi awal melalui tumit."
+    ]
+  },
+  {
+    "name": "Farmer's Walk",
+    "description": "Latihan seluruh tubuh yang sangat baik untuk meningkatkan kekuatan genggaman, stabilitas inti, dan daya tahan.",
+    "targetMuscle": "full body",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/farmers_walk.gif",
+    "instructions": [
+      "Pegang sepasang dumbbell atau kettlebell yang berat di setiap sisi tubuh.",
+      "Berdiri tegak dengan bahu ditarik ke belakang dan otot inti dikencangkan.",
+      "Berjalanlah ke depan dengan langkah yang terkontrol untuk jarak atau waktu yang ditentukan."
+    ]
+  },
+  {
+    "name": "Dumbbell Pullover",
+    "description": "Latihan unik yang melatih otot dada dan punggung (lats) secara bersamaan.",
+    "targetMuscle": "chest",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/dumbbell_pullover.gif",
+    "instructions": [
+      "Berbaring dengan punggung atas di atas bangku datar, kaki menapak kuat di lantai.",
+      "Pegang satu dumbbell secara vertikal di atas dada dengan kedua tangan.",
+      "Dengan sedikit tekukan pada siku, turunkan dumbbell ke belakang kepala hingga merasakan peregangan.",
+      "Tarik kembali dumbbell ke posisi awal menggunakan kekuatan dada dan lats."
+    ]
+  },
+  {
+    "name": "Box Jump",
+    "description": "Latihan pliometrik untuk membangun kekuatan eksplosif dan tenaga pada tubuh bagian bawah.",
+    "targetMuscle": "legs",
+    "equipment": "box",
+    "gifUrl": "https://placeholder.com/box_jump.gif",
+    "instructions": [
+      "Berdiri di depan kotak pliometrik dengan kaki selebar bahu.",
+      "Ayunkan lengan dan tekuk lutut untuk mempersiapkan lompatan.",
+      "Lompat secara eksplosif ke atas kotak, mendarat dengan lembut dengan kedua kaki.",
+      "Turun dari kotak satu per satu, jangan melompat turun."
+    ]
+  },
+  {
+    "name": "Burpee",
+    "description": "Latihan full-body intensitas tinggi yang menggabungkan squat, push-up, dan lompatan.",
+    "targetMuscle": "full body",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/burpee.gif",
+    "instructions": [
+      "Mulai dari posisi berdiri, kemudian turun ke posisi jongkok.",
+      "Letakkan tangan di lantai dan tendang kaki ke belakang ke posisi plank.",
+      "Lakukan satu push-up, lalu lompatkan kaki kembali ke posisi jongkok.",
+      "Lompat setinggi mungkin dari posisi jongkok."
+    ]
+  },
+  {
+    "name": "Band Pull-Apart",
+    "description": "Latihan yang sangat baik untuk kesehatan bahu, memperkuat deltoid belakang dan otot punggung atas.",
+    "targetMuscle": "shoulders",
+    "equipment": "resistance band",
+    "gifUrl": "https://placeholder.com/band_pull_apart.gif",
+    "instructions": [
+      "Berdiri tegak, pegang resistance band dengan kedua tangan di depan Anda setinggi bahu.",
+      "Jaga lengan tetap lurus, tarik band hingga menyentuh dada Anda.",
+      "Fokus untuk meremas tulang belikat Anda bersama-sama.",
+      "Kembali ke posisi awal secara perlahan."
+    ]
+  },
+  {
+    "name": "Glute Bridge",
+    "description": "Latihan aktivasi yang bagus untuk otot glutes dan hamstring.",
+    "targetMuscle": "legs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/glute_bridge.gif",
+    "instructions": [
+      "Berbaring telentang dengan lutut ditekuk, kaki rata di lantai, dan lengan di samping tubuh.",
+      "Angkat pinggul dari lantai hingga tubuh membentuk garis lurus dari bahu ke lutut.",
+      "Kontraksikan glutes dengan kuat di puncak gerakan.",
+      "Turunkan pinggul kembali ke posisi awal."
+    ]
+  },
+  {
+    "name": "Reverse Lunge",
+    "description": "Varian lunge yang lebih ramah pada lutut dan menargetkan glutes dan hamstring.",
+    "targetMuscle": "legs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/reverse_lunge.gif",
+    "instructions": [
+      "Berdiri tegak dengan kaki rapat.",
+      "Langkahkan satu kaki lurus ke belakang, turunkan pinggul hingga kedua lutut membentuk sudut 90 derajat.",
+      "Jaga agar dada tetap tegak.",
+      "Dorong kembali ke posisi awal dan ulangi dengan kaki lainnya."
+    ]
+  },
+  {
+    "name": "Pike Push-up",
+    "description": "Latihan bodyweight untuk membangun kekuatan bahu, merupakan progresi menuju handstand push-up.",
+    "targetMuscle": "shoulders",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/pike_pushup.gif",
+    "instructions": [
+      "Mulai dari posisi 'Downward Dog' dalam yoga, dengan pinggul diangkat tinggi.",
+      "Tekuk siku untuk menurunkan bagian atas kepala ke arah lantai.",
+      "Dorong kembali ke posisi awal, fokus pada kekuatan bahu."
+    ]
+  },
+  {
+    "name": "Sumo Deadlift",
+    "description": "Varian deadlift dengan kuda-kuda lebar yang lebih menargetkan glutes, hamstring, dan paha dalam.",
+    "targetMuscle": "legs",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/sumo_deadlift.gif",
+    "instructions": [
+      "Berdiri dengan kaki sangat lebar, ujung jari kaki mengarah keluar.",
+      "Pegang barbell dengan genggaman di dalam kaki Anda.",
+      "Jaga punggung tetap lurus, angkat beban dengan mendorong lantai, jaga pinggul tetap rendah.",
+      "Turunkan beban dengan terkontrol."
+    ]
+  },
+  {
+    "name": "Zottman Curl",
+    "description": "Gerakan curl unik yang melatih bisep saat mengangkat dan otot lengan bawah (forearm) saat menurunkan.",
+    "targetMuscle": "biceps",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/zottman_curl.gif",
+    "instructions": [
+      "Pegang sepasang dumbbell dengan telapak tangan menghadap ke depan (supinated grip).",
+      "Lakukan bicep curl seperti biasa.",
+      "Di puncak gerakan, putar pergelangan tangan sehingga telapak tangan menghadap ke bawah (pronated grip).",
+      "Turunkan dumbbell secara perlahan dengan posisi ini."
+    ]
+  },
+  {
+    "name": "Chin-up",
+    "description": "Mirip dengan pull-up, tetapi dengan genggaman underhand yang lebih menekankan pada otot bisep.",
+    "targetMuscle": "back",
+    "equipment": "pull-up bar",
+    "gifUrl": "https://placeholder.com/chin_up.gif",
+    "instructions": [
+      "Genggam palang dengan telapak tangan menghadap ke arah Anda (underhand grip), selebar bahu.",
+      "Tarik tubuh ke atas hingga dagu melewati palang.",
+      "Fokus pada penggunaan punggung dan bisep.",
+      "Turunkan tubuh secara perlahan dan terkontrol."
+    ]
+  },
+  {
+    "name": "Diamond Push-up",
+    "description": "Varian push-up dengan tangan berdekatan untuk meningkatkan fokus pada otot trisep.",
+    "targetMuscle": "triceps",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/diamond_pushup.gif",
+    "instructions": [
+      "Mulai dalam posisi plank, tetapi satukan tangan Anda di bawah dada, membentuk berlian dengan jari telunjuk dan ibu jari.",
+      "Turunkan tubuh Anda ke lantai, jaga siku tetap dekat dengan tubuh.",
+      "Dorong kembali dengan kuat ke posisi awal."
+    ]
+  },
+  {
+    "name": "Battle Ropes",
+    "description": "Latihan conditioning intensitas tinggi yang melatih seluruh tubuh bagian atas dan inti.",
+    "targetMuscle": "full body",
+    "equipment": "battle rope",
+    "gifUrl": "https://placeholder.com/battle_ropes.gif",
+    "instructions": [
+      "Pegang ujung tali di setiap tangan, berdiri dengan kaki selebar bahu dan lutut sedikit ditekuk.",
+      "Gerakkan lengan Anda ke atas dan ke bawah secara bergantian untuk menciptakan gelombang pada tali.",
+      "Jaga intensitas dan pertahankan gerakan untuk waktu yang ditentukan."
+    ]
+  },
+  {
+    "name": "Side Plank",
+    "description": "Latihan inti yang menargetkan otot obliques (perut samping) untuk stabilitas.",
+    "targetMuscle": "abs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/side_plank.gif",
+    "instructions": [
+      "Berbaring miring dengan kaki lurus ditumpuk.",
+      "Angkat tubuh Anda dengan bertumpu pada satu lengan bawah (forearm) yang berada tepat di bawah bahu.",
+      "Jaga tubuh tetap dalam garis lurus dari kepala hingga kaki.",
+      "Tahan posisi dan ulangi di sisi lain."
+    ]
+  },
+  {
+    "name": "Wrist Curl",
+    "description": "Latihan isolasi untuk memperkuat otot fleksor di lengan bawah.",
+    "targetMuscle": "forearms",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/wrist_curl.gif",
+    "instructions": [
+      "Duduk dan letakkan lengan bawah Anda di atas paha atau bangku, dengan telapak tangan menghadap ke atas.",
+      "Pegang dumbbell dan biarkan pergelangan tangan Anda menekuk ke bawah.",
+      "Angkat dumbbell hanya dengan menggunakan kekuatan pergelangan tangan.",
+      "Turunkan secara perlahan."
+    ]
+  },
+  {
+    "name": "Inverted Row",
+    "description": "Latihan punggung bodyweight yang merupakan progresi yang baik menuju pull-up.",
+    "targetMuscle": "back",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/inverted_row.gif",
+    "instructions": [
+      "Atur barbell pada rak setinggi pinggang. Berbaring di bawahnya.",
+      "Pegang barbell dengan genggaman sedikit lebih lebar dari bahu.",
+      "Jaga tubuh tetap lurus, tarik dada Anda ke arah barbell.",
+      "Turunkan tubuh secara terkontrol."
+    ]
+  },
+  {
+    "name": "Clean and Press",
+    "description": "Latihan angkat besi klasik yang membangun kekuatan dan tenaga seluruh tubuh.",
+    "targetMuscle": "full body",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/clean_and_press.gif",
+    "instructions": [
+      "Mulai dengan barbell di lantai seperti deadlift.",
+      "Tarik barbell secara eksplosif ke atas, lalu 'tangkap' di bahu Anda dalam posisi front squat.",
+      "Dari posisi ini, dorong barbell lurus ke atas kepala.",
+      "Turunkan beban dengan terkontrol."
+    ]
+  },
+  {
+    "name": "Elliptical Trainer",
+    "description": "Latihan kardio berdampak rendah (low-impact) yang melatih seluruh tubuh.",
+    "targetMuscle": "cardio",
+    "equipment": "machine",
+    "gifUrl": "https://placeholder.com/elliptical.gif",
+    "instructions": [
+      "Naik ke mesin dan letakkan kaki di pedal dan tangan di gagang.",
+      "Mulai gerakan mengayuh dalam gerakan elips yang mulus.",
+      "Dorong dan tarik gagang untuk melibatkan tubuh bagian atas.",
+      "Sesuaikan resistensi dan kecepatan sesuai tingkat kebugaran Anda."
+    ]
+  },
+
+  {
+    "name": "Triceps Pushdown",
+    "description": "Latihan isolasi yang populer untuk menargetkan ketiga bagian otot trisep.",
+    "targetMuscle": "triceps",
+    "equipment": "cable machine",
+    "gifUrl": "https://placeholder.com/triceps_pushdown.gif",
+    "instructions": [
+      "Berdiri di depan mesin kabel, pegang palang lurus atau V-bar dengan genggaman overhand.",
+      "Jaga siku tetap menempel di sisi tubuh, dorong palang ke bawah hingga lengan lurus.",
+      "Kembalikan palang ke posisi awal secara perlahan."
+    ]
+  },
+  {
+    "name": "Skull Crusher",
+    "description": "Latihan efektif untuk membangun massa pada otot trisep.",
+    "targetMuscle": "triceps",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/skull_crusher.gif",
+    "instructions": [
+      "Berbaring di bangku datar, pegang EZ-bar atau barbell lurus di atas dada dengan lengan lurus.",
+      "Tekuk siku untuk menurunkan beban secara perlahan ke arah dahi Anda.",
+      "Gunakan kekuatan trisep untuk mendorong beban kembali ke posisi awal."
+    ]
+  },
+  {
+    "name": "Plank",
+    "description": "Latihan isometrik fundamental untuk membangun kekuatan inti (core) dan stabilitas.",
+    "targetMuscle": "abs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/plank.gif",
+    "instructions": [
+      "Mulai dengan posisi push-up, tetapi bertumpu pada lengan bawah (forearm) bukan telapak tangan.",
+      "Pastikan tubuh membentuk garis lurus dari kepala hingga tumit.",
+      "Tahan posisi ini selama mungkin dengan mengencangkan otot perut dan bokong."
+    ]
+  },
+  {
+    "name": "Hanging Leg Raise",
+    "description": "Latihan tingkat lanjut untuk menargetkan perut bagian bawah.",
+    "targetMuscle": "abs",
+    "equipment": "pull-up bar",
+    "gifUrl": "https://placeholder.com/hanging_leg_raise.gif",
+    "instructions": [
+      "Bergantung pada palang pull-up dengan lengan lurus.",
+      "Tanpa mengayun, angkat kaki lurus ke atas setinggi mungkin.",
+      "Turunkan kaki secara perlahan dan terkontrol ke posisi awal."
+    ]
+  },
+  {
+    "name": "Russian Twist",
+    "description": "Latihan yang bagus untuk melatih otot obliques (perut samping).",
+    "targetMuscle": "abs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/russian_twist.gif",
+    "instructions": [
+      "Duduk di lantai dengan lutut ditekuk dan tumit di lantai.",
+      "Condongkan tubuh sedikit ke belakang hingga Anda merasakan otot perut menegang.",
+      "Putar badan Anda dari satu sisi ke sisi lain secara bergantian."
+    ]
+  },
+  {
+    "name": "Goblet Squat",
+    "description": "Varian squat yang ramah pemula dan membantu menjaga postur tubuh yang benar.",
+    "targetMuscle": "legs",
+    "equipment": "kettlebell",
+    "gifUrl": "https://placeholder.com/goblet_squat.gif",
+    "instructions": [
+      "Pegang satu kettlebell atau dumbbell secara vertikal di depan dada.",
+      "Berdiri dengan kaki sedikit lebih lebar dari bahu.",
+      "Lakukan gerakan squat, jaga dada tetap tegak dan siku berada di antara lutut."
+    ]
+  },
+  {
+    "name": "Hip Thrust",
+    "description": "Latihan terbaik untuk mengisolasi dan membangun kekuatan serta ukuran otot glutes (bokong).",
+    "targetMuscle": "legs",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/hip_thrust.gif",
+    "instructions": [
+      "Duduk di lantai dengan punggung atas bersandar pada bangku.",
+      "Letakkan barbell di atas pinggul Anda.",
+      "Dorong pinggul ke atas hingga tubuh sejajar dari bahu hingga lutut, kontraksikan glutes.",
+      "Turunkan pinggul secara terkontrol."
+    ]
+  },
+  {
+    "name": "Bulgarian Split Squat",
+    "description": "Latihan unilateral yang menantang keseimbangan dan kekuatan kaki.",
+    "targetMuscle": "legs",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/bulgarian_split_squat.gif",
+    "instructions": [
+      "Berdiri beberapa langkah di depan bangku, letakkan bagian atas salah satu kaki di atas bangku.",
+      "Pegang dumbbell di kedua tangan.",
+      "Turunkan tubuh hingga paha depan sejajar dengan lantai.",
+      "Dorong kembali ke posisi awal melalui tumit kaki depan."
+    ]
+  },
+  {
+    "name": "Single-Arm Dumbbell Row",
+    "description": "Membangun kekuatan punggung secara unilateral, membantu memperbaiki ketidakseimbangan otot.",
+    "targetMuscle": "back",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/single_arm_dumbbell_row.gif",
+    "instructions": [
+      "Letakkan satu lutut dan satu tangan pada bangku datar, jaga punggung tetap lurus.",
+      "Pegang dumbbell dengan tangan yang bebas, lengan lurus ke bawah.",
+      "Tarik dumbbell ke atas ke arah sisi dada Anda, fokus pada otot punggung.",
+      "Turunkan secara perlahan."
+    ]
+  },
+  {
+    "name": "T-Bar Row",
+    "description": "Latihan compound yang bagus untuk membangun ketebalan punggung tengah.",
+    "targetMuscle": "back",
+    "equipment": "t-bar row machine",
+    "gifUrl": "https://placeholder.com/t_bar_row.gif",
+    "instructions": [
+      "Berdiri di atas platform T-bar dengan palang di antara kaki Anda.",
+      "Pegang gagang dengan punggung lurus dan sedikit menekuk lutut.",
+      "Tarik palang ke arah dada Anda, satukan tulang belikat.",
+      "Turunkan beban dengan terkontrol."
+    ]
+  },
+  {
+    "name": "Upright Row",
+    "description": "Menargetkan otot bahu (deltoid) dan trapezius (traps).",
+    "targetMuscle": "shoulders",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/upright_row.gif",
+    "instructions": [
+      "Pegang barbell dengan genggaman overhand, tangan berdekatan.",
+      "Tarik barbell lurus ke atas menuju dagu, pimpin gerakan dengan siku.",
+      "Jaga agar palang tetap dekat dengan tubuh.",
+      "Turunkan secara perlahan."
+    ]
+  },
+  {
+    "name": "Dumbbell Shrugs",
+    "description": "Latihan isolasi sederhana untuk membangun otot trapezius (traps).",
+    "targetMuscle": "shoulders",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/dumbbell_shrugs.gif",
+    "instructions": [
+      "Berdiri tegak memegang dumbbell berat di kedua sisi tubuh.",
+      "Angkat bahu setinggi mungkin ke arah telinga.",
+      "Tahan sejenak di puncak, lalu turunkan bahu kembali ke posisi awal."
+    ]
+  },
+  {
+    "name": "Decline Bench Press",
+    "description": "Menargetkan bagian bawah otot dada untuk pengembangan dada yang menyeluruh.",
+    "targetMuscle": "chest",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/decline_bench_press.gif",
+    "instructions": [
+      "Berbaring di bangku yang menurun, kaitkan kaki Anda dengan aman.",
+      "Pegang barbell sedikit lebih lebar dari bahu.",
+      "Turunkan barbell ke bagian bawah dada Anda.",
+      "Dorong barbell kembali ke posisi awal."
+    ]
+  },
+  {
+    "name": "Machine Chest Press",
+    "description": "Alternatif yang lebih aman untuk bench press, memberikan stabilitas dan isolasi yang baik.",
+    "targetMuscle": "chest",
+    "equipment": "machine",
+    "gifUrl": "https://placeholder.com/machine_chest_press.gif",
+    "instructions": [
+      "Duduk di mesin dan sesuaikan kursi sehingga gagang sejajar dengan tengah dada.",
+      "Pegang gagang dan dorong ke depan hingga lengan hampir lurus.",
+      "Kembalikan secara perlahan ke posisi awal."
+    ]
+  },
+  {
+    "name": "Concentration Curl",
+    "description": "Latihan isolasi yang sangat baik untuk puncak (peak) otot bisep.",
+    "targetMuscle": "biceps",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/concentration_curl.gif",
+    "instructions": [
+      "Duduk di ujung bangku, sandarkan siku bagian dalam ke paha bagian dalam.",
+      "Biarkan dumbbell menggantung lurus ke bawah.",
+      "Angkat dumbbell ke arah bahu, fokus penuh pada kontraksi bisep.",
+      "Turunkan secara perlahan."
+    ]
+  },
+  {
+    "name": "Overhead Triceps Extension",
+    "description": "Melatih bagian kepala panjang (long head) dari trisep secara efektif.",
+    "targetMuscle": "triceps",
+    "equipment": "dumbbell",
+    "gifUrl": "https://placeholder.com/overhead_triceps_extension.gif",
+    "instructions": [
+      "Duduk atau berdiri, pegang satu dumbbell dengan kedua tangan di atas kepala.",
+      "Turunkan dumbbell di belakang kepala Anda dengan menekuk siku.",
+      "Luruskan lengan untuk mengangkat dumbbell kembali ke posisi awal."
+    ]
+  },
+  {
+    "name": "Good Morning",
+    "description": "Latihan untuk memperkuat punggung bawah, glutes, dan hamstring.",
+    "targetMuscle": "back",
+    "equipment": "barbell",
+    "gifUrl": "https://placeholder.com/good_morning.gif",
+    "instructions": [
+      "Letakkan barbell di punggung atas Anda seperti saat squat.",
+      "Dengan lutut sedikit ditekuk, tekuk pinggul Anda dan turunkan tubuh hingga sejajar dengan lantai.",
+      "Jaga punggung tetap lurus selama gerakan.",
+      "Kembali ke posisi berdiri."
+    ]
+  },
+  {
+    "name": "Crunches",
+    "description": "Latihan perut klasik untuk menargetkan otot rektus abdominis bagian atas.",
+    "targetMuscle": "abs",
+    "equipment": "bodyweight",
+    "gifUrl": "https://placeholder.com/crunches.gif",
+    "instructions": [
+      "Berbaring telentang dengan lutut ditekuk dan kaki rata di lantai.",
+      "Letakkan tangan di belakang kepala atau menyilang di dada.",
+      "Angkat kepala dan bahu dari lantai, kontraksikan otot perut.",
+      "Turunkan kembali secara perlahan."
+    ]
+  }
+
+]
