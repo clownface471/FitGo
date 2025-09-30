@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import '../../models/exercise_model.dart';
 import '../../models/user_model.dart';
 import '../../models/workout_plan_model.dart';
-import '../../utils/auth_service.dart';
 import '../../utils/firestore_service.dart';
 import '../workout/exercise_player_screen.dart';
-import '../home/motivation_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,7 +14,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late Future<Map<String, dynamic>> _dataFuture;
-  final _authService = AuthService();
 
   @override
   void initState() {
@@ -39,9 +36,8 @@ class _HomeScreenState extends State<HomeScreen> {
     if (userData == null || userData.goal == null || userData.level == null) {
       throw Exception("Data onboarding pengguna tidak lengkap.");
     }
-
-    final recommendedPlan = await firestoreService.getRecommendedPlan(
-        userData.goal!, userData.level!);
+    
+    final recommendedPlan = await firestoreService.getRecommendedPlan(userData.goal!, userData.level!);
     final allExercises = await firestoreService.getExercises();
 
     return {
@@ -58,8 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: FutureBuilder<Map<String, dynamic>>(
           future: _dataFuture,
           builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done &&
-                snapshot.hasData) {
+            if (snapshot.connectionState == ConnectionState.done && snapshot.hasData) {
               final UserModel user = snapshot.data!['user'];
               final String name = user.email.split('@')[0];
               return Text('Hai, $name!');
@@ -67,6 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
             return const Text('Memuat...');
           },
         ),
+        actions: const [],
       ),
       body: RefreshIndicator(
         onRefresh: () async => _loadAllData(),
@@ -77,8 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
               return const Center(child: CircularProgressIndicator());
             }
             if (snapshot.hasError) {
-              return Center(
-                  child: Text("Gagal memuat data: ${snapshot.error}"));
+              return Center(child: Text("Gagal memuat data: ${snapshot.error}"));
             }
             if (!snapshot.hasData) {
               return const Center(child: Text("Data tidak ditemukan."));
@@ -95,16 +90,15 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildDashboard(BuildContext context, UserModel user,
-      WorkoutPlan? plan, List<Exercise> allExercises) {
+  Widget _buildDashboard(BuildContext context, UserModel user, WorkoutPlan? plan, List<Exercise> allExercises) {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Program Anda",
-              style: Theme.of(context).textTheme.headlineMedium),
+          Text("Program Anda", style: Theme.of(context).textTheme.headlineMedium),
           const SizedBox(height: 16),
+          
           if (plan != null)
             _RecommendedPlanCard(
               plan: plan,
@@ -117,27 +111,9 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ListTile(
                 leading: Icon(Icons.info_outline),
                 title: Text("Program Tidak Ditemukan"),
-                subtitle: Text(
-                    "Belum ada program yang cocok untuk tujuan dan level Anda."),
+                subtitle: Text("Belum ada program yang cocok untuk tujuan dan level Anda."),
               ),
             ),
-          const SizedBox(height: 24),
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.local_fire_department_rounded,
-                  color: Colors.orange),
-              title: const Text("Butuh Semangat?"),
-              subtitle: const Text("Lihat kutipan dan cerita inspiratif."),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MotivationScreen(),
-                    ));
-              },
-            ),
-          ),
         ],
       ),
     );
@@ -171,41 +147,31 @@ class _RecommendedPlanCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(plan.planName,
-                style: Theme.of(context).textTheme.headlineSmall),
+            Text(plan.planName, style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 8),
-            Text("Hari ke-$dayToShow: ${todayWorkout.workoutName}",
-                style: Theme.of(context).textTheme.titleMedium),
+            Text("Hari ke-$dayToShow: ${todayWorkout.workoutName}", style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 4),
-            Text("${todayWorkout.exercises.length} gerakan",
-                style: Theme.of(context).textTheme.bodyMedium),
+            Text("${todayWorkout.exercises.length} gerakan", style: Theme.of(context).textTheme.bodyMedium),
             const SizedBox(height: 16),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 50)),
-              onPressed: todayWorkout.exercises.isEmpty
-                  ? null
-                  : () async {
-                      final result = await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ExercisePlayerScreen(
-                              dailyExercises: todayWorkout.exercises,
-                              allExercises: allExercises,
-                              planName: plan.planName,
-                              workoutName: todayWorkout.workoutName,
-                              currentDay: dayToShow,
-                            ),
-                          ));
+              style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 50)),
+              onPressed: todayWorkout.exercises.isEmpty ? null : () async {
+                final result = await Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => ExercisePlayerScreen(
+                    dailyExercises: todayWorkout.exercises,
+                    allExercises: allExercises,
+                    planName: plan.planName,
+                    workoutName: todayWorkout.workoutName,
+                    currentDay: dayToShow,
+                  ),
+                ));
 
-                      if (result == true) {
-                        print("Workout completed! Refreshing home screen...");
-                        onWorkoutCompleted();
-                      }
-                    },
-              child: Text(todayWorkout.exercises.isEmpty
-                  ? 'Hari Istirahat'
-                  : "Mulai Latihan Hari Ini"),
+                if (result == true) {
+                  debugPrint("Workout completed! Refreshing home screen...");
+                  onWorkoutCompleted();
+                }
+              },
+              child: Text(todayWorkout.exercises.isEmpty ? 'Hari Istirahat' : "Mulai Latihan Hari Ini"),
             )
           ],
         ),

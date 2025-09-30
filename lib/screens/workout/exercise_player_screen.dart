@@ -3,13 +3,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../models/daily_workout_model.dart';
 import '../../models/exercise_model.dart';
+import '../../models/performed_set_model.dart';
+import '../../models/workout_history_model.dart';
 import '../../utils/firestore_service.dart';
 import '../../utils/theme.dart';
 
 class ExercisePlayerScreen extends StatefulWidget {
   final List<DailyExercise> dailyExercises;
   final List<Exercise> allExercises;
-  final String planName; 
+  final String planName;
   final String workoutName;
   final int currentDay;
 
@@ -30,8 +32,88 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
   int _currentExerciseIndex = 0;
   int _currentSet = 1;
   bool _isResting = false;
+  
   Timer? _timer;
   int _restSeconds = 30;
+
+  final List<PerformedExercise> _performedExercisesLog = []; 
+  final List<PerformedSet> _currentExerciseSetsLog = []; 
+  late TextEditingController _weightController;
+  late TextEditingController _repsController;
+
+  @override
+  void initState() {
+    super.initState();
+    _weightController = TextEditingController(text: '0');
+    _repsController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    _weightController.dispose();
+    _repsController.dispose();
+    super.dispose();
+  }
+
+  void _logSetAndStartRest() {
+    final weight = double.tryParse(_weightController.text) ?? 0.0;
+    final reps = int.tryParse(_repsController.text) ?? 0;
+
+    _currentExerciseSetsLog.add(
+      PerformedSet(setNumber: _currentSet, weight: weight, reps: reps),
+    );
+
+    _startRestTimer();
+  }
+
+  void _startRestTimer() {
+    setState(() {
+      _isResting = true;
+      _restSeconds = 30;
+    });
+
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (_restSeconds > 0) {
+        setState(() {
+          _restSeconds--;
+        });
+      } else {
+        _timer?.cancel();
+        _moveToNext();
+      }
+    });
+  }
+
+  void _moveToNext() {
+    setState(() {
+      _isResting = false;
+      final currentDailyExercise = widget.dailyExercises[_currentExerciseIndex];
+
+      if (_currentSet < currentDailyExercise.sets) {
+        _currentSet++;
+        _repsController.clear(); 
+      } else {
+        final currentExerciseDetail = widget.allExercises.firstWhere((ex) => ex.id == currentDailyExercise.exerciseId);
+        _performedExercisesLog.add(
+          PerformedExercise(
+            exerciseId: currentExerciseDetail.id,
+            exerciseName: currentExerciseDetail.name,
+            sets: List.from(_currentExerciseSetsLog),
+          ),
+        );
+        _currentExerciseSetsLog.clear(); 
+
+        if (_currentExerciseIndex < widget.dailyExercises.length - 1) {
+          _currentExerciseIndex++;
+          _currentSet = 1;
+          _repsController.clear();
+        } else {
+          _finishWorkout();
+        }
+      }
+    });
+  }
 
   Future<void> _finishWorkout() async {
     final user = FirebaseAuth.instance.currentUser;
@@ -42,6 +124,7 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
         planName: widget.planName,
         workoutName: widget.workoutName,
         dayCompleted: widget.currentDay,
+        exercises: _performedExercisesLog,
       );
       await firestoreService.advanceToNextDay(user.uid);
     }
@@ -59,53 +142,13 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
               child: const Text('Kembali ke Home', style: TextStyle(color: primaryColor)),
               onPressed: () {
                 Navigator.of(dialogContext).pop();
-                Navigator.of(context).pop(true); 
+                Navigator.of(context).pop(true);
               },
             ),
           ],
         ),
       );
     }
-  }
-
-  void _startRestTimer() {
-    setState(() {
-      _isResting = true;
-      _restSeconds = 30;
-    });
-
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (_restSeconds > 0) {
-        setState(() => _restSeconds--);
-      } else {
-        _timer?.cancel();
-        _moveToNextSetOrExercise();
-      }
-    });
-  }
-
-  void _moveToNextSetOrExercise() {
-    setState(() {
-      _isResting = false;
-      final currentDailyExercise = widget.dailyExercises[_currentExerciseIndex];
-
-      if (_currentSet < currentDailyExercise.sets) {
-        _currentSet++;
-      } else {
-        if (_currentExerciseIndex < widget.dailyExercises.length - 1) {
-          _currentExerciseIndex++;
-          _currentSet = 1;
-        } else {
-          _finishWorkout();
-        }
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer?.cancel();
-    super.dispose();
   }
 
   @override
@@ -117,11 +160,14 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
     final currentDailyExercise = widget.dailyExercises[_currentExerciseIndex];
     final currentExerciseDetail = widget.allExercises.firstWhere(
       (ex) => ex.id == currentDailyExercise.exerciseId,
+      orElse: () => Exercise(id: '', name: 'Not Found', description: '', bodyPart: '', equipment: '', gifUrl: '', target: '', instructions: []),
     );
+    final secureGifUrl = currentExerciseDetail.gifUrl.replaceFirst('http://', 'https://');
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('${_currentExerciseIndex + 1} / ${widget.dailyExercises.length}'),
+        title: Text('Latihan ${_currentExerciseIndex + 1} / ${widget.dailyExercises.length}'),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -134,20 +180,51 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
                 borderRadius: BorderRadius.circular(15),
               ),
               clipBehavior: Clip.antiAlias,
-              child: Image.network(currentExerciseDetail.gifUrl.replaceFirst('http://', 'https://'), fit: BoxFit.contain),
+              child: Image.network(
+                secureGifUrl,
+                fit: BoxFit.contain,
+                errorBuilder: (c, e, s) => const Center(child: Icon(Icons.fitness_center, size: 60)),
+              ),
             ),
             const SizedBox(height: 24),
-            Text(currentExerciseDetail.name, style: Theme.of(context).textTheme.headlineMedium),
+
+            Text(currentExerciseDetail.name, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
             const SizedBox(height: 8),
             Text(
-              'Set $_currentSet dari ${currentDailyExercise.sets} ・ ${currentDailyExercise.reps} repetisi',
+              'Set $_currentSet dari ${currentDailyExercise.sets} ・ Target: ${currentDailyExercise.reps} repetisi',
               style: Theme.of(context).textTheme.bodyLarge,
             ),
+            const SizedBox(height: 24),
+
+            Row(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    controller: _weightController,
+                    decoration: const InputDecoration(labelText: "Berat (kg)"),
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: TextFormField(
+                    controller: _repsController,
+                    decoration: const InputDecoration(labelText: "Repetisi"),
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
+              ],
+            ),
             const Spacer(),
+
             ElevatedButton(
               style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 50)),
-              onPressed: _startRestTimer,
-              child: Text(_currentExerciseIndex == widget.dailyExercises.length - 1 && _currentSet == currentDailyExercise.sets ? 'Selesaikan Latihan' : 'Selesai & Istirahat'),
+              onPressed: _logSetAndStartRest,
+              child: Text(
+                (_currentExerciseIndex == widget.dailyExercises.length - 1 && _currentSet == currentDailyExercise.sets)
+                    ? 'Selesaikan Latihan'
+                    : 'Selesai & Istirahat',
+              ),
             ),
           ],
         ),
@@ -168,7 +245,7 @@ class _ExercisePlayerScreenState extends State<ExercisePlayerScreen> {
             TextButton(
               onPressed: () {
                 _timer?.cancel();
-                _moveToNextSetOrExercise();
+                _moveToNext();
               },
               child: const Text('Lewati Istirahat', style: TextStyle(color: Colors.white)),
             ),

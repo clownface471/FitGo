@@ -70,7 +70,7 @@ class _ProfileCard extends StatelessWidget {
               width: 100,
               height: 140,
               color: Colors.grey[800],
-              child: Image.network(item.imageUrl, fit: BoxFit.cover, errorBuilder: (c, e, s) => Icon(Icons.person)),
+              child: Image.network(item.imageUrl, fit: BoxFit.cover, errorBuilder: (c, e, s) => const Icon(Icons.person)),
             ),
             const SizedBox(width: 16),
             Expanded(

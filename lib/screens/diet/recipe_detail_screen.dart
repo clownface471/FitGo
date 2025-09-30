@@ -40,7 +40,7 @@ class RecipeDetailScreen extends StatelessWidget {
 
                   Text("Bahan-bahan", style: Theme.of(context).textTheme.titleLarge),
                   const SizedBox(height: 12),
-                  ...recipe.ingredients.map((ingredient) => _buildChecklistItem(ingredient)).toList(),
+                  ...recipe.ingredients.map((ingredient) => _buildChecklistItem(ingredient)),
                   const SizedBox(height: 24),
 
                   Text("Cara Memasak", style: Theme.of(context).textTheme.titleLarge),
@@ -50,7 +50,7 @@ class RecipeDetailScreen extends StatelessWidget {
                       step: entry.key + 1,
                       text: entry.value,
                     );
-                  }).toList(),
+                  }),
                 ],
               ),
             ),

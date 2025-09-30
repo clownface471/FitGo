@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import '../../models/exercise_model.dart';
-import '../../utils/firestore_service.dart'; 
+import '../../utils/firestore_service.dart';
 import '../workout/workout_detail_screen.dart';
 
 class LatihanScreen extends StatefulWidget {
@@ -12,65 +12,103 @@ class LatihanScreen extends StatefulWidget {
 }
 
 class _LatihanScreenState extends State<LatihanScreen> {
-  late Future<List<Exercise>> _exercises = FirestoreService().getExercises();
+  List<Exercise> _allExercises = [];
+  List<Exercise> _filteredExercises = [];
+  final TextEditingController _searchController = TextEditingController();
 
-  void _refreshExercises() {
+  @override
+  void initState() {
+    super.initState();
+    FirestoreService().getExercises().then((exercises) {
+      setState(() {
+        _allExercises = exercises;
+        _filteredExercises = exercises;
+      });
+    });
+
+    _searchController.addListener(_filterExercises);
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  void _filterExercises() {
+    final query = _searchController.text.toLowerCase();
     setState(() {
-      _exercises = FirestoreService().getExercises();
+      _filteredExercises = _allExercises.where((exercise) {
+        final exerciseName = exercise.name.toLowerCase();
+        return exerciseName.contains(query);
+      }).toList();
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final groupedExercises =
+        groupBy(_filteredExercises, (Exercise e) => e.bodyPart);
+    final bodyParts = groupedExercises.keys.toList();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Latihan'),
         centerTitle: true,
       ),
-      body: RefreshIndicator(
-        onRefresh: () async => _refreshExercises(),
-        child: FutureBuilder<List<Exercise>>(
-          future: _exercises,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator());
-            } else if (snapshot.hasError) {
-              return Center(child: Text('Error: ${snapshot.error}'));
-            } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return const Center(child: Text('Tidak ada data latihan di database.'));
-            } else {
-              final exercises = snapshot.data!;
-              final groupedExercises = groupBy(exercises, (Exercise e) => e.bodyPart);
-              final bodyParts = groupedExercises.keys.toList();
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              controller: _searchController,
+              decoration: InputDecoration(
+                hintText: 'Cari nama latihan...',
+                prefixIcon: const Icon(Icons.search),
+                filled: true,
+                fillColor: Theme.of(context).cardTheme.color,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide.none,
+                ),
+              ),
+            ),
+          ),
 
-              return ListView.separated(
-                padding: const EdgeInsets.all(16.0),
-                itemCount: bodyParts.length,
-                separatorBuilder: (context, index) => const SizedBox(height: 16),
-                itemBuilder: (context, index) {
-                  final bodyPart = bodyParts[index];
-                  final exercisesForBodyPart = groupedExercises[bodyPart]!;
-                  
-                  return _WorkoutCategoryCard(
-                    title: bodyPart,
-                    exerciseCount: exercisesForBodyPart.length,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => WorkoutDetailScreen(
+          Expanded(
+            child: _allExercises.isEmpty
+                ? const Center(child: CircularProgressIndicator())
+                : bodyParts.isEmpty
+                    ? const Center(child: Text("Latihan tidak ditemukan."))
+                    : ListView.separated(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        itemCount: bodyParts.length,
+                        separatorBuilder: (context, index) =>
+                            const SizedBox(height: 16),
+                        itemBuilder: (context, index) {
+                          final bodyPart = bodyParts[index];
+                          final exercisesForBodyPart =
+                              groupedExercises[bodyPart]!;
+
+                          return _WorkoutCategoryCard(
                             title: bodyPart,
-                            exercises: exercisesForBodyPart,
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                },
-              );
-            }
-          },
-        ),
+                            exerciseCount: exercisesForBodyPart.length,
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => WorkoutDetailScreen(
+                                    title: bodyPart,
+                                    exercises: exercisesForBodyPart,
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      ),
+          ),
+        ],
       ),
     );
   }
@@ -81,7 +119,8 @@ class _WorkoutCategoryCard extends StatelessWidget {
   final int exerciseCount;
   final VoidCallback onTap;
 
-  const _WorkoutCategoryCard({required this.title, required this.exerciseCount, required this.onTap});
+  const _WorkoutCategoryCard(
+      {required this.title, required this.exerciseCount, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +138,8 @@ class _WorkoutCategoryCard extends StatelessWidget {
                   color: Colors.grey[800],
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: const Center(child: Icon(Icons.image, color: Colors.grey, size: 40)),
+                child: const Center(
+                    child: Icon(Icons.image, color: Colors.grey, size: 40)),
               ),
               const SizedBox(width: 16),
               Expanded(
@@ -108,7 +148,10 @@ class _WorkoutCategoryCard extends StatelessWidget {
                   children: [
                     Text(
                       title.toUpperCase(),
-                      style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontSize: 22),
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(fontSize: 22),
                     ),
                     Text(
                       '$exerciseCount Latihan',

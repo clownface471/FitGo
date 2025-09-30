@@ -63,7 +63,8 @@ class FirestoreService {
     try {
       QuerySnapshot snapshot = await _db.collection('exercises').get();
       final exercises = snapshot.docs.map((doc) {
-        return Exercise.fromFirestore(doc.data() as Map<String, dynamic>, doc.id);
+        return Exercise.fromFirestore(
+            doc.data() as Map<String, dynamic>, doc.id);
       }).toList();
       return exercises;
     } catch (e) {
@@ -74,7 +75,8 @@ class FirestoreService {
 
   Future<WorkoutPlan?> getRecommendedPlan(String goal, String level) async {
     try {
-      final querySnapshot = await _db.collection('workoutPlans')
+      final querySnapshot = await _db
+          .collection('workoutPlans')
           .where('goal', isEqualTo: goal)
           .where('level', isEqualTo: level)
           .limit(1)
@@ -89,18 +91,21 @@ class FirestoreService {
       return null;
     }
   }
-    Future<void> addWorkoutHistory({
+
+  Future<void> addWorkoutHistory({
     required String uid,
     required String planName,
     required String workoutName,
     required int dayCompleted,
+    required List<PerformedExercise> exercises,
   }) async {
     try {
       await _db.collection('users').doc(uid).collection('workoutHistory').add({
         'planName': planName,
         'workoutName': workoutName,
         'dayCompleted': dayCompleted,
-        'completedDate': FieldValue.serverTimestamp(), 
+        'completedDate': FieldValue.serverTimestamp(),
+        'exercises': exercises.map((e) => e.toMap()).toList(),
       });
     } catch (e) {
       print("Error adding workout history: $e");
@@ -119,16 +124,23 @@ class FirestoreService {
       if (snapshot.docs.isEmpty) {
         return [];
       }
-      
-      return snapshot.docs.map((doc) => WorkoutHistory.fromFirestore(doc)).toList();
+
+      return snapshot.docs
+          .map((doc) => WorkoutHistory.fromFirestore(doc))
+          .toList();
     } catch (e) {
       print("Error fetching workout history: $e");
       return [];
     }
   }
+
   Future<DietPlan?> getRecommendedDietPlan(String goal) async {
     try {
-      final query = await _db.collection('dietPlans').where('goal', isEqualTo: goal).limit(1).get();
+      final query = await _db
+          .collection('dietPlans')
+          .where('goal', isEqualTo: goal)
+          .limit(1)
+          .get();
       if (query.docs.isNotEmpty) {
         return DietPlan.fromFirestore(query.docs.first);
       }
@@ -143,18 +155,19 @@ class FirestoreService {
     try {
       final snapshot = await _db.collection('recipes').get();
       return snapshot.docs.map((doc) => Recipe.fromFirestore(doc)).toList();
-    } catch(e) {
+    } catch (e) {
       print("Error getting all recipes: $e");
       return [];
     }
   }
+
   Future<List<Motivation>> getMotivations() async {
-  try {
-    final snapshot = await _db.collection('motivations').get();
-    return snapshot.docs.map((doc) => Motivation.fromFirestore(doc)).toList();
-  } catch (e) {
-    print("Error getting motivations: $e");
-    return [];
+    try {
+      final snapshot = await _db.collection('motivations').get();
+      return snapshot.docs.map((doc) => Motivation.fromFirestore(doc)).toList();
+    } catch (e) {
+      print("Error getting motivations: $e");
+      return [];
+    }
   }
-}
 }
