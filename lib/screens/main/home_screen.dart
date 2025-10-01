@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../../models/daily_progress_model.dart';
 import '../../models/exercise_model.dart';
 import '../../models/user_model.dart';
 import '../../models/workout_plan_model.dart';
+import '../../utils/calorie_calculator.dart'; 
 import '../../utils/firestore_service.dart';
 import '../workout/exercise_player_screen.dart';
 
@@ -32,18 +34,25 @@ class _HomeScreenState extends State<HomeScreen> {
     if (user == null) throw Exception("Pengguna tidak login");
 
     final firestoreService = FirestoreService();
-    final userData = await firestoreService.getUserData(user.uid);
+    
+    final results = await Future.wait([
+      firestoreService.getUserData(user.uid),
+      firestoreService.getExercises(),
+      firestoreService.getDailyProgress(user.uid),
+    ]);
+    
+    final userData = results[0] as UserModel?;
     if (userData == null || userData.goal == null || userData.level == null) {
       throw Exception("Data onboarding pengguna tidak lengkap.");
     }
-    
-    final recommendedPlan = await firestoreService.getRecommendedPlan(userData.goal!, userData.level!);
-    final allExercises = await firestoreService.getExercises();
 
+    final recommendedPlan = await firestoreService.getRecommendedPlan(userData.goal!, userData.level!);
+    
     return {
       'user': userData,
       'plan': recommendedPlan,
-      'exercises': allExercises,
+      'exercises': results[1] as List<Exercise>,
+      'progress': results[2] as DailyProgress, 
     };
   }
 
@@ -72,30 +81,36 @@ class _HomeScreenState extends State<HomeScreen> {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CircularProgressIndicator());
             }
-            if (snapshot.hasError) {
+            if (snapshot.hasError || !snapshot.hasData) {
               return Center(child: Text("Gagal memuat data: ${snapshot.error}"));
-            }
-            if (!snapshot.hasData) {
-              return const Center(child: Text("Data tidak ditemukan."));
             }
 
             final UserModel user = snapshot.data!['user'];
             final WorkoutPlan? plan = snapshot.data!['plan'];
             final List<Exercise> allExercises = snapshot.data!['exercises'];
+            final DailyProgress progress = snapshot.data!['progress'];
 
-            return _buildDashboard(context, user, plan, allExercises);
+            return _buildDashboard(context, user, plan, allExercises, progress);
           },
         ),
       ),
     );
   }
 
-  Widget _buildDashboard(BuildContext context, UserModel user, WorkoutPlan? plan, List<Exercise> allExercises) {
+  Widget _buildDashboard(BuildContext context, UserModel user, WorkoutPlan? plan, List<Exercise> allExercises, DailyProgress progress) {
+    final calorieTarget = CalorieCalculator.calculateBMR(user);
+
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          CalorieDashboard(
+            caloriesConsumed: progress.caloriesConsumed,
+            calorieTarget: calorieTarget,
+          ),
+          const SizedBox(height: 24),
+          
           Text("Program Anda", style: Theme.of(context).textTheme.headlineMedium),
           const SizedBox(height: 16),
           
@@ -176,6 +191,67 @@ class _RecommendedPlanCard extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+class CalorieDashboard extends StatelessWidget {
+  final int caloriesConsumed;
+  final int calorieTarget;
+
+  const CalorieDashboard({
+    super.key,
+    required this.caloriesConsumed,
+    required this.calorieTarget,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final double progress = calorieTarget > 0 ? (caloriesConsumed / calorieTarget).clamp(0, 1) : 0;
+    final int remainingCalories = calorieTarget - caloriesConsumed;
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Ringkasan Kalori Hari Ini", style: Theme.of(context).textTheme.titleLarge),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _InfoColumn(title: "Masuk", value: "$caloriesConsumed"),
+                _InfoColumn(title: "Target", value: "$calorieTarget"),
+                _InfoColumn(title: "Sisa", value: "$remainingCalories"),
+              ],
+            ),
+            const SizedBox(height: 16),
+            LinearProgressIndicator(
+              value: progress,
+              minHeight: 10,
+              borderRadius: BorderRadius.circular(5),
+              backgroundColor: Theme.of(context).cardTheme.color,
+              valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _InfoColumn extends StatelessWidget {
+  final String title;
+  final String value;
+  const _InfoColumn({required this.title, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(value, style: Theme.of(context).textTheme.headlineSmall),
+        Text(title, style: Theme.of(context).textTheme.bodyMedium),
+      ],
     );
   }
 }
