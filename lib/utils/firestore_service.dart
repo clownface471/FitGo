@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/exercise_model.dart';
 import '../models/user_model.dart';
 import '../models/workout_plan_model.dart';
+import '../models/daily_progress_model.dart';
 import '../models/workout_history_model.dart';
 import '../models/diet_plan_model.dart';
 import '../models/recipe_model.dart';
@@ -168,6 +169,59 @@ class FirestoreService {
     } catch (e) {
       print("Error getting motivations: $e");
       return [];
+    }
+  }
+
+  Future<void> logMeal({
+    required String uid,
+    required String mealType,
+    required int calories,
+    required int protein,
+    required int carbs,
+    required int fat,
+  }) async {
+    final now = DateTime.now();
+    final docId =
+        "${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}";
+    final docRef =
+        _db.collection('users').doc(uid).collection('dailyProgress').doc(docId);
+
+    await _db.runTransaction((transaction) async {
+      final snapshot = await transaction.get(docRef);
+
+      if (!snapshot.exists) {
+        transaction.set(docRef, {
+          'date': Timestamp.fromDate(now),
+          'caloriesConsumed': calories,
+          'proteinConsumed': protein,
+          'carbsConsumed': carbs,
+          'fatConsumed': fat,
+          'mealsCompleted': {mealType: true},
+        });
+      } else {
+        transaction.update(docRef, {
+          'caloriesConsumed': FieldValue.increment(calories),
+          'proteinConsumed': FieldValue.increment(protein),
+          'carbsConsumed': FieldValue.increment(carbs),
+          'fatConsumed': FieldValue.increment(fat),
+          'mealsCompleted.$mealType': true,
+        });
+      }
+    });
+  }
+
+  Future<DailyProgress> getDailyProgress(String uid) async {
+    final now = DateTime.now();
+    final docId =
+        "${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}";
+    final docRef =
+        _db.collection('users').doc(uid).collection('dailyProgress').doc(docId);
+
+    final doc = await docRef.get();
+    if (doc.exists) {
+      return DailyProgress.fromFirestore(doc);
+    } else {
+      return DailyProgress(date: now);
     }
   }
 }
