@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import '../../models/daily_progress_model.dart';
 import '../../models/exercise_model.dart';
 import '../../models/user_model.dart';
+import '../../utils/custom_page_route.dart';
 import '../../models/workout_plan_model.dart';
 import '../../utils/calorie_calculator.dart'; 
+import 'package:flutter/services.dart';
 import '../../utils/firestore_service.dart';
 import '../workout/exercise_player_screen.dart';
 
@@ -171,8 +173,9 @@ class _RecommendedPlanCard extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 50)),
               onPressed: todayWorkout.exercises.isEmpty ? null : () async {
-                final result = await Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => ExercisePlayerScreen(
+                HapticFeedback.lightImpact();
+                final result = await Navigator.push(context, CustomPageRoute(
+                  child: ExercisePlayerScreen(
                     dailyExercises: todayWorkout.exercises,
                     allExercises: allExercises,
                     planName: plan.planName,
