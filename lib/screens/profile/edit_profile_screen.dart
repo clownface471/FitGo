@@ -28,6 +28,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     _selectedLevel = widget.user.level ?? 'beginner';
   }
 
+  @override
+  void dispose() {
+    _heightController.dispose();
+    _weightController.dispose();
+    super.dispose();
+  }
+
   Future<void> _saveProfile() async {
     if (_formKey.currentState!.validate()) {
       final uid = FirebaseAuth.instance.currentUser!.uid;
@@ -102,7 +109,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
   Widget _buildDropdown(String label, String value, List<String> items, ValueChanged<String?> onChanged) {
     return DropdownButtonFormField<String>(
-      value: value,
+      initialValue: value,
       items: items.map((String item) {
         return DropdownMenuItem<String>(
           value: item,

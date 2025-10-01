@@ -94,7 +94,7 @@ class _OptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: isSelected ? Theme.of(context).primaryColor.withOpacity(0.3) : Theme.of(context).cardTheme.color,
+      color: isSelected ? Theme.of(context).primaryColor.withAlpha(77) : Theme.of(context).cardTheme.color,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
         side: isSelected
