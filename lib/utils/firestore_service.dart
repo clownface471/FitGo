@@ -1,14 +1,15 @@
 // ignore_for_file: avoid_print
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../models/exercise_model.dart';
-import '../models/user_model.dart';
-import '../models/workout_plan_model.dart';
 import '../models/daily_progress_model.dart';
-import '../models/workout_history_model.dart';
 import '../models/diet_plan_model.dart';
-import '../models/recipe_model.dart';
+import '../models/exercise_model.dart';
 import '../models/motivation_model.dart';
+import '../models/recipe_model.dart';
+import '../models/user_model.dart';
+import '../models/user_progress_model.dart';
+import '../models/workout_history_model.dart';
+import '../models/workout_plan_model.dart';
 
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -35,13 +36,56 @@ class FirestoreService {
       'email': email,
       'createdAt': FieldValue.serverTimestamp(),
       'onboardingCompleted': false,
-      'currentDay': 1,
+      'planStartDate': null,
+      'progress': UserProgress().toMap(),
     });
   }
 
-  Future<void> advanceToNextDay(String uid) async {
-    await _db.collection('users').doc(uid).update({
-      'currentDay': FieldValue.increment(1),
+  Future<void> updateUserProgressAfterWorkout(String uid) async {
+    final userRef = _db.collection('users').doc(uid);
+
+    await _db.runTransaction((transaction) async {
+      final userDoc = await transaction.get(userRef);
+      if (!userDoc.exists) return;
+
+      final data = userDoc.data() as Map<String, dynamic>;
+      final progress = UserProgress.fromMap(data['progress']);
+      final planStartDate = (data['planStartDate'] as Timestamp?)?.toDate();
+
+      final now = DateTime.now();
+      final today = DateTime(now.year, now.month, now.day);
+      
+      int newStreak = progress.currentStreak;
+      
+      if (progress.lastWorkoutDate != null) {
+        final lastWorkoutDay = DateTime(progress.lastWorkoutDate!.year, progress.lastWorkoutDate!.month, progress.lastWorkoutDate!.day);
+        final yesterday = today.subtract(const Duration(days: 1));
+
+        if (lastWorkoutDay.isAtSameMomentAs(yesterday)) {
+          newStreak++;
+        } else if (!lastWorkoutDay.isAtSameMomentAs(today)) {
+          newStreak = 1;
+        }
+      } else {
+        newStreak = 1;
+      }
+
+      final newTotal = progress.totalWorkouts + 1;
+      final newLongestStreak = newStreak > progress.longestStreak ? newStreak : progress.longestStreak;
+
+      final updatedProgress = UserProgress(
+        currentStreak: newStreak,
+        longestStreak: newLongestStreak,
+        totalWorkouts: newTotal,
+        lastWorkoutDate: now,
+      );
+      
+      final Map<String, dynamic> updates = {'progress': updatedProgress.toMap()};
+      if (planStartDate == null) {
+        updates['planStartDate'] = Timestamp.fromDate(now);
+      }
+
+      transaction.update(userRef, updates);
     });
   }
 
@@ -99,6 +143,7 @@ class FirestoreService {
     required String workoutName,
     required int dayCompleted,
     required List<PerformedExercise> exercises,
+    required String difficultyFeedback,
   }) async {
     try {
       await _db.collection('users').doc(uid).collection('workoutHistory').add({
@@ -107,6 +152,7 @@ class FirestoreService {
         'dayCompleted': dayCompleted,
         'completedDate': FieldValue.serverTimestamp(),
         'exercises': exercises.map((e) => e.toMap()).toList(),
+        'difficultyFeedback': difficultyFeedback,
       });
     } catch (e) {
       print("Error adding workout history: $e");

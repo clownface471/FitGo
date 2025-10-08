@@ -41,7 +41,7 @@ class WorkoutDetailScreen extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) => ExercisePlayerScreen(
                             dailyExercises: [
-                              DailyExercise(exerciseId: exercise.id, sets: 3, reps: '10-12')
+                              DailyExercise(exerciseId: exercise.id, exerciseName: exercise.name, sets: 3, reps: '10-12')
                             ],
                             allExercises: exercises,
                             planName: "Latihan Bebas",

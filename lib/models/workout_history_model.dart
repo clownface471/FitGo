@@ -32,6 +32,7 @@ class WorkoutHistory {
   final DateTime completedDate;
   final int dayCompleted;
   final List<PerformedExercise> exercises;
+  final String? difficultyFeedback;
 
   WorkoutHistory({
     required this.id,
@@ -40,6 +41,7 @@ class WorkoutHistory {
     required this.completedDate,
     required this.dayCompleted,
     required this.exercises,
+    this.difficultyFeedback,
   });
 
   factory WorkoutHistory.fromFirestore(DocumentSnapshot doc) {
@@ -51,6 +53,7 @@ class WorkoutHistory {
       completedDate: (data['completedDate'] as Timestamp).toDate(),
       dayCompleted: data['dayCompleted'] ?? 0,
       exercises: (data['exercises'] as List<dynamic>? ?? []).map((e) => PerformedExercise.fromMap(e)).toList(),
+      difficultyFeedback: data['difficultyFeedback'] as String?,
     );
   }
 }

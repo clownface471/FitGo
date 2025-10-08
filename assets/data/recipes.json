@@ -1,205 +1,136 @@
 [
   {
     "recipeId": "FL001",
-    "name": "Oatmeal Pisang & Kacang Almond",
-    "imageUrl": "https://placeholder.com/oatmeal_pisang_kacang.jpg",
+    "name": "Overnight Oats Buah Berry",
+    "imageUrl": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?q=80&w=1547&auto=format&fit=crop",
     "calories": 350,
     "protein": "15g",
     "carbs": "55g",
     "fat": "10g",
     "ingredients": [
-      "5 sdm oatmeal instan",
-      "200ml air panas atau susu rendah lemak",
-      "1 buah pisang, iris",
-      "1 sdm kacang almond cincang",
-      "Sedikit bubuk kayu manis"
+      "5 sdm rolled oats",
+      "150ml susu rendah lemak atau susu almond",
+      "1 sdm biji chia",
+      "50g campuran buah berry (beku atau segar)",
+      "1 sdt madu (opsional)"
     ],
     "instructions": [
-      "Seduh oatmeal dengan air panas atau susu, aduk hingga rata.",
-      "Tambahkan irisan pisang di atasnya.",
-      "Taburi dengan kacang almond cincang dan bubuk kayu manis.",
-      "Sajikan selagi hangat."
+      "Dalam sebuah toples atau mangkuk, campurkan rolled oats, susu, dan biji chia.",
+      "Aduk hingga rata, tutup, dan simpan di kulkas semalaman.",
+      "Keesokan paginya, aduk kembali dan tambahkan buah berry di atasnya.",
+      "Tambahkan madu jika Anda menginginkan rasa yang lebih manis."
     ]
   },
   {
     "recipeId": "FL002",
-    "name": "Salad Dada Ayam Panggang",
-    "imageUrl": "https://placeholder.com/salad_ayam_panggang.jpg",
-    "calories": 400,
+    "name": "Salad Quinoa & Ayam",
+    "imageUrl": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1740&auto=format&fit=crop",
+    "calories": 420,
     "protein": "40g",
-    "carbs": "10g",
-    "fat": "22g",
+    "carbs": "30g",
+    "fat": "18g",
     "ingredients": [
-      "150g dada ayam fillet",
-      "100g selada campur (lettuce, romaine)",
+      "150g dada ayam panggang, potong dadu",
+      "100g quinoa, masak",
+      "50g bayam muda",
       "50g tomat ceri, belah dua",
-      "25g timun, iris",
-      "Dressing: 2 sdm minyak zaitun, 1 sdm jus lemon, garam, lada"
+      "Dressing: 2 sdm minyak zaitun, 1 sdm cuka apel, garam, lada"
     ],
     "instructions": [
-      "Bumbui dada ayam dengan garam dan lada, panggang hingga matang.",
-      "Iris dada ayam yang sudah matang.",
-      "Dalam mangkuk, campurkan selada, tomat, dan timun.",
-      "Masukkan irisan ayam ke dalam mangkuk.",
-      "Campur bahan dressing dan tuangkan di atas salad. Aduk rata."
+      "Dalam sebuah mangkuk besar, campurkan quinoa yang sudah dingin, bayam, dan tomat ceri.",
+      "Tambahkan potongan dada ayam panggang.",
+      "Dalam wadah terpisah, campurkan semua bahan dressing dan kocok hingga merata.",
+      "Tuangkan dressing di atas salad, aduk perlahan, dan sajikan."
     ]
   },
   {
     "recipeId": "FL003",
-    "name": "Ikan Dori Kukus Jahe",
-    "imageUrl": "https://placeholder.com/ikan_kukus_jahe.jpg",
-    "calories": 320,
-    "protein": "35g",
-    "carbs": "5g",
-    "fat": "18g",
+    "name": "Salmon Panggang & Asparagus",
+    "imageUrl": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1587&auto=format&fit=crop",
+    "calories": 450,
+    "protein": "45g",
+    "carbs": "8g",
+    "fat": "28g",
     "ingredients": [
-      "150g fillet ikan dori",
-      "2 cm jahe, iris korek api",
-      "1 siung bawang putih, cincang",
-      "1 sdm kecap asin rendah sodium",
-      "Daun bawang secukupnya, iris"
+      "180g fillet ikan salmon",
+      "150g asparagus, buang ujungnya yang keras",
+      "1 sdm minyak zaitun",
+      "1/2 buah lemon, iris",
+      "Garam dan lada hitam secukupnya"
     ],
     "instructions": [
-      "Letakkan fillet ikan di piring tahan panas.",
-      "Taburi dengan jahe, bawang putih, dan daun bawang.",
-      "Siram dengan kecap asin.",
-      "Kukus selama 10-15 menit atau hingga ikan matang.",
-      "Sajikan dengan nasi merah (opsional)."
-    ]
-  },
-  {
-    "recipeId": "FL004",
-    "name": "Tumis Tahu Brokoli Bawang Putih",
-    "imageUrl": "https://placeholder.com/tumis_tahu_brokoli.jpg",
-    "calories": 280,
-    "protein": "20g",
-    "carbs": "15g",
-    "fat": "15g",
-    "ingredients": [
-      "150g tahu putih, potong dadu",
-      "100g brokoli, potong per kuntum",
-      "2 siung bawang putih, cincang",
-      "1 sdm saus tiram",
-      "1 sdt minyak wijen",
-      "Sedikit air"
-    ],
-    "instructions": [
-      "Tumis bawang putih hingga harum.",
-      "Masukkan tahu, masak hingga sedikit kecoklatan.",
-      "Masukkan brokoli dan sedikit air, masak hingga brokoli setengah matang.",
-      "Tambahkan saus tiram dan minyak wijen, aduk rata.",
-      "Masak hingga brokoli matang dan bumbu meresap."
-    ]
-  },
-  {
-    "recipeId": "FL005",
-    "name": "Greek Yogurt dengan Buah Berry",
-    "imageUrl": "https://placeholder.com/greek_yogurt_berry.jpg",
-    "calories": 250,
-    "protein": "22g",
-    "carbs": "30g",
-    "fat": "5g",
-    "ingredients": [
-      "200g Greek yogurt plain",
-      "50g campuran buah berry (strawberry, blueberry)",
-      "1 sdt madu (opsional)"
-    ],
-    "instructions": [
-      "Tuang Greek yogurt ke dalam mangkuk.",
-      "Tambahkan campuran buah berry di atasnya.",
-      "Jika suka, tambahkan sedikit madu.",
-      "Aduk perlahan dan sajikan dingin."
+      "Panaskan oven hingga 200°C.",
+      "Letakkan salmon dan asparagus di atas loyang yang dilapisi kertas roti.",
+      "Siram dengan minyak zaitun, lalu bumbui dengan garam dan lada.",
+      "Letakkan irisan lemon di atas salmon.",
+      "Panggang selama 12-15 menit, atau hingga salmon matang sesuai selera."
     ]
   },
   {
     "recipeId": "MG001",
-    "name": "Smoothie Protein Coklat Pisang",
-    "imageUrl": "https://placeholder.com/smoothie_protein_coklat.jpg",
+    "name": "Dada Ayam & Nasi Merah",
+    "imageUrl": "https://images.unsplash.com/photo-1598103442345-0c65c958471c?q=80&w=1740&auto=format&fit=crop",
     "calories": 550,
-    "protein": "45g",
-    "carbs": "60g",
+    "protein": "50g",
+    "carbs": "55g",
     "fat": "15g",
     "ingredients": [
-      "1 scoop whey protein rasa coklat",
-      "1 buah pisang beku",
-      "250ml susu full cream",
-      "1 sdm selai kacang",
-      "1 sdm biji chia"
+      "200g dada ayam fillet",
+      "150g nasi merah matang",
+      "100g brokoli kukus",
+      "Bumbu marinasi: bawang putih bubuk, paprika bubuk, garam, lada"
     ],
     "instructions": [
-      "Masukkan semua bahan ke dalam blender.",
-      "Blender dengan kecepatan tinggi hingga halus dan tercampur rata.",
-      "Tuang ke dalam gelas dan sajikan segera."
+      "Lumuri dada ayam dengan bumbu marinasi dan diamkan selama 15 menit.",
+      "Panggang atau tumis dada ayam di wajan anti lengket hingga matang.",
+      "Sajikan dada ayam panggang bersama nasi merah dan brokoli kukus."
     ]
   },
   {
     "recipeId": "MG002",
-    "name": "Dada Ayam & Ubi Panggang",
-    "imageUrl": "https://placeholder.com/ayam_ubi_panggang.jpg",
+    "name": "Burger Daging Sapi & Ubi Panggang",
+    "imageUrl": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=1742&auto=format&fit=crop",
     "calories": 650,
     "protein": "55g",
-    "carbs": "50g",
-    "fat": "25g",
+    "carbs": "45g",
+    "fat": "30g",
     "ingredients": [
-      "200g dada ayam fillet",
-      "200g ubi jalar, potong dadu",
-      "100g asparagus",
-      "1 sdm minyak zaitun",
-      "Bumbu: paprika bubuk, bawang putih bubuk, garam, lada"
+      "180g daging sapi giling tanpa lemak",
+      "1 roti burger gandum utuh",
+      "200g ubi jalar, potong memanjang",
+      "Daun selada dan irisan tomat",
+      "1 sdt minyak zaitun",
+      "Garam dan lada"
     ],
     "instructions": [
-      "Panaskan oven hingga 200°C.",
-      "Campurkan ubi jalar dan asparagus dengan minyak zaitun dan bumbu, lalu sebarkan di loyang.",
-      "Bumbui dada ayam dan letakkan di loyang yang sama.",
-      "Panggang selama 20-25 menit atau hingga ayam dan ubi matang sempurna."
+      "Bentuk daging giling menjadi patty, bumbui dengan garam dan lada.",
+      "Panggang patty hingga matang sesuai selera.",
+      "Sambil menunggu, campurkan potongan ubi dengan minyak zaitun, garam, dan lada. Panggang di oven atau air fryer hingga matang.",
+      "Sajikan patty di dalam roti burger dengan selada dan tomat, ditemani ubi panggang."
     ]
   },
   {
     "recipeId": "MG003",
-    "name": "Steak Daging Sapi & Nasi Merah",
-    "imageUrl": "https://placeholder.com/steak_nasi_merah.jpg",
-    "calories": 700,
-    "protein": "60g",
-    "carbs": "45g",
-    "fat": "30g",
+    "name": "Pasta Gandum dengan Udang",
+    "imageUrl": "https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?q=80&w=1587&auto=format&fit=crop",
+    "calories": 600,
+    "protein": "45g",
+    "carbs": "65g",
+    "fat": "18g",
     "ingredients": [
-      "180g daging sapi sirloin",
-      "150g nasi merah matang",
-      "100g buncis, rebus",
-      "1 siung bawang putih, geprek",
-      "1 sdm mentega",
-      "Garam dan lada hitam"
+      "100g pasta gandum utuh",
+      "150g udang, kupas",
+      "2 siung bawang putih, cincang",
+      "50g tomat ceri",
+      "1 sdm minyak zaitun",
+      "Daun peterseli (parsley), cincang"
     ],
     "instructions": [
-      "Bumbui steak dengan garam dan lada hitam.",
-      "Panaskan wajan dengan mentega, masukkan bawang putih geprek.",
-      "Masak steak sesuai tingkat kematangan yang diinginkan (misal: 3-4 menit per sisi untuk medium).",
-      "Angkat steak dan istirahatkan selama 5 menit sebelum diiris.",
-      "Sajikan steak dengan nasi merah dan buncis rebus."
-    ]
-  },
-  {
-    "recipeId": "MG004",
-    "name": "Telur Orak-arik & Roti Gandum",
-    "imageUrl": "https://placeholder.com/telur_orak_arik_roti.jpg",
-    "calories": 500,
-    "protein": "30g",
-    "carbs": "40g",
-    "fat": "25g",
-    "ingredients": [
-      "3 butir telur ayam",
-      "50ml susu",
-      "2 lembar roti gandum utuh",
-      "1 sdm mentega",
-      "Garam dan lada secukupnya",
-      "50g alpukat, iris (opsional)"
-    ],
-    "instructions": [
-      "Kocok lepas telur, susu, garam, dan lada.",
-      "Panggang roti gandum hingga kecoklatan.",
-      "Lelehkan mentega di wajan, tuang campuran telur.",
-      "Masak sambil diaduk (orak-arik) hingga matang.",
-      "Sajikan telur orak-arik di atas roti panggang, tambahkan irisan alpukat jika suka."
+      "Rebus pasta sesuai petunjuk kemasan.",
+      "Panaskan minyak zaitun di wajan, tumis bawang putih hingga harum.",
+      "Masukkan udang dan masak hingga berubah warna.",
+      "Masukkan tomat ceri dan pasta yang sudah matang ke dalam wajan.",
+      "Aduk rata, bumbui dengan garam dan lada. Taburi dengan peterseli sebelum disajikan."
     ]
   }
 ]

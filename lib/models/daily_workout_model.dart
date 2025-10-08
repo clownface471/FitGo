@@ -1,10 +1,12 @@
 class DailyExercise {
   final String exerciseId;
+  final String exerciseName; // Tambahkan field ini
   final int sets;
   final String reps;
 
   DailyExercise({
     required this.exerciseId,
+    required this.exerciseName, // Tambahkan di constructor
     required this.sets,
     required this.reps,
   });
@@ -12,6 +14,7 @@ class DailyExercise {
   factory DailyExercise.fromMap(Map<String, dynamic> map) {
     return DailyExercise(
       exerciseId: map['exerciseId'] ?? '',
+      exerciseName: map['exerciseName'] ?? '', // Tambahkan parsing
       sets: map['sets'] ?? 0,
       reps: map['reps'] ?? '0',
     );

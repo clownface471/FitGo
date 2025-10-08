@@ -1,41 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../models/motivation_model.dart';
-import '../../utils/firestore_service.dart';
+import '../../providers/providers.dart';
 
-class MotivationScreen extends StatefulWidget {
+class MotivationScreen extends ConsumerWidget {
   const MotivationScreen({super.key});
 
   @override
-  State<MotivationScreen> createState() => _MotivationScreenState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final motivationsFuture = ref.watch(motivationsProvider);
 
-class _MotivationScreenState extends State<MotivationScreen> {
-  late Future<List<Motivation>> _motivationsFuture;
-
-  @override
-  void initState() {
-    super.initState();
-    _motivationsFuture = FirestoreService().getMotivations();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Motivasi"),
       ),
-      body: FutureBuilder<List<Motivation>>(
-        future: _motivationsFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          if (!snapshot.hasData || snapshot.data!.isEmpty) {
+      body: motivationsFuture.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (err, stack) => const Center(child: Text("Konten motivasi belum tersedia.")),
+        data: (motivations) {
+          if (motivations.isEmpty) {
             return const Center(child: Text("Konten motivasi belum tersedia."));
           }
-
-          final motivations = snapshot.data!;
-
           return ListView.builder(
             padding: const EdgeInsets.all(16),
             itemCount: motivations.length,
@@ -105,6 +90,7 @@ class _QuoteCard extends StatelessWidget {
               radius: 30,
               backgroundColor: Colors.grey[800],
               backgroundImage: NetworkImage(item.imageUrl),
+              onBackgroundImageError: (e, s) => const Icon(Icons.person),
             ),
             const SizedBox(width: 16),
             Expanded(

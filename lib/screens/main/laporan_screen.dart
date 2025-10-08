@@ -1,56 +1,31 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:fl_chart/fl_chart.dart';
 import '../../models/workout_history_model.dart';
-import '../../utils/firestore_service.dart';
+import '../../providers/providers.dart';
 import '../../utils/theme.dart';
 import '../history/history_detail_screen.dart';
 
-class LaporanScreen extends StatefulWidget {
+class LaporanScreen extends ConsumerWidget {
   const LaporanScreen({super.key});
 
   @override
-  State<LaporanScreen> createState() => _LaporanScreenState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final historyFuture = ref.watch(workoutHistoryProvider);
 
-class _LaporanScreenState extends State<LaporanScreen> {
-  late Future<List<WorkoutHistory>> _historyFuture;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadHistory();
-  }
-
-  void _loadHistory() {
-    final user = FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      setState(() {
-        _historyFuture = FirestoreService().getWorkoutHistory(user.uid);
-      });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Laporan & Riwayat'),
         centerTitle: true,
       ),
       body: RefreshIndicator(
-        onRefresh: () async => _loadHistory(),
-        child: FutureBuilder<List<WorkoutHistory>>(
-          future: _historyFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            if (snapshot.hasError) {
-              return const Center(child: Text("Gagal memuat riwayat."));
-            }
-            if (!snapshot.hasData || snapshot.data!.isEmpty) {
+        onRefresh: () async => ref.invalidate(workoutHistoryProvider),
+        child: historyFuture.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (err, stack) => const Center(child: Text("Gagal memuat riwayat.")),
+          data: (historyList) {
+            if (historyList.isEmpty) {
               return const Center(
                 child: Text(
                   "Anda belum menyelesaikan latihan apapun.\nSelesaikan satu sesi untuk melihatnya di sini.",
@@ -58,8 +33,6 @@ class _LaporanScreenState extends State<LaporanScreen> {
                 ),
               );
             }
-
-            final historyList = snapshot.data!;
 
             return ListView(
               children: [

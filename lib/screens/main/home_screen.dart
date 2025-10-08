@@ -1,108 +1,66 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../models/daily_progress_model.dart';
 import '../../models/exercise_model.dart';
 import '../../models/user_model.dart';
-import '../../utils/custom_page_route.dart';
 import '../../models/workout_plan_model.dart';
-import '../../utils/calorie_calculator.dart'; 
-import 'package:flutter/services.dart';
-import '../../utils/firestore_service.dart';
+import '../../providers/providers.dart';
+import '../../utils/calorie_calculator.dart';
+import '../../utils/custom_page_route.dart';
 import '../workout/exercise_player_screen.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  late Future<Map<String, dynamic>> _dataFuture;
 
   @override
-  void initState() {
-    super.initState();
-    _loadAllData();
-  }
+  Widget build(BuildContext context, WidgetRef ref) {
+    final dataFuture = ref.watch(homeScreenDataProvider);
 
-  void _loadAllData() {
-    setState(() {
-      _dataFuture = _fetchData();
-    });
-  }
-
-  Future<Map<String, dynamic>> _fetchData() async {
-    final user = FirebaseAuth.instance.currentUser;
-    if (user == null) throw Exception("Pengguna tidak login");
-
-    final firestoreService = FirestoreService();
-    
-    final results = await Future.wait([
-      firestoreService.getUserData(user.uid),
-      firestoreService.getExercises(),
-      firestoreService.getDailyProgress(user.uid),
-    ]);
-    
-    final userData = results[0] as UserModel?;
-    if (userData == null || userData.goal == null || userData.level == null) {
-      throw Exception("Data onboarding pengguna tidak lengkap.");
-    }
-
-    final recommendedPlan = await firestoreService.getRecommendedPlan(userData.goal!, userData.level!);
-    
-    return {
-      'user': userData,
-      'plan': recommendedPlan,
-      'exercises': results[1] as List<Exercise>,
-      'progress': results[2] as DailyProgress, 
-    };
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: FutureBuilder<Map<String, dynamic>>(
-          future: _dataFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done && snapshot.hasData) {
-              final UserModel user = snapshot.data!['user'];
-              final String name = user.email.split('@')[0];
-              return Text('Hai, $name!');
-            }
-            return const Text('Memuat...');
+        title: dataFuture.when(
+          data: (data) {
+            final UserModel user = data['user'];
+            final String name = user.email.split('@')[0];
+            return Text('Hai, $name!');
           },
+          loading: () => const Text('Memuat...'),
+          error: (_, __) => const Text('Selamat Datang!'),
         ),
         actions: const [],
       ),
       body: RefreshIndicator(
-        onRefresh: () async => _loadAllData(),
-        child: FutureBuilder<Map<String, dynamic>>(
-          future: _dataFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            if (snapshot.hasError || !snapshot.hasData) {
-              return Center(child: Text("Gagal memuat data: ${snapshot.error}"));
-            }
-
-            final UserModel user = snapshot.data!['user'];
-            final WorkoutPlan? plan = snapshot.data!['plan'];
-            final List<Exercise> allExercises = snapshot.data!['exercises'];
-            final DailyProgress progress = snapshot.data!['progress'];
-
-            return _buildDashboard(context, user, plan, allExercises, progress);
+        onRefresh: () async {
+          ref.invalidate(homeScreenDataProvider);
+        },
+        child: dataFuture.when(
+          data: (data) {
+            final UserModel user = data['user'];
+            final WorkoutPlan? plan = data['plan'];
+            final List<Exercise> allExercises = data['exercises'];
+            final DailyProgress progress = data['progress'];
+            return _buildDashboard(context, ref, user, plan, allExercises, progress);
           },
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (err, stack) => Center(child: Text("Gagal memuat data: $err")),
         ),
       ),
     );
   }
 
-  Widget _buildDashboard(BuildContext context, UserModel user, WorkoutPlan? plan, List<Exercise> allExercises, DailyProgress progress) {
+  Widget _buildDashboard(BuildContext context, WidgetRef ref, UserModel user, WorkoutPlan? plan, List<Exercise> allExercises, DailyProgress progress) {
     final calorieTarget = CalorieCalculator.calculateBMR(user);
 
+    int dayOfProgram = 1;
+    if (user.planStartDate != null) {
+      final today = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+      final startDate = DateTime(user.planStartDate!.year, user.planStartDate!.month, user.planStartDate!.day);
+      dayOfProgram = today.difference(startDate).inDays + 1;
+    }
+
     return SingleChildScrollView(
+      physics: const AlwaysScrollableScrollPhysics(),
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,16 +70,16 @@ class _HomeScreenState extends State<HomeScreen> {
             calorieTarget: calorieTarget,
           ),
           const SizedBox(height: 24),
-          
           Text("Program Anda", style: Theme.of(context).textTheme.headlineMedium),
           const SizedBox(height: 16),
-          
           if (plan != null)
             _RecommendedPlanCard(
               plan: plan,
               allExercises: allExercises,
-              currentDay: user.currentDay,
-              onWorkoutCompleted: _loadAllData,
+              dayOfProgram: dayOfProgram,
+              onWorkoutCompleted: () {
+                 ref.invalidate(homeScreenDataProvider);
+              },
             )
           else
             const Card(
@@ -140,23 +98,20 @@ class _HomeScreenState extends State<HomeScreen> {
 class _RecommendedPlanCard extends StatelessWidget {
   final WorkoutPlan plan;
   final List<Exercise> allExercises;
-  final int currentDay;
+  final int dayOfProgram;
   final VoidCallback onWorkoutCompleted;
 
   const _RecommendedPlanCard({
     required this.plan,
     required this.allExercises,
-    required this.currentDay,
+    required this.dayOfProgram,
     required this.onWorkoutCompleted,
   });
 
   @override
   Widget build(BuildContext context) {
-    final dayToShow = (currentDay - 1) % plan.durationDays + 1;
-    final todayWorkout = plan.workouts.firstWhere(
-      (w) => w.day == dayToShow,
-      orElse: () => plan.workouts.first,
-    );
+    final dayInCycle = (dayOfProgram - 1) % plan.workouts.length;
+    final todayWorkout = plan.workouts[dayInCycle];
 
     return Card(
       child: Padding(
@@ -166,7 +121,7 @@ class _RecommendedPlanCard extends StatelessWidget {
           children: [
             Text(plan.planName, style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 8),
-            Text("Hari ke-$dayToShow: ${todayWorkout.workoutName}", style: Theme.of(context).textTheme.titleMedium),
+            Text("Hari ke-$dayOfProgram: ${todayWorkout.workoutName}", style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 4),
             Text("${todayWorkout.exercises.length} gerakan", style: Theme.of(context).textTheme.bodyMedium),
             const SizedBox(height: 16),
@@ -180,12 +135,11 @@ class _RecommendedPlanCard extends StatelessWidget {
                     allExercises: allExercises,
                     planName: plan.planName,
                     workoutName: todayWorkout.workoutName,
-                    currentDay: dayToShow,
+                    currentDay: dayOfProgram,
                   ),
                 ));
 
                 if (result == true) {
-                  debugPrint("Workout completed! Refreshing home screen...");
                   onWorkoutCompleted();
                 }
               },

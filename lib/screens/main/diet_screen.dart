@@ -1,89 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../models/daily_progress_model.dart';
 import '../../models/user_model.dart';
 import '../../models/diet_plan_model.dart';
 import '../../models/recipe_model.dart';
-import '../../utils/firestore_service.dart';
+import '../../providers/providers.dart';
 import '../diet/recipe_detail_screen.dart';
 
-class DietScreen extends StatefulWidget {
+class DietScreen extends ConsumerWidget {
   const DietScreen({super.key});
 
   @override
-  State<DietScreen> createState() => _DietScreenState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final dataFuture = ref.watch(dietScreenDataProvider);
 
-class _DietScreenState extends State<DietScreen> {
-  late Future<Map<String, dynamic>> _dataFuture;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadData();
-  }
-
-  void _loadData() {
-    setState(() {
-      _dataFuture = _fetchData();
-    });
-  }
-
-  Future<Map<String, dynamic>> _fetchData() async {
-    final user = FirebaseAuth.instance.currentUser!;
-    final firestore = FirestoreService();
-
-    final results = await Future.wait([
-      firestore.getUserData(user.uid),
-      firestore.getAllRecipes(),
-      firestore.getDailyProgress(user.uid),
-    ]);
-
-    final userData = results[0] as UserModel?;
-    if (userData == null || userData.goal == null) {
-      throw Exception("Data user tidak lengkap");
-    }
-
-    final dietPlan = await firestore.getRecommendedDietPlan(userData.goal!);
-
-    return {
-      'user': userData,
-      'plan': dietPlan,
-      'recipes': results[1] as List<Recipe>,
-      'progress': results[2] as DailyProgress,
-    };
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar:
           AppBar(title: const Text("Rencana Makan Harian"), centerTitle: true),
       body: RefreshIndicator(
-        onRefresh: () async => _loadData(),
-        child: FutureBuilder<Map<String, dynamic>>(
-          future: _dataFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            if (snapshot.hasError || !snapshot.hasData) {
-              return Center(
-                  child: Text("Gagal memuat data: ${snapshot.error}"));
-            }
-
-            final UserModel user = snapshot.data!['user'];
-            final DietPlan? plan = snapshot.data!['plan'];
-            final List<Recipe> recipes = snapshot.data!['recipes'];
-            final DailyProgress progress = snapshot.data!['progress'];
+        onRefresh: () async => ref.invalidate(dietScreenDataProvider),
+        child: dataFuture.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (err, stack) => Center(child: Text("Gagal memuat data: $err")),
+          data: (data) {
+            final UserModel user = data['user'];
+            final DietPlan? plan = data['plan'];
+            final List<Recipe> recipes = data['recipes'];
+            final DailyProgress progress = data['progress'];
 
             if (plan == null) {
               return const Center(
                   child: Text("Tidak ada rencana diet yang cocok."));
             }
+            
+            int dayToShow = 1;
+            if (user.planStartDate != null) {
+              final today = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+              final startDate = DateTime(user.planStartDate!.year, user.planStartDate!.month, user.planStartDate!.day);
+              dayToShow = today.difference(startDate).inDays + 1;
+            }
 
-            final dayToShow = (user.currentDay - 1) % plan.dailyMeals.length;
-            final todayMealPlan = plan.dailyMeals[dayToShow];
+            final dayInCycle = (dayToShow - 1) % plan.dailyMeals.length;
+            final todayMealPlan = plan.dailyMeals[dayInCycle];
 
             final breakfastRecipe = recipes.firstWhere(
                 (r) => r.id == todayMealPlan.breakfast.recipeId,
@@ -102,21 +61,21 @@ class _DietScreenState extends State<DietScreen> {
                   mealType: "Sarapan",
                   recipe: breakfastRecipe,
                   isCompleted: progress.breakfastCompleted,
-                  onCompleted: () => _logMeal('breakfast', breakfastRecipe),
+                  onCompleted: () => _logMeal(ref, 'breakfast', breakfastRecipe),
                 ),
                 const SizedBox(height: 16),
                 _MealCard(
                   mealType: "Makan Siang",
                   recipe: lunchRecipe,
                   isCompleted: progress.lunchCompleted,
-                  onCompleted: () => _logMeal('lunch', lunchRecipe),
+                  onCompleted: () => _logMeal(ref, 'lunch', lunchRecipe),
                 ),
                 const SizedBox(height: 16),
                 _MealCard(
                   mealType: "Makan Malam",
                   recipe: dinnerRecipe,
                   isCompleted: progress.dinnerCompleted,
-                  onCompleted: () => _logMeal('dinner', dinnerRecipe),
+                  onCompleted: () => _logMeal(ref, 'dinner', dinnerRecipe),
                 ),
               ],
             );
@@ -126,23 +85,25 @@ class _DietScreenState extends State<DietScreen> {
     );
   }
 
-  void _logMeal(String mealType, Recipe recipe) async {
-    final user = FirebaseAuth.instance.currentUser!;
+  void _logMeal(WidgetRef ref, String mealType, Recipe recipe) async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
 
     final protein = int.tryParse(recipe.protein.replaceAll('g', '')) ?? 0;
     final carbs = int.tryParse(recipe.carbs.replaceAll('g', '')) ?? 0;
     final fat = int.tryParse(recipe.fat.replaceAll('g', '')) ?? 0;
 
-    await FirestoreService().logMeal(
-      uid: user.uid,
-      mealType: mealType,
-      calories: recipe.calories,
-      protein: protein,
-      carbs: carbs,
-      fat: fat,
-    );
-
-    _loadData();
+    await ref.read(firestoreServiceProvider).logMeal(
+          uid: user.uid,
+          mealType: mealType,
+          calories: recipe.calories,
+          protein: protein,
+          carbs: carbs,
+          fat: fat,
+        );
+    
+    ref.invalidate(dietScreenDataProvider);
+    ref.invalidate(homeScreenDataProvider);
   }
 
   Recipe _fallbackRecipe() {
@@ -176,11 +137,13 @@ class _MealCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => RecipeDetailScreen(recipe: recipe),
-            ));
+        if (recipe.id.isNotEmpty) {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => RecipeDetailScreen(recipe: recipe),
+              ));
+        }
       },
       child: Card(
         clipBehavior: Clip.antiAlias,
@@ -191,12 +154,14 @@ class _MealCard extends StatelessWidget {
               height: 180,
               width: double.infinity,
               color: Colors.grey[800],
-              child: Image.network(
-                recipe.imageUrl.replaceFirst('http://', 'https://'),
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stack) =>
-                    const Icon(Icons.restaurant, size: 50),
-              ),
+              child: recipe.imageUrl.isNotEmpty
+                  ? Image.network(
+                      recipe.imageUrl.replaceFirst('http://', 'https://'),
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stack) =>
+                          const Icon(Icons.restaurant, size: 50),
+                    )
+                  : const Icon(Icons.restaurant, size: 50),
             ),
             Padding(
               padding: const EdgeInsets.all(16),
@@ -206,11 +171,10 @@ class _MealCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(mealType,
-                          style: Theme.of(context).textTheme.titleMedium),
+                      Text(mealType, style: Theme.of(context).textTheme.titleMedium),
                       Checkbox(
                         value: isCompleted,
-                        onChanged: isCompleted
+                        onChanged: isCompleted || recipe.id.isEmpty
                             ? null
                             : (bool? value) {
                                 if (value == true) {
@@ -221,11 +185,10 @@ class _MealCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Text(recipe.name,
-                      style: Theme.of(context).textTheme.headlineSmall),
+                  Text(recipe.name, style: Theme.of(context).textTheme.headlineSmall),
                   const SizedBox(height: 8),
-                  Text(
-                      "${recipe.calories} Kcal ・ P: ${recipe.protein}, C: ${recipe.carbs}, F: ${recipe.fat}"),
+                  if (recipe.id.isNotEmpty)
+                    Text("${recipe.calories} Kcal ・ P: ${recipe.protein}, C: ${recipe.carbs}, F: ${recipe.fat}"),
                 ],
               ),
             ),

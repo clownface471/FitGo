@@ -1,104 +1,95 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../models/user_model.dart';
-import '../../utils/auth_service.dart';
-import '../../utils/firestore_service.dart';
+import '../../models/user_progress_model.dart';
+import '../../providers/providers.dart';
 import '../../utils/theme.dart';
-import '../profile/edit_profile_screen.dart'; 
+import '../profile/edit_profile_screen.dart';
 
-class ProfilScreen extends StatefulWidget {
+class ProfilScreen extends ConsumerWidget {
   const ProfilScreen({super.key});
 
   @override
-  State<ProfilScreen> createState() => _ProfilScreenState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final userData = ref.watch(userProvider);
+    final authService = ref.read(authServiceProvider);
 
-class _ProfilScreenState extends State<ProfilScreen> {
-  late Future<UserModel?> _userData;
-  final _authService = AuthService();
-
-  @override
-  void initState() {
-    super.initState();
-    _loadProfileData();
-  }
-
-  void _loadProfileData() {
-    final user = FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      setState(() {
-        _userData = FirestoreService().getUserData(user.uid);
-      });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profil'),
         centerTitle: true,
         actions: [
-          FutureBuilder<UserModel?>(
-            future: _userData,
-            builder: (context, snapshot) {
-              if (snapshot.hasData && snapshot.data != null) {
+          userData.when(
+            data: (user) {
+              if (user != null) {
                 return IconButton(
                   icon: const Icon(Icons.edit),
                   onPressed: () async {
                     final result = await Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => EditProfileScreen(user: snapshot.data!),
+                        builder: (context) => EditProfileScreen(user: user),
                       ),
                     );
                     if (result == true) {
-                      _loadProfileData();
+                      ref.invalidate(userProvider);
                     }
                   },
                 );
               }
               return const SizedBox.shrink();
             },
+            loading: () => const SizedBox.shrink(),
+            error: (_, __) => const SizedBox.shrink(),
           )
         ],
       ),
       body: RefreshIndicator(
-        onRefresh: () async => _loadProfileData(),
-        child: FutureBuilder<UserModel?>(
-          future: _userData,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            if (!snapshot.hasData || snapshot.data == null) {
+        onRefresh: () async => ref.invalidate(userProvider),
+        child: userData.when(
+          data: (user) {
+            if (user == null) {
               return const Center(child: Text("Gagal memuat data profil."));
             }
-
-            final user = snapshot.data!;
-
             return SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildProfileHeader(user),
+                  _buildProfileHeader(context, user),
                   const SizedBox(height: 24),
-                  _buildSectionTitle("Informasi Akun"),
-                  _InfoCard(children: [_InfoTile(label: "Email", value: user.email)]),
+                  _buildSectionTitle(context, "Progres & Pencapaian"),
+                  _buildGamificationCard(context, user.progress),
                   const SizedBox(height: 24),
-                  _buildSectionTitle("Preferensi Latihan"),
+                  _buildSectionTitle(context, "Informasi Akun"),
+                  _InfoCard(
+                      children: [_InfoTile(label: "Email", value: user.email)]),
+                  const SizedBox(height: 24),
+                  _buildSectionTitle(context, "Preferensi Latihan"),
                   _InfoCard(children: [
-                    _InfoTile(label: "Tujuan Utama", value: user.goal?.replaceAll('_', ' ').toUpperCase() ?? '-'),
-                    _InfoTile(label: "Tingkat Kebugaran", value: user.level?.toUpperCase() ?? '-'),
+                    _InfoTile(
+                        label: "Tujuan Utama",
+                        value: user.goal?.replaceAll('_', ' ').toUpperCase() ??
+                            '-'),
+                    _InfoTile(
+                        label: "Tingkat Kebugaran",
+                        value: user.level?.toUpperCase() ?? '-'),
                   ]),
                   const SizedBox(height: 24),
-                  _buildSectionTitle("Data Metrik"),
+                  _buildSectionTitle(context, "Data Metrik"),
                   _InfoCard(children: [
-                    _InfoTile(label: "Jenis Kelamin", value: user.gender?.toUpperCase() ?? '-'),
-                    _InfoTile(label: "Umur", value: "${user.age ?? '-'} tahun"),
-                    _InfoTile(label: "Tinggi Badan", value: "${user.height ?? '-'} cm"),
-                    _InfoTile(label: "Berat Badan", value: "${user.weight ?? '-'} kg"),
+                    _InfoTile(
+                        label: "Jenis Kelamin",
+                        value: user.gender?.toUpperCase() ?? '-'),
+                    _InfoTile(
+                        label: "Umur", value: "${user.age ?? '-'} tahun"),
+                    _InfoTile(
+                        label: "Tinggi Badan",
+                        value: "${user.height ?? '-'} cm"),
+                    _InfoTile(
+                        label: "Berat Badan",
+                        value: "${user.weight ?? '-'} kg"),
                   ]),
                   const SizedBox(height: 40),
                   ElevatedButton(
@@ -107,19 +98,22 @@ class _ProfilScreenState extends State<ProfilScreen> {
                       foregroundColor: Colors.white,
                       minimumSize: const Size(double.infinity, 50),
                     ),
-                    onPressed: () => _authService.signOut(),
+                    onPressed: () => authService.signOut(),
                     child: const Text('Logout'),
                   ),
                 ],
               ),
             );
           },
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (err, stack) =>
+              Center(child: Text("Error: ${err.toString()}")),
         ),
       ),
     );
   }
 
-  Widget _buildProfileHeader(UserModel user) {
+  Widget _buildProfileHeader(BuildContext context, UserModel user) {
     return Center(
       child: Column(
         children: [
@@ -138,13 +132,71 @@ class _ProfilScreenState extends State<ProfilScreen> {
     );
   }
 
-  Widget _buildSectionTitle(String title) {
+  Widget _buildGamificationCard(BuildContext context, UserProgress progress) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _StatColumn(
+              icon: Icons.local_fire_department,
+              value: progress.currentStreak.toString(),
+              label: "Hari Beruntun",
+              color: Colors.orange,
+            ),
+            _StatColumn(
+              icon: Icons.star,
+              value: progress.longestStreak.toString(),
+              label: "Rekor Beruntun",
+              color: Colors.amber,
+            ),
+            _StatColumn(
+              icon: Icons.fitness_center,
+              value: progress.totalWorkouts.toString(),
+              label: "Total Latihan",
+              color: primaryColor,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSectionTitle(BuildContext context, String title) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Text(
         title,
         style: Theme.of(context).textTheme.titleLarge,
       ),
+    );
+  }
+}
+
+class _StatColumn extends StatelessWidget {
+  final IconData icon;
+  final String value;
+  final String label;
+  final Color color;
+
+  const _StatColumn({
+    required this.icon,
+    required this.value,
+    required this.label,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Icon(icon, color: color, size: 28),
+        const SizedBox(height: 8),
+        Text(value, style: Theme.of(context).textTheme.headlineSmall),
+        const SizedBox(height: 4),
+        Text(label, style: Theme.of(context).textTheme.bodyMedium),
+      ],
     );
   }
 }
@@ -180,7 +232,10 @@ class _InfoTile extends StatelessWidget {
           Text(label, style: Theme.of(context).textTheme.bodyMedium),
           Text(
             value,
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(fontWeight: FontWeight.bold),
           ),
         ],
       ),

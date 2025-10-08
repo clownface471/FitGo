@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/workout_history_model.dart';
+import '../../utils/theme.dart';
 
 class HistoryDetailScreen extends StatelessWidget {
   final WorkoutHistory history;
@@ -30,14 +31,38 @@ class HistoryDetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   ...performedExercise.sets.map((set) {
-                    return ListTile(
-                      dense: true,
-                      contentPadding: EdgeInsets.zero,
-                      leading: CircleAvatar(
-                        radius: 14,
-                        child: Text('${set.setNumber}'),
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: Column(
+                        children: [
+                          ListTile(
+                            dense: true,
+                            contentPadding: EdgeInsets.zero,
+                            leading: CircleAvatar(
+                              radius: 14,
+                              child: Text('${set.setNumber}'),
+                            ),
+                            title: Text("${set.weight} kg × ${set.reps} reps"),
+                          ),
+                          if (set.notes != null && set.notes!.isNotEmpty)
+                            Container(
+                              width: double.infinity,
+                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                              margin: const EdgeInsets.only(left: 40, top: 4, right: 16),
+                              decoration: BoxDecoration(
+                                color: darkBackgroundColor,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Text(
+                                '“${set.notes}”',
+                                style: TextStyle(
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.grey[400],
+                                ),
+                              ),
+                            ),
+                        ],
                       ),
-                      title: Text("${set.weight} kg × ${set.reps} reps"),
                     );
                   }),
                 ],
