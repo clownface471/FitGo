@@ -9,6 +9,7 @@ import '../../providers/providers.dart';
 import '../../utils/calorie_calculator.dart';
 import '../../utils/custom_page_route.dart';
 import '../workout/exercise_player_screen.dart';
+import '../home/motivation_screen.dart'; 
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -28,7 +29,17 @@ class HomeScreen extends ConsumerWidget {
           loading: () => const Text('Memuat...'),
           error: (_, __) => const Text('Selamat Datang!'),
         ),
-        actions: const [],
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.format_quote),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MotivationScreen()),
+              );
+            },
+          ),
+        ],
       ),
       body: RefreshIndicator(
         onRefresh: () async {

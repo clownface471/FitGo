@@ -1,15 +1,17 @@
 // ignore_for_file: avoid_print
 
+import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/services.dart';
 import '../models/daily_progress_model.dart';
 import '../models/diet_plan_model.dart';
 import '../models/exercise_model.dart';
-import '../models/motivation_model.dart';
 import '../models/recipe_model.dart';
 import '../models/user_model.dart';
 import '../models/user_progress_model.dart';
 import '../models/workout_history_model.dart';
 import '../models/workout_plan_model.dart';
+import '../models/motivation_model.dart';
 
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -24,6 +26,18 @@ class FirestoreService {
     } catch (e) {
       print("Error getting user data: $e");
       return null;
+    }
+  }
+
+  Future<List<Motivation>> getMotivations() async {
+    try {
+      final String response = await rootBundle.loadString('assets/data/motivations.json');
+      final data = await json.decode(response) as List;
+      // Gunakan fromJson karena model kita sudah disesuaikan untuk itu
+      return data.map((e) => Motivation.fromJson(e)).toList();
+    } catch (e) {
+      print("Error loading local motivations: $e");
+      return [];
     }
   }
 
@@ -103,17 +117,14 @@ class FirestoreService {
     }
     return false;
   }
-
-  Future<List<Exercise>> getExercises() async {
+  
+  Future<List<Exercise>> getLocalExercises() async {
     try {
-      QuerySnapshot snapshot = await _db.collection('exercises').get();
-      final exercises = snapshot.docs.map((doc) {
-        return Exercise.fromFirestore(
-            doc.data() as Map<String, dynamic>, doc.id);
-      }).toList();
-      return exercises;
+      final String response = await rootBundle.loadString('assets/data/exercises.json');
+      final data = await json.decode(response) as List;
+      return data.map((e) => Exercise.fromJson(e)).toList();
     } catch (e) {
-      print("Error fetching exercises: $e");
+      print("Error loading local exercises: $e");
       return [];
     }
   }
@@ -204,16 +215,6 @@ class FirestoreService {
       return snapshot.docs.map((doc) => Recipe.fromFirestore(doc)).toList();
     } catch (e) {
       print("Error getting all recipes: $e");
-      return [];
-    }
-  }
-
-  Future<List<Motivation>> getMotivations() async {
-    try {
-      final snapshot = await _db.collection('motivations').get();
-      return snapshot.docs.map((doc) => Motivation.fromFirestore(doc)).toList();
-    } catch (e) {
-      print("Error getting motivations: $e");
       return [];
     }
   }

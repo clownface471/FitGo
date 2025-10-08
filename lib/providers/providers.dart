@@ -11,18 +11,16 @@ import '../models/workout_plan_model.dart';
 import '../utils/auth_service.dart';
 import '../utils/firestore_service.dart';
 
-final authServiceProvider = Provider<AuthService>((ref) {
-  return AuthService();
-});
+// Service Providers
+final authServiceProvider = Provider<AuthService>((ref) => AuthService());
+final firestoreServiceProvider = Provider<FirestoreService>((ref) => FirestoreService());
 
-final firestoreServiceProvider = Provider<FirestoreService>((ref) {
-  return FirestoreService();
-});
-
+// Auth State Provider
 final authStateChangesProvider = StreamProvider<User?>((ref) {
   return ref.watch(authServiceProvider).authStateChanges;
 });
 
+// User Data Provider
 final userProvider = FutureProvider<UserModel?>((ref) async {
   final user = ref.watch(authStateChangesProvider).asData?.value;
   if (user != null) {
@@ -31,10 +29,17 @@ final userProvider = FutureProvider<UserModel?>((ref) async {
   return null;
 });
 
+// Local Data Provider for Exercises
 final exercisesProvider = FutureProvider<List<Exercise>>((ref) {
-  return ref.watch(firestoreServiceProvider).getExercises();
+  return ref.watch(firestoreServiceProvider).getLocalExercises();
 });
 
+// Local Data Provider for Motivations
+final motivationsProvider = FutureProvider<List<Motivation>>((ref) {
+    return ref.watch(firestoreServiceProvider).getMotivations();
+});
+
+// Firestore-based Providers
 final dailyProgressProvider = FutureProvider<DailyProgress>((ref) async {
   final user = await ref.watch(userProvider.future);
   if (user != null) {
@@ -73,10 +78,7 @@ final workoutHistoryProvider = FutureProvider<List<WorkoutHistory>>((ref) async 
   return [];
 });
 
-final motivationsProvider = FutureProvider<List<Motivation>>((ref) {
-  return ref.watch(firestoreServiceProvider).getMotivations();
-});
-
+// Combined Providers for Screens
 final homeScreenDataProvider = FutureProvider<Map<String, dynamic>>((ref) async {
   final user = await ref.watch(userProvider.future);
   final plan = await ref.watch(recommendedPlanProvider.future);

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../models/daily_workout_model.dart';
 import '../../models/exercise_model.dart';
-import 'exercise_player_screen.dart';
+import 'exercise_detail_screen.dart'; // Import layar detail yang baru
 
 class WorkoutDetailScreen extends StatelessWidget {
   final String title;
@@ -39,15 +38,9 @@ class WorkoutDetailScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ExercisePlayerScreen(
-                            dailyExercises: [
-                              DailyExercise(exerciseId: exercise.id, exerciseName: exercise.name, sets: 3, reps: '10-12')
-                            ],
-                            allExercises: exercises,
-                            planName: "Latihan Bebas",
-                            workoutName: exercise.name,
-                            currentDay: 1,
-                          ),
+                          // Arahkan ke layar detail, bukan player
+                          builder: (context) =>
+                              ExerciseDetailScreen(exercise: exercise),
                         ),
                       );
                     },
@@ -70,8 +63,6 @@ class _ExerciseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final secureGifUrl = exercise.gifUrl.replaceFirst('http://', 'https://');
-
     return Card(
       clipBehavior: Clip.antiAlias,
       child: Column(
@@ -80,15 +71,12 @@ class _ExerciseCard extends StatelessWidget {
           Expanded(
             child: Container(
               color: Colors.white,
-              child: Image.network(
-                secureGifUrl,
+              child: Image.asset(
+                exercise.imagePath,
                 fit: BoxFit.contain,
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return const Center(child: CircularProgressIndicator());
-                },
                 errorBuilder: (context, error, stackTrace) {
-                  return const Icon(Icons.fitness_center, color: Colors.grey, size: 50);
+                  return const Icon(Icons.fitness_center,
+                      color: Colors.grey, size: 50);
                 },
               ),
             ),

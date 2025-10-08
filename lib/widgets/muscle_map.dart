@@ -16,15 +16,22 @@ class MuscleMap extends StatelessWidget {
     this.height = 80,
   });
 
+  bool _isFrontMuscle(String muscle) {
+    const frontMuscles = {'shoulders', 'chest', 'abs', 'obliques', 'adductors', 'quadriceps', 'biceps', 'forearms'};
+    return frontMuscles.contains(muscle);
+  }
+
   @override
   Widget build(BuildContext context) {
+    bool showFront = primaryMuscles.any(_isFrontMuscle) || primaryMuscles.isEmpty;
+
     return SizedBox(
       width: width,
       height: height,
       child: SvgPicture.asset(
-        'assets/images/body_front.svg', 
+        showFront ? 'assets/images/body_front.svg' : 'assets/images/body_back.svg',
         colorFilter: const ColorFilter.mode(darkCardColor, BlendMode.srcIn),
-        semanticsLabel: 'Muscle Map Front',
+        semanticsLabel: 'Muscle Map',
       ),
     );
   }

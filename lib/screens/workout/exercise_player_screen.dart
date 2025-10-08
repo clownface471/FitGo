@@ -246,17 +246,14 @@ class _ExercisePlayerScreenState extends ConsumerState<ExercisePlayerScreen> {
       orElse: () => Exercise(
         id: '',
         name: 'Not Found',
-        description: '',
         bodyPart: '',
         equipment: '',
-        gifUrl: '',
+        imagePath: '', // Path kosong untuk fallback
         primaryMuscles: [],
         secondaryMuscles: [],
         instructions: [],
       ),
     );
-    final secureGifUrl =
-        currentExerciseDetail.gifUrl.replaceFirst('http://', 'https://');
 
     return Scaffold(
       appBar: AppBar(
@@ -275,11 +272,11 @@ class _ExercisePlayerScreenState extends ConsumerState<ExercisePlayerScreen> {
                 borderRadius: BorderRadius.circular(15),
               ),
               clipBehavior: Clip.antiAlias,
-              child: Image.network(
-                secureGifUrl,
+              child: Image.asset(
+                currentExerciseDetail.imagePath,
                 fit: BoxFit.contain,
                 errorBuilder: (c, e, s) =>
-                    const Center(child: Icon(Icons.fitness_center, size: 60)),
+                    const Center(child: Icon(Icons.fitness_center, size: 60, color: Colors.grey)),
               ),
             ),
             const SizedBox(height: 24),
