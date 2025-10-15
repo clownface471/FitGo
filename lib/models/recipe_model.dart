@@ -25,16 +25,20 @@ class Recipe {
 
   factory Recipe.fromFirestore(DocumentSnapshot doc) {
     Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+    return Recipe.fromJson(data, doc.id); // Panggil fromJson
+  }
+
+  factory Recipe.fromJson(Map<String, dynamic> json, [String? docId]) {
     return Recipe(
-      id: doc.id,
-      name: data['name'] ?? '',
-      imageUrl: data['imageUrl'] ?? '',
-      calories: data['calories'] ?? 0,
-      protein: data['protein'] ?? '0g',
-      carbs: data['carbs'] ?? '0g',
-      fat: data['fat'] ?? '0g',
-      ingredients: List<String>.from(data['ingredients'] ?? []),
-      instructions: List<String>.from(data['instructions'] ?? []),
+      id: docId ?? json['recipeId'] ?? '',
+      name: json['name'] ?? 'No Name',
+      imageUrl: json['imageUrl'] ?? '',
+      calories: json['calories'] ?? 0,
+      protein: json['protein'] ?? '0g',
+      carbs: json['carbs'] ?? '0g',
+      fat: json['fat'] ?? '0g',
+      ingredients: List<String>.from(json['ingredients'] ?? []),
+      instructions: List<String>.from(json['instructions'] ?? []),
     );
   }
 }

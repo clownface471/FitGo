@@ -1,136 +1,413 @@
 [
   {
     "recipeId": "FL001",
-    "name": "Overnight Oats Buah Berry",
-    "imageUrl": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?q=80&w=1547&auto=format&fit=crop",
-    "calories": 350,
-    "protein": "15g",
-    "carbs": "55g",
-    "fat": "10g",
+    "name": "Ayam Panggang Lemon & Herba dengan Salad Quinoa",
+    "imageUrl": "https://cdn.scrambledchefs.com/wp-content/uploads/2022/05/Greek-Grilled-Chicken-Salad-29.jpg",
+    "calories": 460,
+    "protein": "42g",
+    "carbs": "35g",
+    "fat": "18g",
     "ingredients": [
-      "5 sdm rolled oats",
-      "150ml susu rendah lemak atau susu almond",
-      "1 sdm biji chia",
-      "50g campuran buah berry (beku atau segar)",
-      "1 sdt madu (opsional)"
+      "150g dada ayam tanpa kulit",
+      "1 sdm minyak zaitun",
+      "1/2 buah lemon, peras airnya",
+      "1 sdt herba kering (thyme, rosemary)",
+      "75g quinoa (berat mentah)",
+      "100g tomat ceri, belah dua",
+      "50g mentimun, potong dadu",
+      "Garam dan lada hitam secukupnya"
     ],
     "instructions": [
-      "Dalam sebuah toples atau mangkuk, campurkan rolled oats, susu, dan biji chia.",
-      "Aduk hingga rata, tutup, dan simpan di kulkas semalaman.",
-      "Keesokan paginya, aduk kembali dan tambahkan buah berry di atasnya.",
-      "Tambahkan madu jika Anda menginginkan rasa yang lebih manis."
+      "1. Bumbui dada ayam dengan minyak zaitun, air lemon, herba kering, garam, dan lada.",
+      "2. Panggang ayam di wajan anti lengket atau panggangan selama 6-8 menit di setiap sisi hingga matang sempurna. Angkat dan sisihkan.",
+      "3. Masak quinoa sesuai petunjuk pada kemasan. Dinginkan sebentar.",
+      "4. Dalam mangkuk besar, campurkan quinoa yang sudah matang dengan tomat ceri dan mentimun.",
+      "5. Iris ayam yang sudah dipanggang, lalu sajikan di atas salad quinoa."
     ]
   },
   {
     "recipeId": "FL002",
-    "name": "Salad Quinoa & Ayam",
-    "imageUrl": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1740&auto=format&fit=crop",
+    "name": "Salmon Panggang dengan Asparagus & Paprika",
+    "imageUrl": "https://img-global.cpcdn.com/recipes/dc8dcfe335fc70a3/400x400cq80/photo.jpg",
     "calories": 420,
-    "protein": "40g",
-    "carbs": "30g",
-    "fat": "18g",
+    "protein": "35g",
+    "carbs": "15g",
+    "fat": "25g",
     "ingredients": [
-      "150g dada ayam panggang, potong dadu",
-      "100g quinoa, masak",
-      "50g bayam muda",
-      "50g tomat ceri, belah dua",
-      "Dressing: 2 sdm minyak zaitun, 1 sdm cuka apel, garam, lada"
+      "150g fillet salmon",
+      "100g asparagus, potong bagian bawahnya yang keras",
+      "75g paprika merah, iris",
+      "1 sdm minyak zaitun",
+      "1 siung bawang putih, cincang halus",
+      "Garam dan lada hitam secukupnya",
+      "Irisan lemon untuk penyajian"
     ],
     "instructions": [
-      "Dalam sebuah mangkuk besar, campurkan quinoa yang sudah dingin, bayam, dan tomat ceri.",
-      "Tambahkan potongan dada ayam panggang.",
-      "Dalam wadah terpisah, campurkan semua bahan dressing dan kocok hingga merata.",
-      "Tuangkan dressing di atas salad, aduk perlahan, dan sajikan."
+      "1. Panaskan oven hingga 200°C.",
+      "2. Letakkan salmon, asparagus, dan paprika di atas loyang yang sudah dilapisi kertas roti.",
+      "3. Campurkan minyak zaitun, bawang putih cincang, garam, dan lada. Siramkan secara merata ke atas salmon dan sayuran.",
+      "4. Panggang selama 12-15 menit, atau sampai salmon matang dan mudah terkelupas dengan garpu.",
+      "5. Sajikan segera dengan irisan lemon segar."
     ]
   },
   {
     "recipeId": "FL003",
-    "name": "Salmon Panggang & Asparagus",
-    "imageUrl": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1587&auto=format&fit=crop",
-    "calories": 450,
-    "protein": "45g",
-    "carbs": "8g",
-    "fat": "28g",
+    "name": "Tumis Tahu Pedas dengan Brokoli & Jamur",
+    "imageUrl": "https://img-global.cpcdn.com/recipes/7a0d49eb4e4b5ea6/1200x630cq80/photo.jpg",
+    "calories": 380,
+    "protein": "25g",
+    "carbs": "30g",
+    "fat": "18g",
     "ingredients": [
-      "180g fillet ikan salmon",
-      "150g asparagus, buang ujungnya yang keras",
-      "1 sdm minyak zaitun",
-      "1/2 buah lemon, iris",
-      "Garam dan lada hitam secukupnya"
+      "200g tahu sutra padat, potong dadu",
+      "150g brokoli, potong per kuntum",
+      "100g jamur champignon, iris",
+      "1 sdm kecap asin rendah sodium",
+      "1 sdt saus sambal (sesuai selera)",
+      "1 sdm minyak wijen",
+      "1 siung bawang putih, cincang",
+      "50g nasi merah matang untuk penyajian"
     ],
     "instructions": [
-      "Panaskan oven hingga 200°C.",
-      "Letakkan salmon dan asparagus di atas loyang yang dilapisi kertas roti.",
-      "Siram dengan minyak zaitun, lalu bumbui dengan garam dan lada.",
-      "Letakkan irisan lemon di atas salmon.",
-      "Panggang selama 12-15 menit, atau hingga salmon matang sesuai selera."
+      "1. Panaskan minyak wijen di wajan dengan api sedang-tinggi.",
+      "2. Tumis bawang putih hingga harum, lalu masukkan potongan tahu. Masak hingga tahu berwarna keemasan di semua sisi.",
+      "3. Masukkan brokoli dan jamur, tumis selama 5-7 menit hingga sayuran sedikit lunak.",
+      "4. Tambahkan kecap asin dan saus sambal, aduk rata dan masak selama 1-2 menit.",
+      "5. Sajikan tumis tahu pedas di atas nasi merah."
+    ]
+  },
+  {
+    "recipeId": "FL004",
+    "name": "Greek Yogurt Bowl Penuh Beri & Kacang Almond",
+    "imageUrl": "https://gratefulgrazer.com/wp-content/uploads/2025/03/yogurt-bowl-serving.jpg",
+    "calories": 350,
+    "protein": "22g",
+    "carbs": "28g",
+    "fat": "15g",
+    "ingredients": [
+      "200g Greek yogurt plain",
+      "50g campuran buah beri (stroberi, blueberry)",
+      "20g kacang almond mentah, cincang kasar",
+      "1 sdt biji chia",
+      "1 sdt madu murni (opsional)"
+    ],
+    "instructions": [
+      "1. Tuang Greek yogurt ke dalam mangkuk.",
+      "2. Taburkan campuran buah beri, kacang almond cincang, dan biji chia di atasnya.",
+      "3. Jika suka lebih manis, tambahkan sedikit madu.",
+      "4. Aduk sedikit atau nikmati langsung. Cocok untuk sarapan atau camilan sehat."
     ]
   },
   {
     "recipeId": "MG001",
-    "name": "Dada Ayam & Nasi Merah",
-    "imageUrl": "https://images.unsplash.com/photo-1598103442345-0c65c958471c?q=80&w=1740&auto=format&fit=crop",
-    "calories": 550,
+    "name": "Power Bowl Daging Sapi & Ubi Jalar Panggang",
+    "imageUrl": "https://eightforestlane.com/wp-content/uploads/2025/03/Hot-Honey-Sweet-Potato-Beef-Bowls_WEB-11.jpg",
+    "calories": 650,
     "protein": "50g",
     "carbs": "55g",
-    "fat": "15g",
+    "fat": "25g",
     "ingredients": [
-      "200g dada ayam fillet",
-      "150g nasi merah matang",
-      "100g brokoli kukus",
-      "Bumbu marinasi: bawang putih bubuk, paprika bubuk, garam, lada"
+      "150g daging sapi giling tanpa lemak (90/10)",
+      "200g ubi jalar, potong dadu",
+      "100g kacang hitam kalengan, bilas",
+      "50g jagung pipil",
+      "1/2 buah alpukat, iris",
+      "1 sdm minyak zaitun",
+      "Bumbu taco (bubuk cabai, jintan, paprika)"
     ],
     "instructions": [
-      "Lumuri dada ayam dengan bumbu marinasi dan diamkan selama 15 menit.",
-      "Panggang atau tumis dada ayam di wajan anti lengket hingga matang.",
-      "Sajikan dada ayam panggang bersama nasi merah dan brokoli kukus."
+      "1. Panaskan oven hingga 200°C. Campurkan ubi jalar dengan setengah minyak zaitun dan sedikit bumbu, lalu panggang selama 20-25 menit.",
+      "2. Panaskan sisa minyak di wajan, masak daging giling hingga matang. Bumbui dengan bumbu taco, garam, dan lada.",
+      "3. Siapkan mangkuk saji. Susun ubi jalar panggang sebagai dasar.",
+      "4. Tambahkan daging giling, kacang hitam, dan jagung di atasnya.",
+      "5. Hiasi dengan irisan alpukat segar sebelum disajikan."
     ]
   },
   {
     "recipeId": "MG002",
-    "name": "Burger Daging Sapi & Ubi Panggang",
-    "imageUrl": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=1742&auto=format&fit=crop",
-    "calories": 650,
-    "protein": "55g",
-    "carbs": "45g",
-    "fat": "30g",
+    "name": "Burrito Bowl Ayam, Nasi Merah & Kacang Hitam",
+    "imageUrl": "https://assets.hotcooking.co.uk/portrait23/pulled-chicken-brown-rice-burrito-bowl_small.jpg",
+    "calories": 620,
+    "protein": "48g",
+    "carbs": "70g",
+    "fat": "16g",
     "ingredients": [
-      "180g daging sapi giling tanpa lemak",
-      "1 roti burger gandum utuh",
-      "200g ubi jalar, potong memanjang",
-      "Daun selada dan irisan tomat",
-      "1 sdt minyak zaitun",
-      "Garam dan lada"
+      "150g dada ayam, potong dadu",
+      "100g nasi merah (berat matang)",
+      "100g kacang hitam kalengan, bilas",
+      "75g salsa tomat",
+      "50g jagung pipil",
+      "1 sdm minyak zaitun",
+      "Bumbu fajita secukupnya",
+      "Daun ketumbar segar untuk hiasan"
     ],
     "instructions": [
-      "Bentuk daging giling menjadi patty, bumbui dengan garam dan lada.",
-      "Panggang patty hingga matang sesuai selera.",
-      "Sambil menunggu, campurkan potongan ubi dengan minyak zaitun, garam, dan lada. Panggang di oven atau air fryer hingga matang.",
-      "Sajikan patty di dalam roti burger dengan selada dan tomat, ditemani ubi panggang."
+      "1. Bumbui potongan ayam dengan bumbu fajita.",
+      "2. Panaskan minyak zaitun di wajan, masak ayam hingga matang dan berwarna keemasan. Angkat.",
+      "3. Siapkan mangkuk, letakkan nasi merah sebagai dasar.",
+      "4. Susun ayam, kacang hitam, dan jagung di atas nasi.",
+      "5. Beri topping salsa tomat dan hias dengan daun ketumbar segar."
     ]
   },
   {
     "recipeId": "MG003",
-    "name": "Pasta Gandum dengan Udang",
-    "imageUrl": "https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?q=80&w=1587&auto=format&fit=crop",
-    "calories": 600,
+    "name": "Smoothie Protein Tinggi Cokelat & Selai Kacang",
+    "imageUrl": "https://joytothefood.com/wp-content/uploads/2025/03/chocolate-pb-shake-2.jpg",
+    "calories": 580,
+    "protein": "40g",
+    "carbs": "50g",
+    "fat": "25g",
+    "ingredients": [
+      "1 scoop (30g) whey protein rasa cokelat",
+      "1 buah pisang beku",
+      "2 sdm selai kacang alami",
+      "250ml susu rendah lemak atau susu almond",
+      "1 sdm biji rami (flaxseed)",
+      "Beberapa es batu (opsional)"
+    ],
+    "instructions": [
+      "1. Masukkan semua bahan ke dalam blender: susu, whey protein, pisang beku, selai kacang, dan biji rami.",
+      "2. Blender dengan kecepatan tinggi hingga semua bahan tercampur rata dan teksturnya lembut.",
+      "3. Jika smoothie terlalu kental, tambahkan sedikit susu lagi. Jika kurang dingin, tambahkan es batu.",
+      "4. Tuang ke dalam gelas dan segera nikmati, ideal sebagai minuman pasca-latihan."
+    ]
+  },
+  {
+    "recipeId": "MG004",
+    "name": "Scramble Telur Krim & Alpukat di Roti Gandum",
+    "imageUrl": "https://img-global.cpcdn.com/recipes/155c4cdd915beab0/1200x630cq80/photo.jpg",
+    "calories": 560,
+    "protein": "30g",
+    "carbs": "40g",
+    "fat": "30g",
+    "ingredients": [
+      "3 butir telur ayam",
+      "2 lembar roti gandum utuh, panggang",
+      "1/2 buah alpukat, tumbuk kasar",
+      "30g keju feta, hancurkan (opsional)",
+      "1 sdm susu",
+      "Garam dan lada hitam secukupnya",
+      "Sedikit minyak kelapa atau mentega untuk wajan"
+    ],
+    "instructions": [
+      "1. Kocok telur bersama susu, garam, dan lada dalam sebuah mangkuk.",
+      "2. Panaskan sedikit minyak atau mentega di wajan anti lengket dengan api sedang.",
+      "3. Tuang campuran telur dan masak sambil terus diaduk perlahan hingga mencapai tingkat kematangan yang diinginkan. Angkat.",
+      "4. Oleskan alpukat yang sudah ditumbuk di atas roti gandum panggang.",
+      "5. Tumpuk telur orak-arik di atasnya. Taburi dengan keju feta jika suka."
+    ]
+  },
+  {
+    "recipeId": "FL005",
+    "name": "Udang & Zucchini Noodles (Zoodles) Aglio Olio",
+    "imageUrl": "https://cdn-aboak.nitrocdn.com/QJsLnWfsWAiuukSIMowyVEHtotvSQZoR/assets/images/optimized/rev-ca18e1d/www.slenderkitchen.com/sites/default/files/styles/featured_1500/public/recipe_images/shrimp-scampi-zoodles.jpg",
+    "calories": 380,
+    "protein": "30g",
+    "carbs": "15g",
+    "fat": "22g",
+    "ingredients": [
+      "150g udang, kupas dan bersihkan",
+      "2 buah zucchini ukuran sedang, buat menjadi mie (zoodles)",
+      "2 sdm minyak zaitun extra virgin",
+      "3 siung bawang putih, iris tipis",
+      "1/4 sdt cabai kering serpihan (chili flakes)",
+      "Segenggam peterseli segar, cincang",
+      "Garam dan lada hitam secukupnya",
+      "Perasan lemon segar"
+    ],
+    "instructions": [
+      "1. Panaskan minyak zaitun di wajan besar dengan api sedang. Tumis irisan bawang putih dan chili flakes hingga harum dan sedikit keemasan, sekitar 1-2 menit.",
+      "2. Masukkan udang ke dalam wajan. Bumbui dengan garam dan lada. Masak selama 2-3 menit hingga udang berubah warna menjadi merah muda dan matang.",
+      "3. Masukkan zoodles (mie zucchini) ke dalam wajan. Aduk cepat dan masak selama 2 menit saja agar tetap renyah.",
+      "4. Angkat dari api. Masukkan peterseli cincang dan sedikit perasan lemon. Aduk rata.",
+      "5. Sajikan segera selagi hangat."
+    ]
+  },
+  {
+    "recipeId": "FL006",
+    "name": "Sup Ayam Bening dengan Sayuran & Shirataki",
+    "imageUrl": "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/07/31052153/Resep-dan-Bumbu-Sop-Ayam-Kuah-Bening-Enak-Segar-dan-Menyehatkan-.jpg",
+    "calories": 250,
+    "protein": "28g",
+    "carbs": "12g",
+    "fat": "9g",
+    "ingredients": [
+      "100g dada ayam, rebus dan suwir",
+      "1 bungkus (200g) mie shirataki, bilas bersih",
+      "750ml kaldu ayam rendah sodium",
+      "50g wortel, potong dadu kecil",
+      "50g buncis, potong-potong",
+      "1 batang daun bawang, iris tipis",
+      "1 siung bawang putih, geprek",
+      "Sedikit jahe, geprek",
+      "Garam dan lada putih secukupnya"
+    ],
+    "instructions": [
+      "1. Didihkan kaldu ayam di dalam panci bersama bawang putih dan jahe geprek.",
+      "2. Masukkan potongan wortel dan buncis. Masak selama 5-7 menit hingga sayuran sedikit empuk.",
+      "3. Masukkan mie shirataki yang sudah dibilas dan ayam suwir ke dalam panci.",
+      "4. Bumbui dengan garam dan lada putih sesuai selera. Masak lagi selama 2-3 menit.",
+      "5. Taburkan irisan daun bawang sesaat sebelum diangkat. Sajikan panas."
+    ]
+  },
+  {
+    "recipeId": "MG005",
+    "name": "Kari Miju-miju & Buncis dengan Nasi Merah",
+    "imageUrl": "https://i0.wp.com/afrovitalityeats.com/wp-content/uploads/2017/07/Spicy-Caribbean-Chickpea-Curry.jpg",
+    "calories": 680,
+    "protein": "30g",
+    "carbs": "90g",
+    "fat": "22g",
+    "ingredients": [
+      "100g miju-miju (lentil) kering, bilas",
+      "150g buncis kalengan (chickpeas), bilas",
+      "100g nasi merah (berat matang)",
+      "200ml santan light",
+      "1 sdm pasta kari merah",
+      "1 siung bawang bombay kecil, cincang",
+      "1 sdm minyak kelapa",
+      "Segenggam bayam segar"
+    ],
+    "instructions": [
+      "1. Masak miju-miju sesuai petunjuk kemasan hingga empuk. Tiriskan.",
+      "2. Panaskan minyak kelapa di panci, tumis bawang bombay hingga layu dan harum.",
+      "3. Masukkan pasta kari merah dan masak selama satu menit hingga aromanya keluar.",
+      "4. Tuangkan santan, lalu masukkan miju-miju yang sudah matang dan buncis. Aduk rata.",
+      "5. Didihkan dengan api kecil selama 5-10 menit agar bumbu meresap. Bumbui dengan garam jika perlu.",
+      "6. Terakhir, masukkan bayam dan aduk hingga layu.",
+      "7. Sajikan kari di atas semangkuk nasi merah hangat."
+    ]
+  },
+  {
+    "recipeId": "MG006",
+    "name": "Oatmeal Protein Pisang & Kenari",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/ind/images/l18820240502140924.jpeg",
+    "calories": 610,
+    "protein": "38g",
+    "carbs": "75g",
+    "fat": "20g",
+    "ingredients": [
+      "80g rolled oats",
+      "300ml air atau susu",
+      "1 scoop (30g) whey protein rasa vanila atau plain",
+      "1 buah pisang, iris",
+      "30g kacang kenari (walnut), cincang kasar",
+      "1 sdm sirup maple",
+      "Sejumput kayu manis bubuk"
+    ],
+    "instructions": [
+      "1. Masak rolled oats dengan air atau susu di dalam panci kecil dengan api sedang hingga menjadi bubur, sekitar 5-7 menit.",
+      "2. Angkat panci dari api. Masukkan bubuk whey protein dan kayu manis bubuk. Aduk cepat hingga tercampur rata dan tidak menggumpal.",
+      "3. Tuang oatmeal ke dalam mangkuk.",
+      "4. Beri topping irisan pisang, kacang kenari cincang, dan sirup maple.",
+      "5. Nikmati sebagai sarapan berenergi tinggi untuk memulai hari."
+    ]
+  },
+  {
+    "recipeId": "FL007",
+    "name": "Salad Ayam Caesar Sehat dengan Saus Yogurt",
+    "imageUrl": "https://www.verywellfit.com/thmb/ueZjCe92jPlt-QszFC17xresHPE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/caesar-salad-with-grilled-chicken-121664016-5bd22cbc46e0fb00519577c3.jpg",
+    "calories": 410,
+    "protein": "40g",
+    "carbs": "10g",
+    "fat": "23g",
+    "ingredients": [
+      "150g dada ayam panggang, potong dadu",
+      "100g selada romaine, sobek-sobek",
+      "2 sdm Greek yogurt plain (sebagai saus)",
+      "1 sdt jus lemon",
+      "1/2 sdt dijon mustard",
+      "1 siung bawang putih kecil, parut halus",
+      "1 sdm keju parmesan parut",
+      "Garam dan lada hitam secukupnya"
+    ],
+    "instructions": [
+      "1. Siapkan saus: Dalam mangkuk kecil, campurkan Greek yogurt, jus lemon, dijon mustard, dan bawang putih parut. Aduk hingga rata. Bumbui dengan garam dan lada.",
+      "2. Dalam mangkuk besar, masukkan selada romaine dan potongan dada ayam panggang.",
+      "3. Tuangkan saus yogurt di atasnya dan aduk perlahan hingga semua bahan terlapisi dengan baik.",
+      "4. Taburkan keju parmesan parut di atasnya sebelum disajikan.",
+      "5. Untuk tambahan tekstur, Anda bisa menambahkan beberapa potong roti gandum panggang (crouton) buatan sendiri."
+    ]
+  },
+  {
+    "recipeId": "FL008",
+    "name": "Ikan Kod Panggang dengan Pesto & Tomat Ceri",
+    "imageUrl": "https://desertislanddishes.co/wp-content/uploads/2024/07/Harissa-Cod-with-Cherry-Tomatoes-scaled.jpg",
+    "calories": 390,
+    "protein": "35g",
+    "carbs": "8g",
+    "fat": "24g",
+    "ingredients": [
+      "180g fillet ikan kod (cod) atau ikan putih lainnya",
+      "1 sdm saus pesto hijau",
+      "100g tomat ceri, belah dua",
+      "1 sdm minyak zaitun",
+      "Garam dan lada hitam",
+      "Irisan lemon untuk hiasan"
+    ],
+    "instructions": [
+      "1. Panaskan oven hingga 200°C.",
+      "2. Letakkan fillet ikan kod di atas loyang yang sudah dilapisi kertas roti. Bumbui kedua sisi ikan dengan garam dan lada hitam.",
+      "3. Oleskan saus pesto secara merata di bagian atas fillet ikan.",
+      "4. Sebarkan tomat ceri di sekitar ikan di atas loyang. Siram dengan sedikit minyak zaitun.",
+      "5. Panggang selama 12-15 menit, atau hingga ikan matang sempurna dan mudah terkelupas.",
+      "6. Sajikan segera dengan hiasan irisan lemon segar."
+    ]
+  },
+  {
+    "recipeId": "MG007",
+    "name": "Pasta Gandum dengan Daging Giling & Saus Tomat",
+    "imageUrl": "https://d36fw6y2wq3bat.cloudfront.net/recipes/pasta-integral-con-carne-y-verduras/900/pasta-integral-con-carne-y-verduras_version_1673265258.jpg",
+    "calories": 720,
     "protein": "45g",
+    "carbs": "85g",
+    "fat": "25g",
+    "ingredients": [
+      "100g pasta gandum utuh (berat mentah)",
+      "150g daging sapi giling rendah lemak",
+      "200g saus tomat (passata)",
+      "1/2 bawang bombay, cincang",
+      "2 siung bawang putih, cincang",
+      "1 sdt herba italia kering (oregano, basil)",
+      "1 sdm minyak zaitun",
+      "Garam dan lada secukupnya",
+      "Keju parmesan parut untuk taburan"
+    ],
+    "instructions": [
+      "1. Masak pasta gandum sesuai petunjuk pada kemasan hingga al dente. Tiriskan.",
+      "2. Panaskan minyak zaitun di wajan, tumis bawang bombay dan bawang putih hingga harum.",
+      "3. Masukkan daging giling dan masak hingga berubah warna dan matang. Hancurkan gumpalan daging dengan spatula.",
+      "4. Tuangkan saus tomat, tambahkan herba italia, garam, dan lada. Aduk rata.",
+      "5. Masak saus dengan api kecil selama 10-15 menit agar bumbu meresap.",
+      "6. Campurkan pasta yang sudah matang ke dalam saus, aduk hingga terlapisi sempurna.",
+      "7. Sajikan di piring dengan taburan keju parmesan."
+    ]
+  },
+  {
+    "recipeId": "MG008",
+    "name": "Pancake Protein Tinggi dengan Topping Buah & Madu",
+    "imageUrl": "https://bdsgp.my.id/img/1200/bsob0d3ebsogk72t2x_2/hPYd3IY6ZDZpspFhPYwTmVhdKGQxLSmiiLpr797bNFQ.jpg",
+    "calories": 590,
+    "protein": "40g",
     "carbs": "65g",
     "fat": "18g",
     "ingredients": [
-      "100g pasta gandum utuh",
-      "150g udang, kupas",
-      "2 siung bawang putih, cincang",
-      "50g tomat ceri",
-      "1 sdm minyak zaitun",
-      "Daun peterseli (parsley), cincang"
+      "50g tepung oat (oat yang dihaluskan)",
+      "1 scoop (30g) whey protein rasa vanila",
+      "1 butir telur",
+      "1/2 sdt baking powder",
+      "100ml susu rendah lemak",
+      "Minyak kelapa untuk memasak",
+      "Topping: 50g buah beri, 1 sdm madu"
     ],
     "instructions": [
-      "Rebus pasta sesuai petunjuk kemasan.",
-      "Panaskan minyak zaitun di wajan, tumis bawang putih hingga harum.",
-      "Masukkan udang dan masak hingga berubah warna.",
-      "Masukkan tomat ceri dan pasta yang sudah matang ke dalam wajan.",
-      "Aduk rata, bumbui dengan garam dan lada. Taburi dengan peterseli sebelum disajikan."
+      "1. Dalam sebuah mangkuk, campurkan bahan kering: tepung oat, whey protein, dan baking powder.",
+      "2. Di mangkuk terpisah, kocok telur dan susu hingga tercampur.",
+      "3. Tuangkan campuran basah ke dalam campuran kering dan aduk hingga menjadi adonan yang halus. Jangan mengaduk berlebihan.",
+      "4. Panaskan sedikit minyak kelapa di wajan anti lengket dengan api sedang.",
+      "5. Tuang sekitar 1/4 adonan untuk setiap pancake. Masak selama 2-3 menit per sisi hingga berwarna keemasan dan matang.",
+      "6. Ulangi hingga adonan habis.",
+      "7. Tumpuk pancake di atas piring dan beri topping buah beri segar serta siraman madu."
     ]
   }
 ]

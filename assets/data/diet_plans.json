@@ -1,124 +1,84 @@
 [
   {
-    "planName": "Menurunkan Berat Badan",
+    "planName": "Rencana Makan Defisit Kalori",
     "goal": "fat_loss",
     "dailyMeals": [
       {
         "day": 1,
-        "meals": {
-          "breakfast": { "recipeId": "FL001" },
-          "lunch": { "recipeId": "FL002" },
-          "dinner": { "recipeId": "FL003" }
+        "breakfast": {
+          "recipeId": "FL004"
+        },
+        "lunch": {
+          "recipeId": "FL001"
+        },
+        "dinner": {
+          "recipeId": "FL002"
         }
       },
       {
         "day": 2,
-        "meals": {
-          "breakfast": { "recipeId": "FL005" },
-          "lunch": { "recipeId": "FL004" },
-          "dinner": { "recipeId": "FL002" }
+        "breakfast": {
+          "recipeId": "FL006"
+        },
+        "lunch": {
+          "recipeId": "FL007"
+        },
+        "dinner": {
+          "recipeId": "FL005"
         }
       },
       {
         "day": 3,
-        "meals": {
-          "breakfast": { "recipeId": "FL001" },
-          "lunch": { "recipeId": "FL003" },
-          "dinner": { "recipeId": "FL004" }
-        }
-      },
-      {
-        "day": 4,
-        "meals": {
-          "breakfast": { "recipeId": "FL005" },
-          "lunch": { "recipeId": "FL002" },
-          "dinner": { "recipeId": "FL003" }
-        }
-      },
-      {
-        "day": 5,
-        "meals": {
-          "breakfast": { "recipeId": "FL001" },
-          "lunch": { "recipeId": "FL004" },
-          "dinner": { "recipeId": "FL002" }
-        }
-      },
-      {
-        "day": 6,
-        "meals": {
-          "breakfast": { "recipeId": "FL005" },
-          "lunch": { "recipeId": "FL003" },
-          "dinner": { "recipeId": "FL004" }
-        }
-      },
-      {
-        "day": 7,
-        "meals": {
-          "breakfast": { "recipeId": "FL001" },
-          "lunch": { "recipeId": "FL002" },
-          "dinner": { "recipeId": "FL003" }
+        "breakfast": {
+          "recipeId": "FL004"
+        },
+        "lunch": {
+          "recipeId": "FL003"
+        },
+        "dinner": {
+          "recipeId": "FL008"
         }
       }
     ]
   },
   {
-    "planName": "Membentuk Otot",
+    "planName": "Rencana Makan Peningkatan Massa Otot",
     "goal": "muscle_gain",
     "dailyMeals": [
       {
         "day": 1,
-        "meals": {
-          "breakfast": { "recipeId": "MG001" },
-          "lunch": { "recipeId": "MG002" },
-          "dinner": { "recipeId": "MG003" }
+        "breakfast": {
+          "recipeId": "MG006"
+        },
+        "lunch": {
+          "recipeId": "MG001"
+        },
+        "dinner": {
+          "recipeId": "MG007"
         }
       },
       {
         "day": 2,
-        "meals": {
-          "breakfast": { "recipeId": "MG004" },
-          "lunch": { "recipeId": "MG003" },
-          "dinner": { "recipeId": "MG002" }
+        "breakfast": {
+          "recipeId": "MG004"
+        },
+        "lunch": {
+          "recipeId": "MG002"
+        },
+        "dinner": {
+          "recipeId": "MG005"
         }
       },
       {
         "day": 3,
-        "meals": {
-          "breakfast": { "recipeId": "MG001" },
-          "lunch": { "recipeId": "MG004" },
-          "dinner": { "recipeId": "MG002" }
-        }
-      },
-      {
-        "day": 4,
-        "meals": {
-          "breakfast": { "recipeId": "MG004" },
-          "lunch": { "recipeId": "MG002" },
-          "dinner": { "recipeId": "MG003" }
-        }
-      },
-      {
-        "day": 5,
-        "meals": {
-          "breakfast": { "recipeId": "MG001" },
-          "lunch": { "recipeId": "MG003" },
-          "dinner": { "recipeId": "MG004" }
-        }
-      },
-      {
-        "day": 6,
-        "meals": {
-          "breakfast": { "recipeId": "MG004" },
-          "lunch": { "recipeId": "MG002" },
-          "dinner": { "recipeId": "MG003" }
-        }
-      },
-      {
-        "day": 7,
-        "meals": {
-          "breakfast": { "recipeId": "MG001" },
-          "lunch": { "recipeId": "MG002" },
-          "dinner": { "recipeId": "MG004" }
+        "breakfast": {
+          "recipeId": "MG008"
+        },
+        "lunch": {
+          "recipeId": "MG003"
+        },
+        "dinner": {
+          "recipeId": "MG001"
         }
       }
     ]

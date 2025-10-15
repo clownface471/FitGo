@@ -1,122 +1,242 @@
 [
   {
-    "type": "profile",
+    "type": "quote",
     "name": "Arnold Schwarzenegger",
-    "imageUrl": "https://placeholder.com/arnold_schwarzenegger.jpg",
-    "content": "Arnold Schwarzenegger adalah seorang binaragawan profesional, aktor, dan politisi legendaris. Ia memenangkan gelar Mr. Olympia sebanyak tujuh kali dan dianggap sebagai salah satu binaragawan terhebat sepanjang masa. Dedikasinya yang luar biasa pada disiplin dan kerja keras terus menginspirasi jutaan orang di seluruh dunia untuk mencapai tujuan kebugaran mereka."
-  },
-  {
-    "type": "quote",
-    "name": "Chris Bumstead",
-    "imageUrl": "https://placeholder.com/chris_bumstead.jpg",
-    "content": "Satu-satunya orang yang harus kamu kalahkan adalah dirimu yang kemarin. Teruslah berkembang."
-  },
-  {
-    "type": "quote",
-    "name": "Dwayne 'The Rock' Johnson",
-    "imageUrl": "https://placeholder.com/dwayne_johnson.jpg",
-    "content": "Kesuksesan tidak selalu tentang kehebatan. Ini tentang konsistensi. Kerja keras yang konsisten akan membawa kesuksesan."
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg/800px-Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg",
+    "content": "The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone who is not a champion."
   },
   {
     "type": "quote",
     "name": "Muhammad Ali",
-    "imageUrl": "https://placeholder.com/muhammad_ali.jpg",
-    "content": "Saya benci setiap menit latihan, tapi saya berkata, 'Jangan berhenti. Menderitalah sekarang dan jalani sisa hidupmu sebagai seorang juara.'"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Muhammad_Ali_NYWTS.jpg/800px-Muhammad_Ali_NYWTS.jpg",
+    "content": "I don't count my sit-ups. I only start counting when it starts hurting because they're the only ones that count."
+  },
+  {
+    "type": "quote",
+    "name": "Dwayne 'The Rock' Johnson",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Dwayne_Johnson_2%2C_2013.jpg/800px-Dwayne_Johnson_2%2C_2013.jpg",
+    "content": "Success isn't always about greatness. It's about consistency. Consistent hard work leads to success. Greatness will come."
   },
   {
     "type": "quote",
     "name": "Michael Jordan",
-    "imageUrl": "https://placeholder.com/michael_jordan.jpg",
-    "content": "Saya bisa menerima kegagalan, semua orang pernah gagal. Tapi saya tidak bisa menerima jika tidak mencoba."
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Michael_Jordan_in_2014.jpg/800px-Michael_Jordan_in_2014.jpg",
+    "content": "I've failed over and over and over again in my life. And that is why I succeed."
   },
   {
     "type": "quote",
-    "name": "David Goggins",
-    "imageUrl": "https://placeholder.com/david_goggins.jpg",
-    "content": "Jangan biarkan pikiranmu mengontrol dirimu. Kamulah yang harus mengontrol pikiranmu."
-  },
-  {
-    "type": "quote",
-    "name": "Vince Lombardi",
-    "imageUrl": "https://placeholder.com/vince_lombardi.jpg",
-    "content": "Satu-satunya tempat di mana kesuksesan datang sebelum kerja keras hanyalah di dalam kamus."
-  },
-  {
-    "type": "quote",
-    "name": "Bruce Lee",
-    "imageUrl": "https://placeholder.com/bruce_lee.jpg",
-    "content": "Mengetahui saja tidak cukup, kita harus menerapkan. Berkemauan saja tidak cukup, kita harus melakukan."
+    "name": "Marcus Aurelius",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/MARCUS_AURELIUS_statue_in_the_Louvre.jpg/800px-MARCUS_AURELIUS_statue_in_the_Louvre.jpg",
+    "content": "The impediment to action advances action. What stands in the way becomes the way."
   },
   {
     "type": "quote",
     "name": "Serena Williams",
-    "imageUrl": "https://placeholder.com/serena_williams.jpg",
-    "content": "Saya tidak pernah suka kalah, tapi yang paling saya benci adalah belajar dari kekalahan itu."
-  },
-  {
-    "type": "quote",
-    "name": "Tim Motivasi",
-    "imageUrl": "https://placeholder.com/tim_motivasi.jpg",
-    "content": "Rasa sakit yang kamu rasakan hari ini adalah kekuatan yang akan kamu rasakan besok."
-  },
-  {
-    "type": "quote",
-    "name": "Cristiano Ronaldo",
-    "imageUrl": "https://placeholder.com/cristiano_ronaldo.jpg",
-    "content": "Saya tidak melihat batasan, saya melihat peluang untuk menjadi lebih baik setiap hari."
-  },
-  {
-    "type": "quote",
-    "name": "Jillian Michaels",
-    "imageUrl": "https://placeholder.com/jillian_michaels.jpg",
-    "content": "Transformasi bukanlah tentang fisik semata, ini tentang merevolusi cara berpikirmu."
-  },
-  {
-    "type": "quote",
-    "name": "Tim Motivasi",
-    "imageUrl": "https://placeholder.com/tim_motivasi.jpg",
-    "content": "Satu jam latihan hanyalah 4% dari harimu. Jangan ada alasan."
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Serena_Williams_at_the_2013_US_Open.jpg/800px-Serena_Williams_at_the_2013_US_Open.jpg",
+    "content": "I decided I can't pay a person to rewind time, so I might as well get over it."
   },
   {
     "type": "quote",
     "name": "Ronnie Coleman",
-    "imageUrl": "https://placeholder.com/ronnie_coleman.jpg",
-    "content": "Semua orang ingin menjadi binaragawan, tapi tidak semua orang mau mengangkat beban yang berat."
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Ronnie_Coleman_2009.jpg/800px-Ronnie_Coleman_2009.jpg",
+    "content": "Everybody wants to be a bodybuilder, but nobody wants to lift no heavy-ass weights."
+  },
+  {
+    "type": "quote",
+    "name": "Bruce Lee",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Bruce_Lee_1973.jpg/800px-Bruce_Lee_1973.jpg",
+    "content": "I fear not the man who has practiced 10,000 kicks once, but I fear the man who has practiced one kick 10,000 times."
+  },
+  {
+    "type": "quote",
+    "name": "Kobe Bryant",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Kobe_Bryant_2014.jpg/800px-Kobe_Bryant_2014.jpg",
+    "content": "The most important thing is to try and inspire people so that they can be great in whatever they want to do."
+  },
+  {
+    "type": "quote",
+    "name": "Simone Biles",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Simone_Biles_in_2016.jpg/800px-Simone_Biles_in_2016.jpg",
+    "content": "I'd rather regret the risks that didn't work out than the chances I didn't take at all."
+  },
+  {
+    "type": "quote",
+    "name": "Seneca",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Seneca_herm_in_the_Antikensammlung_Berlin.jpg/800px-Seneca_herm_in_the_Antikensammlung_Berlin.jpg",
+    "content": "It is not because things are difficult that we do not dare, it is because we do not dare that they are difficult."
   },
   {
     "type": "quote",
     "name": "Usain Bolt",
-    "imageUrl": "https://placeholder.com/usain_bolt.jpg",
-    "content": "Saya berlatih selama bertahun-tahun hanya untuk berlari selama sembilan detik. Kerja keras itu nyata."
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Usain_Bolt_by_Augustas_Didzgalvis.jpg/800px-Usain_Bolt_by_Augustas_Didzgalvis.jpg",
+    "content": "I trained 4 years to run 9 seconds, and people give up when they don’t see results in 2 months."
   },
   {
     "type": "quote",
-    "name": "Tim Motivasi",
-    "imageUrl": "https://placeholder.com/tim_motivasi.jpg",
-    "content": "Tubuhmu bisa melakukan hampir semua hal. Kamulah yang harus meyakinkan pikiranmu."
+    "name": "David Goggins",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/David_Goggins_at_the_2019_Endurance_sports_awards.png/800px-David_Goggins_at_the_2019_Endurance_sports_awards.png",
+    "content": "Don't stop when you're tired. Stop when you're done."
+  },
+  {
+    "type": "quote",
+    "name": "Aristotle",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Aristoteles_Louvre.jpg/800px-Aristoteles_Louvre.jpg",
+    "content": "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
+  },
+  {
+    "type": "quote",
+    "name": "Michael Phelps",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Michael_Phelps_Rio_Olympics_2016.jpg/800px-Michael_Phelps_Rio_Olympics_2016.jpg",
+    "content": "If you want to be the best, you have to do things that other people aren't willing to do."
+  },
+  {
+    "type": "quote",
+    "name": "Tom Platz",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Tom_Platz_IFBB_Pro_and_Mr_Universe_at_the_2008_FIBO.jpg/1024px-Tom_Platz_IFBB_Pro_and_Mr_Universe_at_the_2008_FIBO.jpg",
+    "content": "The body you want, the life you want, is on the other side of 'I don't feel like it.'"
+  },
+  {
+    "type": "quote",
+    "name": "Epictetus",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Epictetus_bust%2C_Naples%2C_MAN.jpg/800px-Epictetus_bust%2C_Naples%2C_MAN.jpg",
+    "content": "First say to yourself what you would be; and then do what you have to do."
+  },
+  {
+    "type": "quote",
+    "name": "Cristiano Ronaldo",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Cristiano_Ronaldo_2018.jpg/800px-Cristiano_Ronaldo_2018.jpg",
+    "content": "I am not a perfectionist, but I like to feel that things are done well. More important than that, I feel an endless need to learn, to improve, to evolve."
+  },
+  {
+    "type": "quote",
+    "name": "Jocko Willink",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Jocko_Willink_in_2017.jpg/800px-Jocko_Willink_in_2017.jpg",
+    "content": "Discipline equals freedom."
+  },
+  {
+    "type": "quote",
+    "name": "Vince Lombardi",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Vince_Lombardi_Trophy_at_NFL_Experience.jpg/800px-Vince_Lombardi_Trophy_at_NFL_Experience.jpg",
+    "content": "The only place success comes before work is in the dictionary."
+  },
+  {
+    "type": "quote",
+    "name": "Michelle Obama",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Michelle_Obama_2013_official_portrait.jpg/800px-Michelle_Obama_2013_official_portrait.jpg",
+    "content": "For me, exercise is more than just physical—it's therapeutic."
+  },
+  {
+    "type": "quote",
+    "name": "Lee Haney",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/National_Bodybuilding_Championships_2014_-_Men%27s_fitness-16.jpg/800px-National_Bodybuilding_Championships_2014_-_Men%27s_fitness-16.jpg",
+    "content": "Exercise to stimulate, not to annihilate. The world wasn't formed in a day, and neither were we. Set small goals and build upon them."
+  },
+  {
+    "type": "quote",
+    "name": "Tom Brady",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Tom_Brady_2023.png/800px-Tom_Brady_2023.png",
+    "content": "If you don't believe in yourself why is anyone else going to believe in you?"
+  },
+  {
+    "type": "quote",
+    "name": "Lao Tzu",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Lao_Tzu-e.svg/901px-Lao_Tzu-e.svg.png",
+    "content": "The journey of a thousand miles begins with a single step."
+  },
+  {
+    "type": "quote",
+    "name": "C.T. Fletcher",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/USMC-081013-M-1627S-001.jpg/1024px-USMC-081013-M-1627S-001.jpg",
+    "content": "I don't wanna be a wanna be, I wanna be what I'm destined to be. I will it to be. I demand it. It's my command."
+  },
+  {
+    "type": "quote",
+    "name": "Floyd Mayweather Jr.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Floyd_Mayweather_in_the_ring_in_2009.jpg/800px-Floyd_Mayweather_in_the_ring_in_2009.jpg",
+    "content": "No one is faster than me. No one is stronger than me. No one is smarter than me."
+  },
+  {
+    "type": "quote",
+    "name": "Sun Tzu",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Sun_Tzu_Statue_Yinqueshan.jpg/800px-Sun_Tzu_Statue_Yinqueshan.jpg",
+    "content": "Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win."
+  },
+  {
+    "type": "quote",
+    "name": "Martina Navratilova",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Martina_Navratilova_at_the_2011_US_Open_2.jpg/800px-Martina_Navratilova_at_the_2011_US_Open_2.jpg",
+    "content": "The difference between involvement and commitment is like ham and eggs. The chicken is involved; the pig is committed."
+  },
+  {
+    "type": "quote",
+    "name": "Eliud Kipchoge",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Eliud_Kipchoge_in_2019.jpg/800px-Eliud_Kipchoge_in_2019.jpg",
+    "content": "No human is limited. When you have that in your mind, you can do anything."
+  },
+  {
+    "type": "quote",
+    "name": "Confucius",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Konfuzius-1770.jpg/800px-Konfuzius-1770.jpg",
+    "content": "It does not matter how slowly you go as long as you do not stop."
+  },
+  {
+    "type": "quote",
+    "name": "Rich Froning Jr.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Rich_Froning_Jr._%2835928628036%29.jpg/800px-Rich_Froning_Jr._%2835928628036%29.jpg",
+    "content": "In training, you listen to your body. In competition, you tell your body to shut up."
+  },
+  {
+    "type": "quote",
+    "name": "Wayne Gretzky",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Wayne_Gretzky_2012-04-13.jpg/800px-Wayne_Gretzky_2012-04-13.jpg",
+    "content": "You miss 100% of the shots you don't take."
+  },
+  {
+    "type": "quote",
+    "name": "Jack LaLanne",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Jack_LaLanne_ca._1961.jpg/800px-Jack_LaLanne_ca._1961.jpg",
+    "content": "Your body is your most priceless possession. You've got to take care of it."
+  },
+  {
+    "type": "quote",
+    "name": "Henry Ford",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Henry_ford_1919.jpg/800px-Henry_ford_1919.jpg",
+    "content": "Whether you think you can, or you think you can't – you're right."
+  },
+  {
+    "type": "quote",
+    "name": "Frank Zane",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Frank_Zane_Mr_Olympia_1977.jpg/800px-Frank_Zane_Mr_Olympia_1977.jpg",
+    "content": "The more you're obsessed by something, the better chance you have of achieving it."
+  },
+  {
+    "type": "quote",
+    "name": "Lewis Hamilton",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg/800px-Lewis_Hamilton_2016_Malaysia_2.jpg",
+    "content": "My dad always said, 'Never give up, and always be the best you can be.' That's something that I've always lived by."
+  },
+  {
+    "type": "quote",
+    "name": "Plato",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Plato_Silanion_Musei_Capitolini_MC1377.jpg/800px-Plato_Silanion_Musei_Capitolini_MC1377.jpg",
+    "content": "Lack of activity destroys the good condition of every human being, while movement and methodical physical exercise save it and preserve it."
+  },
+  {
+    "type": "quote",
+    "name": "Jackie Joyner-Kersee",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Jackie_Joyner-Kersee_2008.jpg/800px-Jackie_Joyner-Kersee_2008.jpg",
+    "content": "The medals don't mean anything and the glory doesn't last. It's all about your happiness. The rewards are going to come, but my happiness is just loving the sport and having fun performing."
   },
   {
     "type": "quote",
     "name": "Arnold Schwarzenegger",
-    "imageUrl": "https://placeholder.com/arnold_schwarzenegger.jpg",
-    "content": "Repetisi terakhir yang membuat otot bertumbuh. Momen rasa sakit itulah yang memisahkan seorang juara dari pecundang."
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg/800px-Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg",
+    "content": "Strength does not come from winning. Your struggles develop your strengths. When you go through hardships and decide not to surrender, that is strength."
   },
   {
-    "type": "quote",
-    "name": "Tim Motivasi",
-    "imageUrl": "https://placeholder.com/tim_motivasi.jpg",
-    "content": "Jangan berharap untuk melihat perubahan jika kamu tidak membuatnya."
-  },
-  {
-    "type": "quote",
-    "name": "Conor McGregor",
-    "imageUrl": "https://placeholder.com/conor_mcgregor.jpg",
-    "content": "Tidak ada bakat di sini, ini adalah kerja keras. Ini adalah sebuah obsesi."
-  },
-  {
-    "type": "quote",
-    "name": "Tim Motivasi",
-    "imageUrl": "https://placeholder.com/tim_motivasi.jpg",
-    "content": "Hari ini mungkin sulit, besok mungkin lebih sulit, tapi lusa akan menjadi hari kemenanganmu."
+    "type": "profile",
+    "name": "Arnold Schwarzenegger",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg/800px-Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg",
+    "content": "A true icon of physical and mental fortitude. Arnold transformed himself from a young Austrian bodybuilder into a 7-time Mr. Olympia champion, a Hollywood superstar, and the Governor of California. His journey is a testament to the power of a clear vision, relentless discipline, and an unbreakable work ethic."
   }
 ]

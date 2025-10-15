@@ -129,6 +129,51 @@ class FirestoreService {
     }
   }
 
+  Future<List<WorkoutPlan>> getLocalWorkoutPlans() async {
+    try {
+      final String response = await rootBundle.loadString('assets/data/workout_plans.json');
+      final data = await json.decode(response) as List;
+      return data.map((e) => WorkoutPlan.fromMap(e)).toList();
+    } catch (e) {
+      print("Error loading local workout plans: $e");
+      return [];
+    }
+  }
+
+  Future<List<Recipe>> getLocalRecipes() async {
+    try {
+      final String response = await rootBundle.loadString('assets/data/recipes.json');
+      final data = await json.decode(response) as List;
+      return data.map((e) => Recipe.fromJson(e)).toList();
+    } catch (e) {
+      print("Error loading local recipes: $e");
+      return [];
+    }
+  }
+
+  Future<List<DietPlan>> getLocalDietPlans() async {
+    try {
+      final String response = await rootBundle.loadString('assets/data/diet_plans.json');
+      final data = await json.decode(response) as List;
+      return data.map((e) => DietPlan.fromMap(e)).toList();
+    } catch (e) {
+      print("Error loading local diet plans: $e");
+      return [];
+    }
+  }
+
+  Future<List<Motivation>> getLocalMotivations() async {
+    try {
+      final String response = await rootBundle.loadString('assets/data/motivations.json');
+      final data = await json.decode(response) as List;
+      return data.map((e) => Motivation.fromJson(e)).toList();
+    } catch (e) {
+      print("Error loading local motivations: $e");
+      return [];
+    }
+  }
+
+
   Future<WorkoutPlan?> getRecommendedPlan(String goal, String level) async {
     try {
       final querySnapshot = await _db

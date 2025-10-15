@@ -1,6 +1,6 @@
 [
   {
-    "planName": "Membentuk Otot Pemula",
+    "planName": "Foundational Strength: Beginner Muscle Gain",
     "level": "beginner",
     "goal": "muscle_gain",
     "durationDays": 28,
@@ -9,58 +9,1492 @@
         "day": 1,
         "workoutName": "Hari 1: Full Body A",
         "exercises": [
-          { "exerciseName": "Barbell Squat", "sets": 3, "reps": "8-12" },
-          { "exerciseName": "Barbell Bench Press", "sets": 3, "reps": "8-12" },
-          { "exerciseName": "Lat Pulldown", "sets": 3, "reps": "8-12" },
-          { "exerciseName": "Dumbbell Shoulder Press", "sets": 3, "reps": "8-12" },
-          { "exerciseName": "Tricep Dips", "sets": 3, "reps": "8-12" }
+          {
+            "exerciseName": "Barbell Squat",
+            "sets": 3,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Barbell Bench Press - Medium Grip",
+            "sets": 3,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Bent Over Barbell Row",
+            "sets": 3,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Dumbbell Shoulder Press",
+            "sets": 3,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Barbell Curl",
+            "sets": 2,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Lying Triceps Press",
+            "sets": 2,
+            "reps": "10-15"
+          }
         ]
       },
-      { "day": 2, "workoutName": "Hari 2: Istirahat", "exercises": [] },
+      {
+        "day": 2,
+        "workoutName": "Hari 2: Istirahat",
+        "exercises": []
+      },
       {
         "day": 3,
         "workoutName": "Hari 3: Full Body B",
         "exercises": [
-          { "exerciseName": "Leg Press", "sets": 3, "reps": "8-12" },
-          { "exerciseName": "Push-up", "sets": 3, "reps": "8-12" },
-          { "exerciseName": "Pull Up", "sets": 3, "reps": "Max" },
-          { "exerciseName": "Dumbbell Bicep Curl", "sets": 3, "reps": "10-15" },
-          { "exerciseName": "Plank", "sets": 3, "reps": "30-60 detik" }
+          {
+            "exerciseName": "Barbell Deadlift",
+            "sets": 3,
+            "reps": "5-8"
+          },
+          {
+            "exerciseName": "Dumbbell Lunges",
+            "sets": 3,
+            "reps": "10-12 per leg"
+          },
+          {
+            "exerciseName": "Pullups",
+            "sets": 3,
+            "reps": "Failure"
+          },
+          {
+            "exerciseName": "Pushups",
+            "sets": 3,
+            "reps": "Failure"
+          },
+          {
+            "exerciseName": "Plank",
+            "sets": 3,
+            "reps": "60 detik"
+          }
         ]
       },
-      { "day": 4, "workoutName": "Hari 4: Istirahat", "exercises": [] }
+      {
+        "day": 4,
+        "workoutName": "Hari 4: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 5,
+        "workoutName": "Hari 5: Full Body A",
+        "exercises": [
+          {
+            "exerciseName": "Barbell Squat",
+            "sets": 3,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Barbell Bench Press - Medium Grip",
+            "sets": 3,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Bent Over Barbell Row",
+            "sets": 3,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Dumbbell Shoulder Press",
+            "sets": 3,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Barbell Curl",
+            "sets": 2,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Lying Triceps Press",
+            "sets": 2,
+            "reps": "10-15"
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "workoutName": "Hari 6: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 7,
+        "workoutName": "Hari 7: Istirahat",
+        "exercises": []
+      }
     ]
   },
   {
-    "planName": "Menurunkan Berat Badan Pemula",
+    "planName": "Metabolic Spark: Beginner Fat Loss",
     "level": "beginner",
     "goal": "fat_loss",
     "durationDays": 28,
     "workouts": [
-       {
+      {
         "day": 1,
-        "workoutName": "Hari 1: Full Body Sirkuit",
+        "workoutName": "Hari 1: Full Body Circuit A",
         "exercises": [
-          { "exerciseName": "Barbell Squat", "sets": 3, "reps": "12-15" },
-          { "exerciseName": "Push-up", "sets": 3, "reps": "12-15" },
-          { "exerciseName": "Lat Pulldown", "sets": 3, "reps": "12-15" },
-          { "exerciseName": "Dumbbell Shoulder Press", "sets": 3, "reps": "12-15" },
-          { "exerciseName": "Crunches", "sets": 3, "reps": "15-20" }
+          {
+            "exerciseName": "Bodyweight Squat",
+            "sets": 3,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Pushups",
+            "sets": 3,
+            "reps": "Failure"
+          },
+          {
+            "exerciseName": "Inverted Row",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Dumbbell Lunges",
+            "sets": 3,
+            "reps": "12-15 per leg"
+          },
+          {
+            "exerciseName": "Plank",
+            "sets": 3,
+            "reps": "60 detik"
+          },
+          {
+            "exerciseName": "Rope Jumping",
+            "sets": 3,
+            "reps": "60 detik"
+          }
         ]
       },
-      { "day": 2, "workoutName": "Hari 2: Istirahat Aktif (Kardio Ringan)", "exercises": [] },
+      {
+        "day": 2,
+        "workoutName": "Hari 2: Istirahat Aktif",
+        "exercises": []
+      },
       {
         "day": 3,
-        "workoutName": "Hari 3: Full Body Sirkuit B",
+        "workoutName": "Hari 3: Full Body Circuit B",
         "exercises": [
-          { "exerciseName": "Deadlift", "sets": 3, "reps": "12-15" },
-          { "exerciseName": "Dumbbell Bicep Curl", "sets": 3, "reps": "12-15" },
-          { "exerciseName": "Tricep Dips", "sets": 3, "reps": "Max" },
-          { "exerciseName": "Leg Press", "sets": 3, "reps": "15-20" },
-          { "exerciseName": "Plank", "sets": 3, "reps": "45-60 detik" }
+          {
+            "exerciseName": "Goblet Squat",
+            "sets": 3,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Dumbbell Bench Press",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "One-Arm Dumbbell Row",
+            "sets": 3,
+            "reps": "12-15 per arm"
+          },
+          {
+            "exerciseName": "Glute Kickback",
+            "sets": 3,
+            "reps": "15-20 per leg"
+          },
+          {
+            "exerciseName": "Leg Pull-In",
+            "sets": 3,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Mountain Climbers",
+            "sets": 3,
+            "reps": "60 detik"
+          }
         ]
       },
-      { "day": 4, "workoutName": "Hari 4: Istirahat", "exercises": [] }
+      {
+        "day": 4,
+        "workoutName": "Hari 4: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 5,
+        "workoutName": "Hari 5: Full Body Circuit A",
+        "exercises": [
+          {
+            "exerciseName": "Bodyweight Squat",
+            "sets": 3,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Pushups",
+            "sets": 3,
+            "reps": "Failure"
+          },
+          {
+            "exerciseName": "Inverted Row",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Dumbbell Lunges",
+            "sets": 3,
+            "reps": "12-15 per leg"
+          },
+          {
+            "exerciseName": "Plank",
+            "sets": 3,
+            "reps": "60 detik"
+          },
+          {
+            "exerciseName": "Rope Jumping",
+            "sets": 3,
+            "reps": "60 detik"
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "workoutName": "Hari 6: Istirahat Aktif",
+        "exercises": []
+      },
+      {
+        "day": 7,
+        "workoutName": "Hari 7: Istirahat",
+        "exercises": []
+      }
+    ]
+  },
+  {
+    "planName": "Hypertrophy Blueprint: Intermediate Muscle Gain",
+    "level": "intermediate",
+    "goal": "muscle_gain",
+    "durationDays": 28,
+    "workouts": [
+      {
+        "day": 1,
+        "workoutName": "Hari 1: Upper Body Strength",
+        "exercises": [
+          {
+            "exerciseName": "Barbell Bench Press - Medium Grip",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Bent Over Barbell Row",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Incline Dumbbell Press",
+            "sets": 3,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Wide-Grip Lat Pulldown",
+            "sets": 3,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Seated Dumbbell Press",
+            "sets": 3,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Barbell Curl",
+            "sets": 3,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Triceps Pushdown",
+            "sets": 3,
+            "reps": "8-12"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "workoutName": "Hari 2: Lower Body Strength",
+        "exercises": [
+          {
+            "exerciseName": "Barbell Squat",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Romanian Deadlift",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Leg Press",
+            "sets": 3,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Lying Leg Curls",
+            "sets": 3,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Standing Calf Raises",
+            "sets": 4,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Hanging Leg Raise",
+            "sets": 3,
+            "reps": "15-20"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "workoutName": "Hari 3: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 4,
+        "workoutName": "Hari 4: Upper Body Hypertrophy",
+        "exercises": [
+          {
+            "exerciseName": "Dumbbell Bench Press",
+            "sets": 4,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "One-Arm Dumbbell Row",
+            "sets": 4,
+            "reps": "10-15 per arm"
+          },
+          {
+            "exerciseName": "Cable Crossover",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Seated Cable Rows",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Side Lateral Raise",
+            "sets": 4,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Incline Dumbbell Curl",
+            "sets": 3,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Cable Rope Overhead Triceps Extension",
+            "sets": 3,
+            "reps": "10-15"
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "workoutName": "Hari 5: Lower Body Hypertrophy",
+        "exercises": [
+          {
+            "exerciseName": "Front Barbell Squat",
+            "sets": 4,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Barbell Glute Bridge",
+            "sets": 4,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Dumbbell Lunges",
+            "sets": 3,
+            "reps": "12-15 per leg"
+          },
+          {
+            "exerciseName": "Seated Leg Curl",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Seated Calf Raise",
+            "sets": 4,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Cable Crunch",
+            "sets": 3,
+            "reps": "15-20"
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "workoutName": "Hari 6: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 7,
+        "workoutName": "Hari 7: Istirahat",
+        "exercises": []
+      }
+    ]
+  },
+  {
+    "planName": "Metabolic Overdrive: Intermediate Fat Loss",
+    "level": "intermediate",
+    "goal": "fat_loss",
+    "durationDays": 28,
+    "workouts": [
+      {
+        "day": 1,
+        "workoutName": "Hari 1: Upper Body Circuit",
+        "exercises": [
+          {
+            "exerciseName": "Incline Dumbbell Press",
+            "sets": 4,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Pullups",
+            "sets": 4,
+            "reps": "Failure"
+          },
+          {
+            "exerciseName": "Arnold Dumbbell Press",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Face Pull",
+            "sets": 3,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Pushups",
+            "sets": 3,
+            "reps": "Failure"
+          },
+          {
+            "exerciseName": "Battling Ropes",
+            "sets": 3,
+            "reps": "60 detik"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "workoutName": "Hari 2: Lower Body & Core Circuit",
+        "exercises": [
+          {
+            "exerciseName": "Goblet Squat",
+            "sets": 4,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Dumbbell Rear Lunge",
+            "sets": 4,
+            "reps": "12-15 per leg"
+          },
+          {
+            "exerciseName": "One-Arm Kettlebell Swings",
+            "sets": 3,
+            "reps": "20-25"
+          },
+          {
+            "exerciseName": "Ball Leg Curl",
+            "sets": 3,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Russian Twist",
+            "sets": 3,
+            "reps": "15-20 per side"
+          },
+          {
+            "exerciseName": "Box Jump (Multiple Response)",
+            "sets": 3,
+            "reps": "10-12"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "workoutName": "Hari 3: Istirahat Aktif",
+        "exercises": []
+      },
+      {
+        "day": 4,
+        "workoutName": "Hari 4: Full Body Metabolic",
+        "exercises": [
+          {
+            "exerciseName": "Dumbbell Clean",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Push Press",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Alternating Renegade Row",
+            "sets": 3,
+            "reps": "10-12 per arm"
+          },
+          {
+            "exerciseName": "Bodyweight Squat",
+            "sets": 3,
+            "reps": "20-25"
+          },
+          {
+            "exerciseName": "Kettlebell Windmill",
+            "sets": 3,
+            "reps": "8-10 per side"
+          },
+          {
+            "exerciseName": "Tire Flip",
+            "sets": 3,
+            "reps": "8-10"
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "workoutName": "Hari 5: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 6,
+        "workoutName": "Hari 6: Istirahat Aktif",
+        "exercises": []
+      },
+      {
+        "day": 7,
+        "workoutName": "Hari 7: Istirahat",
+        "exercises": []
+      }
+    ]
+  },
+  {
+    "planName": "Apex Predator: Advanced Muscle Gain",
+    "level": "advanced",
+    "goal": "muscle_gain",
+    "durationDays": 28,
+    "workouts": [
+      {
+        "day": 1,
+        "workoutName": "Hari 1: Push (Dada, Bahu, Trisep)",
+        "exercises": [
+          {
+            "exerciseName": "Barbell Bench Press - Medium Grip",
+            "sets": 5,
+            "reps": "6-10"
+          },
+          {
+            "exerciseName": "Seated Dumbbell Press",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Incline Dumbbell Press",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Side Lateral Raise",
+            "sets": 4,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Dips - Chest Version",
+            "sets": 3,
+            "reps": "Failure"
+          },
+          {
+            "exerciseName": "EZ-Bar Skullcrusher",
+            "sets": 3,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Triceps Pushdown - Rope Attachment",
+            "sets": 3,
+            "reps": "12-15"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "workoutName": "Hari 2: Pull (Punggung, Bisep)",
+        "exercises": [
+          {
+            "exerciseName": "Barbell Deadlift",
+            "sets": 5,
+            "reps": "3-5"
+          },
+          {
+            "exerciseName": "Pullups",
+            "sets": 4,
+            "reps": "Failure"
+          },
+          {
+            "exerciseName": "Bent Over Barbell Row",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Seated Cable Rows",
+            "sets": 3,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Face Pull",
+            "sets": 3,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Barbell Curl",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Hammer Curls",
+            "sets": 3,
+            "reps": "10-12"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "workoutName": "Hari 3: Legs (Kaki, Betis, Perut)",
+        "exercises": [
+          {
+            "exerciseName": "Barbell Squat",
+            "sets": 5,
+            "reps": "6-10"
+          },
+          {
+            "exerciseName": "Romanian Deadlift",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Leg Press",
+            "sets": 4,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Barbell Walking Lunge",
+            "sets": 3,
+            "reps": "10-12 per leg"
+          },
+          {
+            "exerciseName": "Leg Extensions",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Standing Calf Raises",
+            "sets": 5,
+            "reps": "10-15"
+          },
+          {
+            "exerciseName": "Hanging Leg Raise",
+            "sets": 4,
+            "reps": "15-20"
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "workoutName": "Hari 4: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 5,
+        "workoutName": "Hari 5: Push (Bahu, Dada, Trisep)",
+        "exercises": [
+          {
+            "exerciseName": "Barbell Shoulder Press",
+            "sets": 5,
+            "reps": "6-10"
+          },
+          {
+            "exerciseName": "Dumbbell Bench Press",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Arnold Dumbbell Press",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Cable Crossover",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Upright Barbell Row",
+            "sets": 3,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Close-Grip Barbell Bench Press",
+            "sets": 3,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Cable Rope Overhead Triceps Extension",
+            "sets": 3,
+            "reps": "12-15"
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "workoutName": "Hari 6: Pull (Punggung, Bisep, Perut)",
+        "exercises": [
+          {
+            "exerciseName": "Weighted Pull Ups",
+            "sets": 5,
+            "reps": "6-10"
+          },
+          {
+            "exerciseName": "T-Bar Row with Handle",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Straight-Arm Pulldown",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Barbell Shrug",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Preacher Curl",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Concentration Curls",
+            "sets": 3,
+            "reps": "10-12 per arm"
+          },
+          {
+            "exerciseName": "Cable Crunch",
+            "sets": 4,
+            "reps": "15-20"
+          }
+        ]
+      },
+      {
+        "day": 7,
+        "workoutName": "Hari 7: Istirahat",
+        "exercises": []
+      }
+    ]
+  },
+  {
+    "planName": "Elite Conditioning: Advanced Fat Loss",
+    "level": "advanced",
+    "goal": "fat_loss",
+    "durationDays": 28,
+    "workouts": [
+      {
+        "day": 1,
+        "workoutName": "Hari 1: Push Day - Metabolic Stress",
+        "exercises": [
+          {
+            "exerciseName": "Dumbbell Bench Press",
+            "sets": 4,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Seated Dumbbell Press",
+            "sets": 4,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Incline Push-Up",
+            "sets": 3,
+            "reps": "Failure"
+          },
+          {
+            "exerciseName": "Lateral Raise - With Bands",
+            "sets": 3,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Dips - Triceps Version",
+            "sets": 3,
+            "reps": "Failure"
+          },
+          {
+            "exerciseName": "Battling Ropes",
+            "sets": 4,
+            "reps": "45 detik"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "workoutName": "Hari 2: Pull Day - High Intensity",
+        "exercises": [
+          {
+            "exerciseName": "Chin-Up",
+            "sets": 4,
+            "reps": "Failure"
+          },
+          {
+            "exerciseName": "Bent Over Barbell Row",
+            "sets": 4,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Kettlebell Sumo High Pull",
+            "sets": 3,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Face Pull",
+            "sets": 3,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Alternate Hammer Curl",
+            "sets": 3,
+            "reps": "12-15 per arm"
+          },
+          {
+            "exerciseName": "Sledgehammer Swings",
+            "sets": 4,
+            "reps": "45 detik"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "workoutName": "Hari 3: Leg Day - Endurance & Power",
+        "exercises": [
+          {
+            "exerciseName": "Goblet Squat",
+            "sets": 4,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Stiff-Legged Dumbbell Deadlift",
+            "sets": 4,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Bodyweight Walking Lunge",
+            "sets": 3,
+            "reps": "15-20 per leg"
+          },
+          {
+            "exerciseName": "Box Jump (Multiple Response)",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Calf Press On The Leg Press Machine",
+            "sets": 4,
+            "reps": "20-25"
+          },
+          {
+            "exerciseName": "Plank",
+            "sets": 4,
+            "reps": "90 detik"
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "workoutName": "Hari 4: Istirahat Aktif",
+        "exercises": []
+      },
+      {
+        "day": 5,
+        "workoutName": "Hari 5: Full Body Power Circuit",
+        "exercises": [
+          {
+            "exerciseName": "One-Arm Kettlebell Swings",
+            "sets": 5,
+            "reps": "20"
+          },
+          {
+            "exerciseName": "Push Press",
+            "sets": 5,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Alternating Renegade Row",
+            "sets": 4,
+            "reps": "10-12 per arm"
+          },
+          {
+            "exerciseName": "Plyo Push-up",
+            "sets": 4,
+            "reps": "15"
+          },
+          {
+            "exerciseName": "Russian Twist",
+            "sets": 4,
+            "reps": "20 per side"
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "workoutName": "Hari 6: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 7,
+        "workoutName": "Hari 7: Istirahat",
+        "exercises": []
+      }
+    ]
+  },
+  {
+    "planName": "Power & Strength: Advanced Powerlifting Focus",
+    "level": "advanced",
+    "goal": "muscle_gain",
+    "durationDays": 28,
+    "workouts": [
+      {
+        "day": 1,
+        "workoutName": "Hari 1: Max Effort Lower Body",
+        "exercises": [
+          {
+            "exerciseName": "Box Squat",
+            "sets": 5,
+            "reps": "3-5"
+          },
+          {
+            "exerciseName": "Sumo Deadlift",
+            "sets": 3,
+            "reps": "3-5"
+          },
+          {
+            "exerciseName": "Good Morning",
+            "sets": 3,
+            "reps": "8-10"
+          },
+          {
+            "exerciseName": "Reverse Hyperextension",
+            "sets": 3,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Hanging Leg Raise",
+            "sets": 3,
+            "reps": "12-15"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "workoutName": "Hari 2: Max Effort Upper Body",
+        "exercises": [
+          {
+            "exerciseName": "Bench Press - Powerlifting",
+            "sets": 5,
+            "reps": "3-5"
+          },
+          {
+            "exerciseName": "Close-Grip Barbell Bench Press",
+            "sets": 4,
+            "reps": "6-8"
+          },
+          {
+            "exerciseName": "Bent Over Barbell Row",
+            "sets": 4,
+            "reps": "8-10"
+          },
+          {
+            "exerciseName": "Seated Dumbbell Press",
+            "sets": 3,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Face Pull",
+            "sets": 3,
+            "reps": "15-20"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "workoutName": "Hari 3: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 4,
+        "workoutName": "Hari 4: Dynamic Effort Lower Body",
+        "exercises": [
+          {
+            "exerciseName": "Speed Box Squat",
+            "sets": 8,
+            "reps": "3"
+          },
+          {
+            "exerciseName": "Rack Pulls",
+            "sets": 6,
+            "reps": "3"
+          },
+          {
+            "exerciseName": "Barbell Glute Bridge",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Glute Ham Raise",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Ab Roller",
+            "sets": 4,
+            "reps": "12-15"
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "workoutName": "Hari 5: Dynamic Effort Upper Body",
+        "exercises": [
+          {
+            "exerciseName": "Bench Press with Chains",
+            "sets": 8,
+            "reps": "3"
+          },
+          {
+            "exerciseName": "Dumbbell Floor Press",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "One-Arm Dumbbell Row",
+            "sets": 4,
+            "reps": "10-12 per arm"
+          },
+          {
+            "exerciseName": "Band Pull Apart",
+            "sets": 4,
+            "reps": "20-25"
+          },
+          {
+            "exerciseName": "JM Press",
+            "sets": 3,
+            "reps": "10-12"
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "workoutName": "Hari 6: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 7,
+        "workoutName": "Hari 7: Istirahat",
+        "exercises": []
+      }
+    ]
+  },
+  {
+    "planName": "Functional Power: Intermediate Strongman Intro",
+    "level": "intermediate",
+    "goal": "fat_loss",
+    "durationDays": 28,
+    "workouts": [
+      {
+        "day": 1,
+        "workoutName": "Hari 1: Carry & Press",
+        "exercises": [
+          {
+            "exerciseName": "Farmer's Walk",
+            "sets": 4,
+            "reps": "50 feet"
+          },
+          {
+            "exerciseName": "Log Lift",
+            "sets": 4,
+            "reps": "8-10"
+          },
+          {
+            "exerciseName": "Sled Push",
+            "sets": 3,
+            "reps": "50 feet"
+          },
+          {
+            "exerciseName": "Overhead Squat",
+            "sets": 3,
+            "reps": "10-12"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "workoutName": "Hari 2: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 3,
+        "workoutName": "Hari 3: Pull & Flip",
+        "exercises": [
+          {
+            "exerciseName": "Tire Flip",
+            "sets": 4,
+            "reps": "6-8"
+          },
+          {
+            "exerciseName": "Trap Bar Deadlift",
+            "sets": 4,
+            "reps": "8-10"
+          },
+          {
+            "exerciseName": "Sled Drag - Harness",
+            "sets": 3,
+            "reps": "50 feet"
+          },
+          {
+            "exerciseName": "Rope Climb",
+            "sets": 3,
+            "reps": "Failure"
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "workoutName": "Hari 4: Istirahat Aktif",
+        "exercises": []
+      },
+      {
+        "day": 5,
+        "workoutName": "Hari 5: Full Body Conditioning",
+        "exercises": [
+          {
+            "exerciseName": "Sandbag Load",
+            "sets": 4,
+            "reps": "8-10"
+          },
+          {
+            "exerciseName": "Sledgehammer Swings",
+            "sets": 4,
+            "reps": "30 detik per side"
+          },
+          {
+            "exerciseName": "Yoke Walk",
+            "sets": 3,
+            "reps": "50 feet"
+          },
+          {
+            "exerciseName": "Atlas Stones",
+            "sets": 3,
+            "reps": "5"
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "workoutName": "Hari 6: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 7,
+        "workoutName": "Hari 7: Istirahat",
+        "exercises": []
+      }
+    ]
+  },
+  {
+    "planName": "Olympic Foundations: Advanced Weightlifting",
+    "level": "advanced",
+    "goal": "muscle_gain",
+    "durationDays": 28,
+    "workouts": [
+      {
+        "day": 1,
+        "workoutName": "Hari 1: Snatch & Squat",
+        "exercises": [
+          {
+            "exerciseName": "Snatch",
+            "sets": 6,
+            "reps": "2-3"
+          },
+          {
+            "exerciseName": "Snatch Pull",
+            "sets": 4,
+            "reps": "3-4"
+          },
+          {
+            "exerciseName": "Overhead Squat",
+            "sets": 4,
+            "reps": "5-6"
+          },
+          {
+            "exerciseName": "Good Morning",
+            "sets": 3,
+            "reps": "8-10"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "workoutName": "Hari 2: Clean, Jerk & Press",
+        "exercises": [
+          {
+            "exerciseName": "Clean and Jerk",
+            "sets": 6,
+            "reps": "2-3"
+          },
+          {
+            "exerciseName": "Clean Pull",
+            "sets": 4,
+            "reps": "3-4"
+          },
+          {
+            "exerciseName": "Push Press",
+            "sets": 4,
+            "reps": "5-6"
+          },
+          {
+            "exerciseName": "Barbell Bench Press - Medium Grip",
+            "sets": 3,
+            "reps": "8-10"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "workoutName": "Hari 3: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 4,
+        "workoutName": "Hari 4: Snatch Variations & Pulls",
+        "exercises": [
+          {
+            "exerciseName": "Hang Snatch",
+            "sets": 5,
+            "reps": "3"
+          },
+          {
+            "exerciseName": "Snatch Balance",
+            "sets": 4,
+            "reps": "3"
+          },
+          {
+            "exerciseName": "Snatch Deadlift",
+            "sets": 4,
+            "reps": "4-5"
+          },
+          {
+            "exerciseName": "Pullups",
+            "sets": 3,
+            "reps": "Failure"
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "workoutName": "Hari 5: Clean Variations & Squats",
+        "exercises": [
+          {
+            "exerciseName": "Hang Clean",
+            "sets": 5,
+            "reps": "3"
+          },
+          {
+            "exerciseName": "Split Jerk",
+            "sets": 4,
+            "reps": "3"
+          },
+          {
+            "exerciseName": "Front Squat (Clean Grip)",
+            "sets": 4,
+            "reps": "4-5"
+          },
+          {
+            "exerciseName": "Dips - Triceps Version",
+            "sets": 3,
+            "reps": "Failure"
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "workoutName": "Hari 6: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 7,
+        "workoutName": "Hari 7: Istirahat",
+        "exercises": []
+      }
+    ]
+  },
+  {
+    "planName": "Machine Matrix: Intermediate Hypertrophy",
+    "level": "intermediate",
+    "goal": "muscle_gain",
+    "durationDays": 28,
+    "workouts": [
+      {
+        "day": 1,
+        "workoutName": "Hari 1: Dada & Trisep",
+        "exercises": [
+          {
+            "exerciseName": "Smith Machine Bench Press",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Leverage Incline Chest Press",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Butterfly",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Dip Machine",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Machine Triceps Extension",
+            "sets": 3,
+            "reps": "12-15"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "workoutName": "Hari 2: Punggung & Bisep",
+        "exercises": [
+          {
+            "exerciseName": "Leverage High Row",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Wide-Grip Lat Pulldown",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Leverage Iso Row",
+            "sets": 3,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Machine Bicep Curl",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Machine Preacher Curls",
+            "sets": 3,
+            "reps": "12-15"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "workoutName": "Hari 3: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 4,
+        "workoutName": "Hari 4: Kaki",
+        "exercises": [
+          {
+            "exerciseName": "Leg Press",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Hack Squat",
+            "sets": 4,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Leg Extensions",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Seated Leg Curl",
+            "sets": 3,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Thigh Adductor",
+            "sets": 3,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Thigh Abductor",
+            "sets": 3,
+            "reps": "15-20"
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "workoutName": "Hari 5: Bahu & Perut",
+        "exercises": [
+          {
+            "exerciseName": "Machine Shoulder (Military) Press",
+            "sets": 4,
+            "reps": "8-12"
+          },
+          {
+            "exerciseName": "Reverse Machine Flyes",
+            "sets": 4,
+            "reps": "12-15"
+          },
+          {
+            "exerciseName": "Leverage Shrug",
+            "sets": 3,
+            "reps": "10-12"
+          },
+          {
+            "exerciseName": "Ab Crunch Machine",
+            "sets": 4,
+            "reps": "15-20"
+          },
+          {
+            "exerciseName": "Decline Crunch",
+            "sets": 3,
+            "reps": "15-20"
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "workoutName": "Hari 6: Istirahat",
+        "exercises": []
+      },
+      {
+        "day": 7,
+        "workoutName": "Hari 7: Istirahat",
+        "exercises": []
+      }
     ]
   }
 ]
+
